@@ -435,11 +435,11 @@ const botopiaGallery = [
 const zhuangyuanGallery = [
   { image: asset('zhuangyuan-case/zhuangyuan-01-overview.png'), label: '项目总览与品牌定位' },
   { image: asset('zhuangyuan-case/zhuangyuan-02-workflow-visual-system.png'), label: 'AIGC工作流程与视觉系统' },
-  { image: asset('zhuangyuan-case/zhuangyuan-03-packaging-expansion.png'), label: '包装插图与展开图' },
-  { image: asset('zhuangyuan-case/zhuangyuan-04-gift-box-structure.png'), label: '主礼盒结构与交互说明' },
-  { image: asset('zhuangyuan-case/zhuangyuan-05-product-render.png'), label: '全系列产品包装效果图' },
-  { image: asset('zhuangyuan-case/zhuangyuan-06-extension-products.png'), label: '文创延展产品展示' },
-  { image: asset('zhuangyuan-case/zhuangyuan-07-pricing-landing.png'), label: '产品定价与落地应用分析' },
+  { image: asset('zhuangyuan-case/zhuangyuan-03-packaging-expansion.jpg'), label: '包装插图与展开图' },
+  { image: asset('zhuangyuan-case/zhuangyuan-04-gift-box-structure.jpg'), label: '主礼盒结构与交互说明' },
+  { image: asset('zhuangyuan-case/zhuangyuan-05-product-render.jpg'), label: '全系列产品包装效果图' },
+  { image: asset('zhuangyuan-case/zhuangyuan-06-extension-products.jpg'), label: '文创延展产品展示' },
+  { image: asset('zhuangyuan-case/zhuangyuan-07-pricing-landing.jpg'), label: '产品定价与落地应用分析' },
 ];
 
 const artHealingGallery = [
