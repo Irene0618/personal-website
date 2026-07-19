@@ -14,7 +14,7 @@ import {
 import type { CSSProperties, SyntheticEvent, WheelEvent } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
-const asset = (name: string) => `/portfolio/${name}`;
+const asset = (name: string) => `${import.meta.env.BASE_URL}portfolio/${name}`;
 
 const navItems = [
   { label: '能力', href: '#roots' },
