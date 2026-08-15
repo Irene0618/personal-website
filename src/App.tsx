@@ -26,6 +26,13 @@ const navItems = [
 
 const rings = [
   {
+    slug: 'ai-pet-internship',
+    year: '2026.06—2026.08',
+    title: 'AI萌宠IP内容孵化与跨平台运营策划',
+    detail: '参与TCL雷鸟科技的AI萌物IP“小龙吨吨”内容孵化，围绕TCL电视大屏场景持续策划并制作治愈向日更视频，已完成46集内容并进入电视首页推荐；结合点击表现及二维码用户留言分析家庭用户偏好，根据用户反馈迭代内容选题。参与了IP向抖音平台拓展的前期调研，围绕竞品、人设、内容栏目及互动机制规划账号冷启动策略。',
+    tags: [],
+  },
+  {
     slug: 'zuel-undergraduate',
     year: '2020-2024',
     title: '中南财经政法大学｜动画与游戏设计本科',
@@ -41,7 +48,7 @@ const rings = [
   },
   {
     slug: 'hitsz-master',
-    year: '2023年至今',
+    year: '2024-2027',
     title: '哈尔滨工业大学（深圳）｜设计学（数字媒体）硕士',
     detail: '成绩排名4/33，前10%，GPA 3.53/4.0。研究方向聚焦用户体验、数字媒体、AIGC内容生产流程、AI产品与原型设计。',
     tags: ['专业排名4/33 ，前10% ，获校特等学金'],
@@ -63,6 +70,25 @@ const rings = [
 ];
 
 const experienceDetails = [
+  {
+    slug: 'ai-pet-internship',
+    year: '2026.06—2026.08',
+    type: 'AI content product / Internship',
+    title: 'AI萌宠IP内容孵化与跨平台运营策划',
+    overview: '参与TCL雷鸟科技的AI萌物IP“小龙吨吨”内容孵化，围绕TCL电视大屏场景持续策划并制作治愈向日更视频，已完成46集内容并进入电视首页推荐；结合点击表现及二维码用户留言分析家庭用户偏好，根据用户反馈迭代内容选题。参与了IP向抖音平台拓展的前期调研，围绕竞品、人设、内容栏目及互动机制规划账号冷启动策略。',
+    tags: ['AIGC视频制作', '电视端日更', '用户反馈', '跨平台运营', 'NDA脱敏'],
+    focus: [
+      '电视端：持续完成AI萌宠日更视频内容，兼顾画面质量、角色一致性与家庭共看场景。',
+      '反馈端：整理扫码留言与内容表现信号，识别“角色可爱、孩子喜欢、主动点餐”等真实反馈。',
+      '移动端：调研抖音同类账号，分析人设、选题、单集结构、评论互动和系列化追更机制。',
+    ],
+    outcomes: [
+      '电视大屏端已连续日更46集，并进入首页推荐场景，获得用户正向留言与选题期待。',
+      '抖音账号仍处于调研与策划阶段；大屏互动仅为概念Demo，均不包装为已上线结果。',
+    ],
+    links: [],
+    images: [{ image: asset('ai-pet-case/stills/hero-river.webp'), label: '小龙吨吨内容画面｜项目已脱敏' }],
+  },
   {
     slug: 'zuel-undergraduate',
     year: '2020-2024',
@@ -97,7 +123,7 @@ const experienceDetails = [
   },
   {
     slug: 'hitsz-master',
-    year: '2023年至今',
+    year: '2024-2027',
     type: 'Master of Design / Digital media',
     title: '哈尔滨工业大学（深圳）｜设计学（数字媒体）硕士',
     overview: '围绕用户体验、数字媒体与 AIGC 内容生产展开研究与实践，持续探索 AI 产品、原型设计与影像表达的结合。',
@@ -178,28 +204,52 @@ const undergraduateArchive = {
 };
 
 const roots = [
+  '问题定义',
   '用户洞察',
-  '影像叙事',
-  'AIGC工作流',
+  '产品策略',
   '产品原型',
+  '验证迭代',
   '内容运营',
-  '摄影观察',
-  '互动媒体',
-  '设计研究',
+  'AIGC工作流',
+  '影像叙事',
 ];
 
 const rootDescriptions: Record<string, string> = {
+  问题定义: '从业务目标与使用情境出发，区分“用户不知道”和“用户做不到”，把宽泛命题收敛为可验证的产品问题。',
   用户洞察: '通过访谈、问卷、用户画像、共情图和旅程图，把模糊需求转化为明确的设计判断。',
+  产品策略: '把定位、用户价值、功能范围、内容架构与阶段目标组织成可执行方案，并明确不做什么。',
+  验证迭代: '围绕关键假设设计前测、可用性测试、指标体系和复盘标签，用证据决定下一轮迭代。',
   影像叙事: '能把议题拆成脚本、分镜、镜头节奏和视觉符号，让观点更容易被理解和传播。',
   AIGC工作流: '熟悉从提示词、素材生成、模型对比到剪辑包装的迭代流程，重视可控性和复盘记录。',
   产品原型: '能从信息架构、功能路径、低保真到高保真界面逐步推进，让概念落到可体验界面。',
   内容运营: '具备选题、脚本、审核、发布和传播包装经验，理解内容节奏与受众反馈。',
-  摄影观察: '用影像记录人物、场景和情绪细节，为视觉表达和用户研究积累真实素材。',
-  互动媒体: '关注网页、装置、APP和视频之间的体验衔接，让作品不仅能看，也能被使用。',
-  设计研究: '能把背景资料、竞品分析、测试反馈和设计决策组织成完整的案例论证。',
 };
 
 const featuredProjects = [
+  {
+    slug: 'ai-pet-incubation',
+    name: 'AI萌宠IP内容孵化',
+    cn: '电视端46集内容验证 → 抖音账号策划',
+    stage: '2026.06—2026.08',
+    type: 'AIGC视频 / 跨平台运营',
+    image: asset('ai-pet-case/stills/hero-river.webp'),
+    icon: Sparkles,
+    summary:
+      '在电视大屏端持续产出46集AI萌宠日更视频，并结合点击表现与二维码留言观察用户偏好；当前转向抖音平台调研，规划角色的人设表达、内容栏目与互动机制。',
+    outputs: ['46集日更', 'AIGC视频制作', '用户反馈', '抖音调研', '产品策划'],
+  },
+  {
+    slug: 'anti-drug-interactive-film',
+    name: '禁毒互动影像游戏',
+    cn: '从“让人害怕”走向“让人会拒绝”',
+    stage: '研究生毕业设计',
+    type: '教育产品 / 互动原型',
+    image: asset('anti-drug-case/cover.png'),
+    icon: Play,
+    summary:
+      '聚焦青年在熟人社交压力下“知道风险却不会拒绝”的行为缺口，通过166份问卷、6人参与式工作坊、互动原型与30份材料前测，把恐惧诉求转化为可选择、可反馈、可重试的行动训练。',
+    outputs: ['用户研究', '需求验证', '互动原型', 'AIGC影像', '实验前测'],
+  },
   {
     slug: 'cocoon',
     name: '思茧成蝶',
@@ -235,6 +285,18 @@ const featuredProjects = [
     summary:
       '围绕中式五音疗愈与古琴文创，完成硬件音箱、配套APP、用户旅程、视觉规范和功能路径设计。',
     outputs: ['硬件概念', 'APP界面', '用户旅程', '品牌视觉'],
+  },
+  {
+    slug: 'game-design-lab',
+    name: '策研工坊',
+    cn: '游戏策划研学平台',
+    stage: '2026.08',
+    type: '产品策划 / 可交互原型',
+    image: asset('game-lab-case/cover.png'),
+    icon: PenLine,
+    summary:
+      '我想解决一个很具体的问题：玩游戏时记了很多东西，写完拆解后却很难在下一次策划中继续使用。为此，我设计了记录、写作、互评和项目验证可以前后接上的学习平台。',
+    outputs: ['产品方案', '信息架构', '交互原型', '知识资产', '评估设计'],
   },
   {
     slug: 'ladywell',
@@ -298,7 +360,7 @@ const featuredProjects = [
   },
 ];
 
-const priorityProjectSlugs = ['electronic-yuefu', 'qin-yun', 'cocoon', 'ladywell'];
+const priorityProjectSlugs = ['ai-pet-incubation', 'anti-drug-interactive-film', 'electronic-yuefu', 'qin-yun', 'game-design-lab'];
 
 const legacyCaseStudies = [
   {
@@ -623,6 +685,225 @@ const visualSnippetLoops = Array.from({ length: 3 }, (_, copy) =>
 );
 
 const caseStudies = [
+  {
+    slug: 'ai-pet-incubation',
+    title: 'AI萌宠IP内容孵化与跨平台运营策划',
+    cn: '电视端46集内容验证 → 抖音账号调研与策划',
+    year: '2026.06—2026.08',
+    type: 'AIGC视频制作 / 产品策划',
+    heroImage: asset('ai-pet-case/stills/hero-river.webp'),
+    overview:
+      '项目以电视大屏为第一阶段内容场景，通过持续更新AI萌宠日常视频验证角色与内容吸引力；已完成46集日更，并从二维码留言中观察到角色好感、家庭共看和用户点餐等正向反馈。现阶段正在研究如何把电视端积累的内容资产迁移到抖音，重新设计适合短视频平台的人设表达、栏目结构和互动方式。',
+    award: 'NDA 脱敏展示｜电视端内容已上线；抖音策划进行中；大屏互动为概念Demo',
+    externalLink: null,
+    highlights: [
+      '电视端已连续更新46集AI萌宠视频，并进入首页推荐场景，完成第一阶段真实内容验证。',
+      '从用户扫码留言中识别出角色好感、儿童观看和主动点餐三类反馈，为后续选题提供依据。',
+      '当前围绕抖音开展竞品与内容机制调研，账号尚未正式运营，不提前包装增长结果。',
+    ],
+    details: [
+      {
+        heading: '第一阶段：用日更内容验证角色吸引力',
+        body:
+          '项目首先在电视大屏端上线AI萌宠日常内容，以较高质量的治愈向视频持续建立角色曝光。我参与AIGC视频内容制作，项目已完成46集日更，并进入电视首页推荐场景。',
+      },
+      {
+        heading: '真实反馈：用户开始从观看走向表达',
+        body:
+          '在不能公开具体业务数据的前提下，电视端点击表现已获得正向信号。二维码留言中出现“角色可爱”“孩子喜欢看”和主动点餐等反馈，说明用户不仅观看画面，也开始表达角色好感和下一集期待。',
+      },
+      {
+        heading: '第二阶段：从电视内容迁移到抖音账号',
+        body:
+          '电视端的核心是家庭共看和持续内容供给，抖音端则更依赖首屏吸引、角色记忆、系列追更与评论互动。当前工作重点是调研同类AI萌宠账号，拆解人设表达、选题结构、发布节奏和互动机制，形成账号冷启动假设。',
+      },
+      {
+        heading: '需要保留与重新设计的内容资产',
+        body:
+          '角色视觉、AIGC制作经验、治愈氛围和做菜题材可以继续使用，但手机端不能直接照搬电视版本。开头节奏、竖屏构图、角色语言、栏目比例、评论承接和连续叙事都需要根据抖音重新验证。',
+      },
+      {
+        heading: '概念边界：大屏互动Demo尚未上线',
+        body:
+          '围绕喂养、陪玩、陪看、权益和治愈屏保的大屏互动方案属于未来方向探索，目前仅完成概念Demo。本案例将其作为产品思考展示，不把它描述为已经上线的产品成果。',
+      },
+    ],
+    role: [
+      '参与电视端AI萌宠视频内容制作，支持项目连续完成46集日更。',
+      '关注内容上线后的点击表现与二维码留言，从反馈中提取角色和选题信号。',
+      '针对抖音平台开展同类账号、内容结构和互动方式调研。',
+      '参与后续账号人设、栏目与冷启动内容方向的策划。',
+    ],
+    process: [
+      '围绕电视大屏的家庭观看场景，持续完成治愈向AI萌宠视频内容。',
+      '通过首页推荐与连续日更积累真实播放和用户反馈。',
+      '整理二维码留言中的角色好感、儿童观看与点餐需求。',
+      '对比电视与抖音的内容消费差异，开展竞品和账号机制调研。',
+      '形成抖音端人设、栏目、互动和冷启动方向的阶段性策划。',
+    ],
+    learned: [
+      '电视端验证了角色的基础吸引力，但平台迁移并不等于直接搬运内容。',
+      '用户留言既是情绪反馈，也是判断角色关系和下一轮选题的低成本研究材料。',
+      '区分已上线、进行中和概念探索，比把所有方案写成结果更能体现产品判断。',
+    ],
+    references: [
+      { image: asset('ai-pet-case/stills/hero-river.webp'), label: '小龙吨吨电视端内容画面' },
+    ],
+    gallery: [],
+  },
+  {
+    slug: 'game-design-lab',
+    title: '策研工坊',
+    cn: '游戏策划研学平台',
+    year: '2026.08',
+    type: '产品策划 / 信息架构 / 可交互原型',
+    heroImage: asset('game-lab-case/01-learning-home.png'),
+    overview:
+      '面向游戏策划学习者，把课程学习、游玩记录、案例拆解、同伴评审、机制卡和项目验证接成一条连续路径。用户每完成一步，平台都会保留来源、判断和下一步动作，让一次作业有机会继续进入团队复用。',
+    award: '独立产品策划项目｜46页产品方案 + 七个主页面静态交互Demo',
+    externalLink: { label: '体验策研工坊Demo', href: 'https://irene0618.github.io/game-design-lab-demo/' },
+    highlights: [
+      '从课程、截图、长文、评审和项目文件之间的断点出发，设计“记录—拆解—评审—提炼—复用—回写”的完整研学路径。',
+      '将《燕云十六声》《文明 VI》《双影奇境》的设计关系分别转成个人成长、知识结构和协作关系三个产品模块。',
+      '完成覆盖学习首页、课程中心、案例广场、资产库、工作台、研学搭子和个人主页的可交互Demo，并明确真实账号、云端协作与推荐效果仍待验证。',
+    ],
+    details: [
+      {
+        heading: '问题：学习完成了，资料仍然会散掉',
+        body:
+          '课程页只留下观看进度，游玩截图脱离发生条件，长文结论埋在正文里，同伴评审又容易停在“写得不错”。每个动作都做过，下一次写方案时仍要重新找资料、重新解释。',
+      },
+      {
+        heading: '主路径：让每一步都能接到下一步',
+        body:
+          '用户先保存截图、录像时间点和当时的问题，再整理为策划案；评审意见回到具体模块，稳定结论被提炼为带来源和边界的机制卡；机制卡进入项目后记录负责人、假设和测试结果，最后把结果回写到原结论。',
+      },
+      {
+        heading: '个人成长：能力需要看得见来路',
+        body:
+          '能力记录读取课程练习、案例借鉴、独立文档、有效评审和项目验证等实际产出。用户可以展开查看依据，也可以切换当前研学方向；历史记录继续保留，不用从零开始。',
+      },
+      {
+        heading: '知识资产：长文结论可以被再次使用',
+        body:
+          '机制卡保留源文档、主要证据、适用条件和风险边界。关系图围绕一张卡展开证据、报告、课程、项目引用与验证结果，只提示缺口，不替人判断结论质量。',
+      },
+      {
+        heading: '协作：反馈要推动一次具体修改',
+        body:
+          '研学搭子根据公开作品证据、方向和协作时间给出双向互补理由。互评按证据、机制、应用和表达分工，分别记录看到的问题、需要补充的内容和双方确认的下一步。',
+      },
+      {
+        heading: '验证边界：当前完成的是静态产品原型',
+        body:
+          'Demo 使用本地数据模拟七个主页面和主要流程，覆盖桌面端与390×844移动端。真实账号、班级空间、云端权限、实时协作和推荐模型尚未建设；学习效果和团队复用价值需要通过小班试点验证。',
+      },
+    ],
+    role: [
+      '独立完成产品定位、用户任务、信息架构、核心对象、权限状态和迭代路线。',
+      '拆解三款游戏，将游戏中的成长、研究和合作关系转译为产品模块。',
+      '设计七个主页面及关键流程，并完成可交互静态网页Demo与移动端适配。',
+      '提出北极星指标、分阶段指标、四周试点方案和质量护栏。',
+    ],
+    process: [
+      '定位课程、游玩记录、策划长文、同伴反馈和项目文件之间的断点。',
+      '建立体验记录、策划案、证据、机制卡、评审、项目引用和验证结果七类核心对象。',
+      '围绕“记录—拆解—评审—提炼—复用—回写”设计用户路径。',
+      '完成页面原型、交互状态、离线数据包和移动端适配。',
+      '为真实试点定义指标、样本周期和暂不建设的能力。',
+    ],
+    learned: [
+      '策划学习产品的价值不只在内容数量，还在用户能否留下带来源、反馈和后续动作的作品。',
+      '能力画像需要允许用户查看依据、拒绝推荐和退出协作，不能变成永久标签或团队排名。',
+      '关系完整只说明材料有没有连接，结论是否可靠仍要由评审和测试判断。',
+    ],
+    references: [
+      { image: asset('game-lab-case/01-learning-home.png'), label: '策研工坊学习首页' },
+      { image: asset('game-lab-case/04-editor.png'), label: '组件化策划案编辑器' },
+      { image: asset('game-lab-case/07-relationship-graph.png'), label: '研学资产关系图' },
+    ],
+    gallery: [],
+  },
+  {
+    slug: 'anti-drug-interactive-film',
+    title: '禁毒互动影像游戏',
+    cn: '基于恐惧诉求的行为训练型教育产品',
+    year: '2026',
+    type: '用户研究 / 互动产品 / 效果前测',
+    heroImage: asset('anti-drug-case/06-web-prototype.png'),
+    overview:
+      '传统禁毒教育常把重点放在“让人知道毒品危险”，但前期研究显示，青年更现实的困难是在熟人聚会和群体压力下不知道如何拒绝、离场和求助。我将毕业设计重新定义为一款行为训练型教育产品：让用户进入生活化风险情境，在倒计时中做选择、看到后果、获得策略解释并重新练习。',
+    award: '阶段状态｜互动原型与材料前测已完成；正式互动性对照实验待开展',
+    externalLink: null,
+    highlights: [
+      '166份有效问卷：自我效能是五个核心维度中均值最低项，互动媒介接受度处于较高水平。',
+      '6名青年参与式工作坊：将熟人施压、策略边界和练习需求转成角色、台词、选项、倒计时、反馈与重试规则。',
+      '30份材料前测：高/低恐惧与有效能/无效能操控均呈显著区分，证明材料具备进入正式修订的基础。',
+    ],
+    details: [
+      {
+        heading: '问题定义：不是“不知道”，而是“做不到”',
+        body:
+          '文献、专业人员访谈与青年研究共同指向一个变化：风险越来越多地嵌入熟人组织的剧本杀、密室、民宿轰趴等封闭娱乐场景。青年通常知道毒品危险，却会担心拒绝破坏关系、显得不合群或无法安全退出。因此产品目标不是继续增加危害知识，而是训练具体情境中的行动能力。',
+      },
+      {
+        heading: '需求验证：166份问卷找到效能短板',
+        body:
+          '问卷围绕风险认知、社交压力、拒毒困难、策略偏好与互动媒介接受展开。自我效能均值为3.105/5，是五个核心维度中最低项；互动媒介接受度为3.725/5。41.0%的受访者将熟人组织的剧本杀、私人密室或封闭桌游局识别为高风险场景，31.3%选择私人民宿或昏暗别墅轰趴。由此把产品需求收敛为“在熟人压力下练习拒绝、离场与求助”。',
+      },
+      {
+        heading: '参与式转化：用户共同决定什么才真实',
+        body:
+          '邀请6名青年参与结构化工作坊，结合录音、手册、白板关键词、角色扮演台词和原型反馈进行编码，形成身体失控、日常伪装、关系压力、策略边界、练习需求与身份代入六类主题。进入核心规则的内容需满足多源重复、与问卷结果一致、并能映射到理论变量和交互机制三个条件。',
+      },
+      {
+        heading: '机制设计：选择—后果—解释—重试',
+        body:
+          '把EPPM中的严重性、易感性、反应效能和自我效能转成游戏语言：用熟人NPC、伪装道具和封闭聚会建立易感风险；用第一人称失控和急救反馈呈现后果；用直接拒绝、客观借口、物理离场和求助构成多层策略；用10秒倒计时、口语化话术、路径反馈和失败重试建立行动信心。',
+      },
+      {
+        heading: '原型生产：把实验条件做成可控版本',
+        body:
+          '独立推进剧情、角色、风险场景、分镜、AIGC图像与视频生成、剪辑和网页交互原型，并建立“高/低恐惧 × 有效能/无效能”四组材料版本。四组共享前置情境、人物关系、关键诱导节点和问卷流程，差异只落在后果强度与是否提供策略、解释和重试，以降低无关变量。',
+      },
+      {
+        heading: '前测结果与结论边界',
+        body:
+          '30份前测中，高恐惧材料的恐惧操控得分显著高于低恐惧材料（p=.006，d=1.163），有效能材料的效能操控得分显著高于无效能材料（p=.008，d=1.183）。这只证明材料操控可区分，不代表互动产品已产生正式教育增益。下一步需在高恐惧—高效能内容一致条件下，对比互动影像与线性影像。',
+      },
+    ],
+    role: [
+      '从研究命题到产品原型独立推进：文献与案例分析、问卷设计、工作坊、需求定义和机制转化。',
+      '负责剧情、角色、风险场景、分镜、AIGC素材、视频剪辑与网页交互原型。',
+      '设计四组实验材料、统一版本编码、关键节点、倒计时、条件跳转和问卷入口。',
+      '完成30份材料前测、量表信度与操控检验，并将反馈转成话术、节奏和AIGC自然度修订项。',
+    ],
+    process: [
+      '研究专业人员与目标青年，定位熟人社交压力下的真实行为缺口。',
+      '用166份问卷验证高风险场景、效能短板、策略偏好和互动媒介接受度。',
+      '通过6人参与式工作坊，把抽象心理变量转成可执行的游戏机制。',
+      '完成四组AIGC互动影像材料与网页原型，保证版本之间的结构一致性。',
+      '开展30份材料前测，检验操控、量表与流程并形成修订清单。',
+      '规划正式互动性对照实验，检验互动机制而非新奇感带来的增益。',
+    ],
+    learned: [
+      '教育产品的关键不一定是提供更多知识，而可能是把“知道”变成能够当场执行的行动脚本。',
+      '理论只有被转成角色、选项、反馈、倒计时和重试等可操作机制，才真正进入产品设计。',
+      '前测结果必须说明统计边界：材料可区分不等于产品有效，阶段状态本身也是产品判断的一部分。',
+    ],
+    references: [
+      { image: asset('anti-drug-case/01-problem.png'), label: '问题定义：从危害知识传播转向拒毒行动训练' },
+      { image: asset('anti-drug-case/02-research-framework.png'), label: '研究与产品验证框架' },
+      { image: asset('anti-drug-case/04-eppm-mda-rules.png'), label: 'EPPM心理变量到互动机制的转化矩阵' },
+      { image: asset('anti-drug-case/06-web-prototype.png'), label: '网页交互原型与多版本材料流程' },
+    ],
+    gallery: [
+      { image: asset('anti-drug-case/03-user-expectations.png'), label: '166份问卷中的互动功能期待' },
+      { image: asset('anti-drug-case/05-product-loop.png'), label: '选择、后果、反馈与重新练习的产品闭环' },
+      { image: asset('anti-drug-case/07-pretest-results.png'), label: '30份材料前测：信度与操控检验' },
+      { image: asset('anti-drug-case/08-next-experiment.png'), label: '正式研究：互动影像与线性影像对照方案' },
+    ],
+  },
   {
     slug: 'cocoon',
     title: '思茧成蝶',
@@ -1460,15 +1741,15 @@ function HeroCollage() {
       </div>
 
       <div className="hero-copy hero-copy-left">
-        <p>从影像、内容运营和设计研究出发，我把复杂议题拆成可体验、可传播、可复盘的产品与AIGC工作流。</p>
+        <p>从用户问题出发，把研究洞察转成产品机制、可体验原型与可复盘的内容增长实验。</p>
       </div>
 
       <div className="hero-title">
         <h1>欢迎来到我的主页</h1>
-        <p className="identity">AI产品/AIGC工作流程/用户研究/内容运营/视觉叙述</p>
+        <p className="identity">AI内容产品 / 用户研究 / 原型验证 / AIGC工作流 / 内容运营</p>
         <a className="explore-button" href="#branches">
           <ArrowDown size={17} />
-          查看精选项目
+          先看产品案例
         </a>
       </div>
 
@@ -1481,7 +1762,7 @@ function HeroCollage() {
 }
 
 function RootsSection() {
-  const [activeRoot, setActiveRoot] = useState('AIGC工作流');
+  const [activeRoot, setActiveRoot] = useState('问题定义');
 
   return (
     <section className="section roots-section" id="roots">
@@ -1492,7 +1773,7 @@ function RootsSection() {
       <div className="split-layout">
         <div>
           <h2>方法与能力</h2>
-          <p className="section-lead">我更擅长把研究、叙事、原型和内容传播连成一条可落地的创作链路。</p>
+          <p className="section-lead">我更擅长沿着“问题定义—用户洞察—机制设计—原型验证—复盘迭代”推进项目，同时用影像与AIGC提高表达和生产效率。</p>
         </div>
         <div className="root-map">
           {roots.map((root) => (
@@ -1526,10 +1807,10 @@ function TrunkSection() {
         <div>
           <h2>个人经历</h2>
           <div className="profile-tags">
-            <span>AI产品</span>
-            <span>AIGC工作流</span>
-            <span>设计研究</span>
-            <span>影像表达</span>
+            <span>产品策略</span>
+            <span>用户研究</span>
+            <span>原型验证</span>
+            <span>AI内容产品</span>
           </div>
         </div>
         <div className="rings-card" aria-label="个人经历时间线">
@@ -1826,9 +2107,12 @@ function BranchesSection() {
 
   const renderProjectCard = (project: (typeof featuredProjects)[number], variant = 'primary') => {
     const Icon = project.icon;
+    const isProductLead = ['ai-pet-incubation', 'anti-drug-interactive-film', 'game-design-lab'].includes(project.slug);
+    const isGameLab = project.slug === 'game-design-lab';
+    const hasDesignedCover = ['anti-drug-interactive-film', 'game-design-lab'].includes(project.slug);
 
     return (
-      <article className={`project-card portfolio-card ${variant === 'supporting' ? 'supporting-card' : ''}`} key={project.name}>
+      <article className={`project-card portfolio-card ${variant === 'supporting' ? 'supporting-card' : ''} ${isProductLead ? 'product-lead-card' : ''} ${isGameLab ? 'lab-feature-card' : ''} ${hasDesignedCover ? 'designed-cover-card' : ''}`} key={project.name}>
         <div className="project-image">
           <img src={project.image} alt={`${project.cn} cover`} onError={quietImageFallback} />
           <span>{project.type}</span>
@@ -1861,9 +2145,6 @@ function BranchesSection() {
       <div className="section-kicker">
         <Leaf size={18} />
         精选项目
-      </div>
-      <div className="section-heading-row">
-        <h2>精选项目</h2>
       </div>
       <div className="project-grid portfolio-grid">
         {priorityProjects.map((project) => renderProjectCard(project))}
@@ -1903,6 +2184,361 @@ function CaseStudyPage({ study }: { study: (typeof caseStudies)[number] }) {
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [lightboxImage]);
+
+  if (study.slug === 'ai-pet-incubation') {
+    const episodeStills = [
+      { src: asset('ai-pet-case/stills/hotpot.webp'), caption: '雨天火锅', note: '电视端日更内容', size: 'wide' },
+      { src: asset('ai-pet-case/stills/kitchen-garlic.webp'), caption: '厨房备菜', note: '画面右下角接入互动二维码', size: 'standard' },
+      { src: asset('ai-pet-case/stills/kitchen-pour.webp'), caption: '开始和面', note: '围绕做菜展开的生活片段', size: 'standard' },
+      { src: asset('ai-pet-case/stills/seaside-grill.webp'), caption: '海边烧烤', note: '从室内延伸到户外场景', size: 'wide' },
+      { src: asset('ai-pet-case/stills/desk-snack.webp'), caption: '书桌边偷吃零食', note: '做饭之外的轻日常', size: 'standard' },
+      { src: asset('ai-pet-case/stills/lychee-milk.webp'), caption: '荔枝牛奶', note: '用户也会留言点下一期想看的菜', size: 'standard' },
+      { src: asset('ai-pet-case/stills/seaside-window.webp'), caption: '海边发呆', note: '治愈向情绪画面', size: 'standard' },
+      { src: asset('ai-pet-case/stills/kitchen-beef.webp'), caption: '今天做什么', note: '保持小龙在不同场景里的形象一致', size: 'standard' },
+    ];
+
+    return (
+      <article className="case-study pet-case pet-case-v2">
+        <a className="back-link pet-v2-back" href="#branches">
+          返回精选项目
+        </a>
+
+        <header className="pet-v2-hero">
+          <div className="pet-v2-title-block">
+            <p>2026.06—2026.08　AIGC视频制作 / 内容策划</p>
+            <h1>AI萌宠IP内容孵化<br />与跨平台运营策划</h1>
+            <div className="pet-v2-lead">
+              <p>我在TCL实习期间，主要负责小龙吨吨的视频内容。电视端已经连续更新46集；现在，团队开始为它规划抖音账号。</p>
+              <dl>
+                <div><dt>已经完成</dt><dd>电视端46集日更视频</dd></div>
+                <div><dt>上线位置</dt><dd>电视首页推荐入口</dd></div>
+                <div><dt>当前工作</dt><dd>抖音账号调研与内容策划</dd></div>
+              </dl>
+            </div>
+          </div>
+
+          <figure className="pet-v2-hero-still">
+            <ZoomableImage
+              src={asset('ai-pet-case/stills/hero-river.webp')}
+              alt="小龙吨吨在溪边准备粽叶的画面"
+              caption="小龙吨吨电视端内容画面"
+              onOpen={setLightboxImage}
+            />
+            <figcaption><span>已上线内容画面</span><strong>46集持续更新中</strong></figcaption>
+          </figure>
+        </header>
+
+        <section className="pet-v2-work">
+          <div className="pet-v2-section-title">
+            <span>我的工作</span>
+            <h2>前一段做视频，<br />最近开始研究抖音。</h2>
+          </div>
+          <div className="pet-v2-work-copy">
+            <p>实习前半段，我一直在做电视端的视频。内容以做菜和轻松日常为主，需要让小龙在不同场景里看起来还是同一个角色，也要保证每一集的画面能够按计划交付。</p>
+            <p>这些视频已经连续更新46集，也进过电视首页的推荐入口。用户可以扫码留言。有人说孩子很喜欢看，有人会直接点下一期想看的菜。具体点击数据涉及保密，这里不展开。</p>
+            <p>最近的工作转到抖音。我们正在看同类AI萌宠账号怎么做人设、怎么安排栏目、怎样让评论接到下一集。账号还在准备中，目前没有可以公开的运营数据。</p>
+          </div>
+        </section>
+
+        <section className="pet-v2-gallery" aria-labelledby="pet-gallery-title">
+          <div className="pet-v2-gallery-heading">
+            <div>
+              <span>内容画面</span>
+              <h2 id="pet-gallery-title">已经做出来的内容</h2>
+            </div>
+            <p>做菜是目前的主要内容，也尝试了书桌、户外和情绪类场景。部分画面保留了电视端用于收集留言的二维码。</p>
+          </div>
+          <div className="pet-v2-still-grid">
+            {episodeStills.map((item) => (
+              <figure className={`pet-v2-still is-${item.size}`} key={item.caption}>
+                <ZoomableImage
+                  src={item.src}
+                  alt={`小龙吨吨内容画面：${item.caption}`}
+                  caption={item.caption}
+                  onOpen={setLightboxImage}
+                />
+                <figcaption><strong>{item.caption}</strong><span>{item.note}</span></figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+
+        <section className="pet-v2-feedback">
+          <div className="pet-v2-section-title">
+            <span>上线后的反馈</span>
+            <h2>46集更新以后，<br />用户开始主动留言。</h2>
+          </div>
+          <div className="pet-v2-feedback-list">
+            <p><strong>“吨吨很可爱”</strong><span>最直接的角色好感</span></p>
+            <p><strong>“家里的孩子很喜欢看”</strong><span>电视端出现了家庭共看的反馈</span></p>
+            <p><strong>“下一期想看它做……”</strong><span>用户开始点菜，也会等下一集</span></p>
+            <small>点击表现获得了正向反馈。具体数字按保密要求不在公开作品集中展示。</small>
+          </div>
+        </section>
+
+        <section className="pet-v2-douyin">
+          <div className="pet-v2-section-title">
+            <span>目前在做</span>
+            <h2>抖音账号还在准备中</h2>
+            <p>电视端已经积累了一批内容，但手机上的观看习惯不同。我们正在调研，完整方案还没有定下来。</p>
+          </div>
+          <div className="pet-v2-research-notes">
+            <article><span>01</span><h3>先让人记住谁？</h3><p>先定下角色的性格、习惯和说话方式。看完一条视频，用户应该能说出它是谁。</p></article>
+            <article><span>02</span><h3>每周稳定发什么？</h3><p>梳理做饭、轻日常和情绪内容的比例，找到能够长期更新的栏目。</p></article>
+            <article><span>03</span><h3>评论区怎么接？</h3><p>研究点菜、任务建议和下一集回访，让用户的留言真正影响后面的内容。</p></article>
+          </div>
+        </section>
+
+        <aside className="pet-v2-demo-note">
+          <strong>关于大屏互动Demo</strong>
+          <p>项目里还有喂养、陪玩、陪看和治愈屏保等概念设计，目前没有正式上线，因此这里只作为补充背景，不写进项目成果。</p>
+        </aside>
+
+        <footer className="pet-v2-footer">
+          <span>页面图片来自项目内容画面</span>
+          <span>品牌合作信息与具体业务数据已做保密处理</span>
+        </footer>
+
+        {lightboxImage ? <ImageLightbox image={lightboxImage} onClose={() => setLightboxImage(null)} /> : null}
+      </article>
+    );
+  }
+
+  if (study.slug === 'game-design-lab') {
+    const learningLoop = [
+      { title: '记录', body: '先保存截图、录像时间点和当时的问题。' },
+      { title: '拆解', body: '补全现象、规则、玩家行为和体验结果。' },
+      { title: '评审', body: '把反馈落到证据、机制、应用或表达。' },
+      { title: '提炼', body: '把稳定结论保存成带出处的机制卡。' },
+      { title: '复用', body: '写清项目、负责人和准备验证的假设。' },
+      { title: '回写', body: '记录样本、结果和下一步决定。' },
+    ];
+
+    const gamePatterns = [
+      {
+        game: '《燕云十六声》',
+        source: '多种武学来源与自由组合',
+        product: '我把能力来源分成课程、案例借鉴和自己动手做三类。即使换了学习方向，以前做过的内容也不会清零。',
+      },
+      {
+        game: '《文明 VI》',
+        source: '双树研究、实践触发与邻接关系',
+        product: '我把通用方法和策划专业课分成两棵树；关系图用来提醒一条结论还缺哪份证据、哪次测试。',
+      },
+      {
+        game: '《双影奇境》',
+        source: '信息互补、职责分工与同步反馈',
+        product: '找搭子时，页面会说清两个人各自能帮什么。互评也会提前分工，最后一起确认下一步改什么。',
+      },
+    ];
+
+    return (
+      <article className="case-study game-lab-case">
+        <a className="back-link game-lab-back" href="#branches">
+          返回精选项目
+        </a>
+
+        <header className="game-lab-hero">
+          <div className="game-lab-hero-copy">
+            <p className="game-lab-overline">2026.08　产品策划 / 信息架构 / 交互原型</p>
+            <h1><span>策研工坊</span>游戏策划研学平台</h1>
+            <p className="game-lab-thesis">我做这个平台，是想让玩游戏时记下的截图和想法，在写完一次作业后还能继续用。用户可以在这里学方法、写拆解、找人互评，再把结论拿到项目里试一试。</p>
+            <dl className="game-lab-meta">
+              <div><dt>给谁用</dt><dd>正在学习游戏策划、需要整理作品和反馈的人</dd></div>
+              <div><dt>我做了什么</dt><dd>46页产品方案、3篇游戏拆解、静态交互Demo</dd></div>
+              <div><dt>做到哪一步</dt><dd>七个主页面已经完成，还没有找真实用户试用</dd></div>
+            </dl>
+            <a className="game-lab-demo-link" href="https://irene0618.github.io/game-design-lab-demo/" target="_blank" rel="noreferrer">
+              打开Demo看看 <ExternalLink size={16} />
+            </a>
+          </div>
+          <figure className="game-lab-hero-visual">
+            <ZoomableImage
+              src={asset('game-lab-case/01-learning-home.png')}
+              alt="策研工坊学习首页"
+              caption="策研工坊学习首页"
+              onOpen={setLightboxImage}
+            />
+            <figcaption><strong>学习首页</strong><span>课程、案例、任务和个人产出汇总在同一入口</span></figcaption>
+          </figure>
+        </header>
+
+        <section className="game-lab-problem">
+          <div className="game-lab-section-heading">
+            <span>为什么做</span>
+            <h2>明明做过很多，<br />下次还是得重来。</h2>
+            <p>看课、截图、写报告、找同学点评，这些事情大家都做过。麻烦在于，内容散在不同地方，下次写方案时还是要重新翻一遍。</p>
+          </div>
+          <div className="game-lab-breakpoints">
+            <article><strong>课程看完了</strong><p>平台只留下观看进度，看不出后来做过什么练习。</p></article>
+            <article><strong>截图存了很多</strong><p>回头写报告时，已经记不清发生条件和当时的判断。</p></article>
+            <article><strong>长文写完了</strong><p>真正有用的机制结论埋在正文里，下一次还要重新找。</p></article>
+            <article><strong>同学也评了</strong><p>反馈停在“写得不错”，没有告诉作者具体改哪里。</p></article>
+          </div>
+        </section>
+
+        <section className="game-lab-loop-section">
+          <div className="game-lab-section-heading">
+            <span>我怎么处理</span>
+            <h2>我把这些步骤<br />接在了一起。</h2>
+            <p>先记下游玩现场，再整理成策划案；同学的意见直接回到文档里；比较稳定的结论可以存成机制卡，拿去做测试后再把结果补回来。</p>
+          </div>
+          <ol className="game-lab-loop">
+            {learningLoop.map((item, index) => (
+              <li key={item.title}>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                <strong>{item.title}</strong>
+                <p>{item.body}</p>
+              </li>
+            ))}
+          </ol>
+          <figure className="game-lab-record-shot">
+            <ZoomableImage
+              src={asset('game-lab-case/02-asset-library.png')}
+              alt="研学资产库中的体验记录"
+              caption="体验记录：先保存游玩现场，再整理成文档"
+              onOpen={setLightboxImage}
+            />
+            <figcaption>游玩现场只要求写清条件、现象、来源和问题，完整分析可以晚一点再做。</figcaption>
+          </figure>
+        </section>
+
+        <section className="game-lab-patterns">
+          <div className="game-lab-section-heading">
+            <span>我参考了什么</span>
+            <h2>三款游戏，帮我想清了三件事。</h2>
+          </div>
+          <div className="game-lab-pattern-list">
+            {gamePatterns.map((item) => (
+              <article key={item.game}>
+                <h3>{item.game}</h3>
+                <p className="game-lab-pattern-source">{item.source}</p>
+                <p>{item.product}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="game-lab-modules">
+          <div className="game-lab-section-heading game-lab-modules-heading">
+            <span>做出来的部分</span>
+            <h2>最后，我重点做了三个工具。</h2>
+          </div>
+
+          <article className="game-lab-module is-editor">
+            <div className="game-lab-module-copy">
+              <span>研学工作台</span>
+              <h3>写策划案时，不用在截图、文档和聊天记录之间来回找</h3>
+              <p>工作台看起来还是熟悉的图文编辑器，但截图、表格、流程、原型链接、批注和版本都放在一起。写完可以检查哪里还缺材料，也可以直接交给同学评审。</p>
+              <ul>
+                <li>10类可拖拽内容组件</li>
+                <li>模块批注、版本保存与差异恢复</li>
+                <li>Markdown、JSON、CSV与项目包导出</li>
+              </ul>
+            </div>
+            <figure>
+              <ZoomableImage
+                src={asset('game-lab-case/04-editor.png')}
+                alt="策研工坊组件化策划案编辑器"
+                caption="组件化策划案编辑器"
+                onOpen={setLightboxImage}
+              />
+              <figcaption>编辑器同时显示文档、组件、素材、批注和版本记录。</figcaption>
+            </figure>
+          </article>
+
+          <article className="game-lab-module is-assets">
+            <div className="game-lab-module-copy">
+              <span>机制卡与关系图</span>
+              <h3>一篇长文里有用的结论，怎么留到以后再用？</h3>
+              <p>我设计了“机制卡”：把结论连同原文、证据、适用条件一起保存。以后把它放进项目时，再写清负责人、准备怎么试。关系图只负责提醒哪里还缺材料，结论靠不靠谱仍然要自己判断。</p>
+            </div>
+            <div className="game-lab-paired-shots">
+              <figure>
+                <ZoomableImage
+                  src={asset('game-lab-case/06-mechanism-cards.png')}
+                  alt="机制卡库"
+                  caption="机制卡库"
+                  onOpen={setLightboxImage}
+                />
+                <figcaption>机制卡库</figcaption>
+              </figure>
+              <figure>
+                <ZoomableImage
+                  src={asset('game-lab-case/07-relationship-graph.png')}
+                  alt="资产关系图"
+                  caption="资产关系图"
+                  onOpen={setLightboxImage}
+                />
+                <figcaption>关系图标记待补的项目验证与结果</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article className="game-lab-module is-partner">
+            <div className="game-lab-module-copy">
+              <span>研学搭子</span>
+              <h3>互评不能只留一句“写得不错”</h3>
+              <p>找搭子时，页面会说明“对方能帮我什么”和“我能帮对方什么”。用户可以拒绝推荐、邀请熟悉的同学，也可以随时退出。</p>
+              <p>开始互评前，两个人先分好谁看证据、谁看机制、谁看表达。反馈要写到具体位置，并一起确认接下来改什么。</p>
+            </div>
+            <figure>
+              <ZoomableImage
+                src={asset('game-lab-case/05-study-partner.png')}
+                alt="研学搭子能力互补推荐页面"
+                caption="研学搭子：能力依据与双向互补理由"
+                onOpen={setLightboxImage}
+              />
+              <figcaption>能力画像允许查看依据，只用于学习建议和搭子推荐。</figcaption>
+            </figure>
+          </article>
+        </section>
+
+        <section className="game-lab-validation">
+          <div className="game-lab-section-heading">
+            <span>怎么验证</span>
+            <h2>Demo能跑，效果还得找人试。</h2>
+            <p>现在可以完整操作主要流程，但我还没有真实的学习效果数据。下一步，我想找一个有固定课程作业的小班，用四周时间跑一遍。</p>
+          </div>
+          <div className="game-lab-metric">
+            <span>我最想看的数字</span>
+            <strong>每周新增多少份“有证据、经过一次有效反馈，并进入下一项学习或项目动作”的研学资产？</strong>
+          </div>
+          <ol className="game-lab-pilot">
+            <li><span>第1周</span><p>记录体验，完成一页短拆解。</p></li>
+            <li><span>第2周</span><p>进行搭子互评，观察意见是否带来修改。</p></li>
+            <li><span>第3周</span><p>提炼机制卡，检查来源与边界是否完整。</p></li>
+            <li><span>第4周</span><p>选一条结论做纸面原型或小规模测试并回写。</p></li>
+          </ol>
+        </section>
+
+        <section className="game-lab-boundary">
+          <div>
+            <span>现在已经有</span>
+            <h3>静态可交互Demo</h3>
+            <p>七个主页面、主要状态、离线项目包、桌面端与390×844移动端适配。</p>
+          </div>
+          <div>
+            <span>现在还没有</span>
+            <h3>真实用户和线上协作</h3>
+            <p>账号、班级、云端权限、实时协作、推荐模型，以及学习和反馈效果。</p>
+          </div>
+        </section>
+
+        <footer className="game-lab-footer">
+          <div>
+            <strong>策研工坊 · Game Design Lab</strong>
+            <span>产品方案、三篇游戏拆解和网页Demo都是我独立完成的。</span>
+          </div>
+          <a href="https://irene0618.github.io/game-design-lab-demo/" target="_blank" rel="noreferrer">
+            打开Demo <ExternalLink size={15} />
+          </a>
+        </footer>
+
+        {lightboxImage ? <ImageLightbox image={lightboxImage} onClose={() => setLightboxImage(null)} /> : null}
+      </article>
+    );
+  }
 
   if (study.slug === 'qin-yun') {
     const researchStats = [
@@ -2906,6 +3542,12 @@ function App() {
 
     return () => window.removeEventListener('hashchange', syncRoute);
   }, []);
+
+  useEffect(() => {
+    if (activeCaseSlug || activeExperienceSlug) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    }
+  }, [activeCaseSlug, activeExperienceSlug]);
 
   if (activeCase) {
     return (

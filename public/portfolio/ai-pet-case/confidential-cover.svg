@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" role="img" aria-labelledby="title desc">
+  <title id="title">AI 萌宠 IP 内容孵化与跨平台运营保密案例封面</title>
+  <desc id="desc">以电视端内容、四十六集日更和抖音调研构成的抽象案例图，不展示保密角色形象。</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f5f1e7"/>
+      <stop offset="1" stop-color="#e8efe7"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#263a31"/>
+      <stop offset="1" stop-color="#4a6655"/>
+    </linearGradient>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M36 0H0V36" fill="none" stroke="#52685a" stroke-opacity=".08"/>
+    </pattern>
+  </defs>
+  <rect width="1440" height="900" fill="url(#paper)"/>
+  <rect width="1440" height="900" fill="url(#grid)"/>
+
+  <g transform="translate(80 74)">
+    <text x="0" y="28" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="20" letter-spacing="6" fill="#6d7c70">PRODUCT CASE / CONFIDENTIAL</text>
+    <text x="0" y="112" font-family="Georgia, 'Noto Serif SC', serif" font-size="68" font-weight="700" fill="#26342d">AI 萌宠 IP 内容孵化</text>
+    <text x="2" y="158" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="25" fill="#5b6c60">电视端 46 集内容验证 → 抖音账号调研与策划</text>
+  </g>
+
+  <g transform="translate(80 280)">
+    <rect x="0" y="0" width="760" height="430" rx="22" fill="#fffdf8" stroke="#86958a" stroke-width="2"/>
+    <rect x="28" y="28" width="704" height="350" rx="12" fill="url(#screen)"/>
+    <circle cx="379" cy="196" r="84" fill="#f1d7a6" fill-opacity=".94"/>
+    <path d="M344 202c32-67 101-58 111 1-11 74-97 92-132 28-11-20 1-28 21-29z" fill="#d9e5dc"/>
+    <circle cx="368" cy="189" r="7" fill="#26342d"/>
+    <circle cx="415" cy="189" r="7" fill="#26342d"/>
+    <path d="M377 225c14 10 29 10 43 0" fill="none" stroke="#26342d" stroke-width="5" stroke-linecap="round"/>
+    <rect x="299" y="394" width="162" height="12" rx="6" fill="#86958a"/>
+    <text x="352" y="452" font-family="Arial, 'Microsoft YaHei', sans-serif" font-size="18" fill="#6d7c70">SMART SCREEN · 46 EPISODES</text>
+  </g>
+
+  <g transform="translate(884 280)" font-family="Arial, 'Microsoft YaHei', sans-serif">
+    <rect width="476" height="124" rx="16" fill="#fffdf8" stroke="#a7b2aa"/>
+    <text x="28" y="38" font-size="16" letter-spacing="3" fill="#7c897f">TV CONTENT / LIVE</text>
+    <text x="28" y="82" font-size="25" font-weight="700" fill="#26342d">连续日更 · 首页推荐 · 用户反馈</text>
+
+    <rect y="146" width="476" height="124" rx="16" fill="#fffdf8" stroke="#a7b2aa"/>
+    <text x="28" y="184" font-size="16" letter-spacing="3" fill="#7c897f">DOUYIN / RESEARCHING</text>
+    <text x="28" y="228" font-size="25" font-weight="700" fill="#26342d">竞品调研 · 人设表达 · 栏目机制</text>
+
+    <rect y="292" width="476" height="124" rx="16" fill="#fffdf8" stroke="#a7b2aa"/>
+    <text x="28" y="330" font-size="16" letter-spacing="3" fill="#7c897f">PROJECT STATUS</text>
+    <text x="28" y="374" font-size="25" font-weight="700" fill="#26342d">已上线 · 进行中 · 概念探索</text>
+  </g>
+
+  <g transform="translate(80 778)" font-family="Arial, 'Microsoft YaHei', sans-serif">
+    <rect width="1280" height="52" rx="26" fill="#26342d"/>
+    <text x="28" y="34" font-size="18" letter-spacing="2" fill="#f7f2e8">角色名、合作方、真实画面与业务数据已脱敏；Demo 不作为上线结果。</text>
+    <text x="1185" y="34" font-size="18" font-weight="700" fill="#f1d7a6">NDA</text>
+  </g>
+</svg>
