@@ -4273,6 +4273,8 @@ img {
 }
 
 .pet-v2-title-block h1 {
+  grid-column: 1 / -1;
+  max-width: 1040px;
   margin: 0;
   color: var(--pet-v2-ink);
   font-family: 'Noto Serif SC', serif;
@@ -4355,12 +4357,7 @@ img {
 }
 
 .pet-v2-hero-still::after {
-  content: '';
-  position: absolute;
-  inset: auto 0 0;
-  height: 34%;
-  background: linear-gradient(transparent, rgba(20, 33, 34, 0.44));
-  pointer-events: none;
+  display: none;
 }
 
 .pet-v2-hero-still figcaption {
@@ -4395,7 +4392,7 @@ img {
 
 .pet-v2-section-title h2,
 .pet-v2-gallery-heading h2 {
-  margin: 13px 0 0;
+  margin: 0;
   color: var(--pet-v2-ink);
   font-family: 'Noto Serif SC', serif;
   font-size: clamp(32px, 4.1vw, 54px);
@@ -4435,8 +4432,8 @@ img {
 
 .pet-v2-gallery-heading {
   display: grid;
-  grid-template-columns: 1fr minmax(280px, 0.72fr);
-  gap: 56px;
+  grid-template-columns: 1fr;
+  gap: 0;
   align-items: end;
   margin-bottom: 38px;
 }
@@ -4573,7 +4570,7 @@ img {
 
 .pet-v2-research-notes {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1px;
   background: var(--pet-v2-line);
   border: 1px solid var(--pet-v2-line);
@@ -4715,6 +4712,10 @@ img {
   .pet-v2-section-title h2,
   .pet-v2-gallery-heading h2 {
     font-size: clamp(30px, 9vw, 42px);
+  }
+
+  .pet-v2-research-notes {
+    grid-template-columns: 1fr;
   }
 
   .pet-v2-still,
