@@ -3520,7 +3520,7 @@ img {
   outline-offset: 5px;
 }
 
-/* 策研工坊：沿用原型里的节点色与工作台语言，展示学习资产如何逐步连接。 */
+/* 策研工坊：与新版 Demo 保持一致的纸张、档案卡与深海军蓝视觉。 */
 .lab-feature-card {
   grid-column: 1 / -1;
   display: grid;
@@ -3530,24 +3530,25 @@ img {
 .lab-feature-card .project-image {
   min-height: 410px;
   aspect-ratio: auto;
-  background: #f7f9fd;
+  background: #f3ecdf;
 }
 
 .lab-feature-card.portfolio-card .project-image img {
   padding: 0;
-  object-fit: contain;
-  filter: saturate(0.95) contrast(1.01);
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.92) contrast(1.02);
 }
 
 .game-lab-case {
-  --lab-ink: #112c4c;
-  --lab-blue: #2479e9;
-  --lab-cyan: #41c9d3;
-  --lab-yellow: #f1bf47;
-  --lab-violet: #8064e8;
-  --lab-paper: #f7f9fc;
-  --lab-soft: #eaf1fb;
-  --lab-line: rgba(17, 44, 76, 0.17);
+  --lab-ink: #1c2f45;
+  --lab-blue: #315b88;
+  --lab-cyan: #718b9d;
+  --lab-yellow: #b5914f;
+  --lab-violet: #9b584b;
+  --lab-paper: #f6f0e6;
+  --lab-soft: #e8dfd1;
+  --lab-line: rgba(46, 54, 62, 0.17);
   width: min(1220px, calc(100% - 40px));
   color: var(--lab-ink);
   font-family: Inter, 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
@@ -3556,8 +3557,8 @@ img {
 .game-lab-back {
   margin-bottom: clamp(36px, 5vw, 62px);
   border-color: var(--lab-line);
-  background: rgba(247, 249, 252, 0.72);
-  color: rgba(17, 44, 76, 0.72);
+  background: rgba(246, 240, 230, 0.78);
+  color: rgba(28, 47, 69, 0.72);
   letter-spacing: 0.03em;
   text-transform: none;
 }
@@ -3589,7 +3590,7 @@ img {
 .game-lab-hero-copy h1 {
   margin: 18px 0 0;
   color: var(--lab-ink);
-  font-family: Inter, 'Noto Sans SC', sans-serif;
+  font-family: 'Noto Serif SC', 'Songti SC', STSong, serif;
   font-size: clamp(39px, 4.4vw, 58px);
   font-weight: 800;
   letter-spacing: -0.06em;
@@ -3599,7 +3600,7 @@ img {
 .game-lab-hero-copy h1 span {
   display: block;
   margin-bottom: 8px;
-  color: var(--lab-blue);
+  color: #9b584b;
   font-size: 0.56em;
   letter-spacing: 0.03em;
 }
@@ -3607,7 +3608,7 @@ img {
 .game-lab-thesis {
   max-width: 560px;
   margin: 26px 0 0;
-  color: rgba(17, 44, 76, 0.72);
+  color: rgba(28, 47, 69, 0.72);
   font-size: clamp(16px, 1.8vw, 20px);
   line-height: 1.78;
 }
@@ -3634,7 +3635,7 @@ img {
 }
 
 .game-lab-meta dt {
-  color: rgba(17, 44, 76, 0.52);
+  color: rgba(28, 47, 69, 0.52);
 }
 
 .game-lab-meta dd {
@@ -3654,13 +3655,13 @@ img {
   color: white;
   font-size: 13px;
   font-weight: 800;
-  box-shadow: 8px 8px 0 rgba(65, 201, 211, 0.28);
+  box-shadow: 8px 8px 0 rgba(181, 145, 79, 0.25);
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
 .game-lab-demo-link:hover {
   transform: translate(-2px, -2px);
-  box-shadow: 11px 11px 0 rgba(65, 201, 211, 0.32);
+  box-shadow: 11px 11px 0 rgba(181, 145, 79, 0.3);
 }
 
 .game-lab-hero-visual,
@@ -3673,13 +3674,13 @@ img {
 .game-lab-hero-visual {
   position: relative;
   padding: 14px;
-  border: 1px solid rgba(17, 44, 76, 0.24);
+  border: 1px solid rgba(46, 54, 62, 0.24);
   background:
-    linear-gradient(rgba(36, 121, 233, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(36, 121, 233, 0.07) 1px, transparent 1px),
+    linear-gradient(rgba(49, 91, 136, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(49, 91, 136, 0.055) 1px, transparent 1px),
     var(--lab-paper);
   background-size: 22px 22px;
-  box-shadow: 16px 16px 0 rgba(128, 100, 232, 0.14);
+  box-shadow: 16px 16px 0 rgba(70, 56, 42, 0.12);
 }
 
 .game-lab-hero-visual img {
@@ -3703,7 +3704,7 @@ img {
 }
 
 .game-lab-hero-visual figcaption span {
-  color: rgba(17, 44, 76, 0.56);
+  color: rgba(28, 47, 69, 0.56);
   font-size: 11px;
   text-align: right;
 }
@@ -3722,7 +3723,7 @@ img {
 .game-lab-section-heading h2 {
   margin: 14px 0 0;
   color: var(--lab-ink);
-  font-family: Inter, 'Noto Sans SC', sans-serif;
+  font-family: 'Noto Serif SC', 'Songti SC', STSong, serif;
   font-size: clamp(32px, 4.1vw, 54px);
   font-weight: 800;
   letter-spacing: -0.055em;
@@ -3732,7 +3733,7 @@ img {
 .game-lab-section-heading > p {
   max-width: 490px;
   margin: 22px 0 0;
-  color: rgba(17, 44, 76, 0.64);
+  color: rgba(28, 47, 69, 0.64);
   font-size: 14px;
   line-height: 1.82;
 }
@@ -3777,7 +3778,7 @@ img {
 
 .game-lab-breakpoints p {
   margin: 10px 0 0;
-  color: rgba(17, 44, 76, 0.62);
+  color: rgba(28, 47, 69, 0.62);
   font-size: 13px;
   line-height: 1.7;
 }
@@ -3809,7 +3810,7 @@ img {
   display: flex;
   flex-direction: column;
   padding: 18px;
-  background: white;
+  background: #fbf7ef;
 }
 
 .game-lab-loop li > span {
@@ -3836,7 +3837,7 @@ img {
 
 .game-lab-loop p {
   margin: 9px 0 0;
-  color: rgba(17, 44, 76, 0.62);
+  color: rgba(28, 47, 69, 0.62);
   font-size: 12px;
   line-height: 1.65;
 }
@@ -3846,7 +3847,7 @@ img {
   margin-top: 18px;
   padding: 14px;
   border: 1px solid var(--lab-line);
-  background: #0f2e50;
+  background: #17385f;
 }
 
 .game-lab-record-shot img {
@@ -3875,7 +3876,7 @@ img {
   flex-direction: column;
   padding: 23px;
   border: 1px solid var(--lab-line);
-  background: rgba(247, 249, 252, 0.78);
+  background: rgba(246, 240, 230, 0.8);
 }
 
 .game-lab-pattern-list article:nth-child(1) {
@@ -3904,7 +3905,7 @@ img {
 
 .game-lab-pattern-list p {
   margin: 13px 0 0;
-  color: rgba(17, 44, 76, 0.63);
+  color: rgba(28, 47, 69, 0.63);
   font-size: 13px;
   line-height: 1.72;
 }
@@ -3936,14 +3937,15 @@ img {
   margin: 13px 0 0;
   color: var(--lab-ink);
   font-size: clamp(27px, 3.3vw, 43px);
-  font-weight: 800;
+  font-family: 'Noto Serif SC', 'Songti SC', STSong, serif;
+  font-weight: 700;
   letter-spacing: -0.045em;
   line-height: 1.22;
 }
 
 .game-lab-module-copy > p {
   margin: 19px 0 0;
-  color: rgba(17, 44, 76, 0.66);
+  color: rgba(28, 47, 69, 0.66);
   font-size: 14px;
   line-height: 1.82;
 }
@@ -3964,7 +3966,7 @@ img {
 .game-lab-module figure {
   padding: 10px;
   border: 1px solid var(--lab-line);
-  background: white;
+  background: #fbf7ef;
 }
 
 .game-lab-module figure img {
@@ -3977,7 +3979,7 @@ img {
 
 .game-lab-module figure figcaption {
   padding: 10px 2px 1px;
-  color: rgba(17, 44, 76, 0.55);
+  color: rgba(28, 47, 69, 0.55);
   font-size: 10px;
 }
 
@@ -4006,7 +4008,7 @@ img {
   padding: clamp(26px, 4vw, 42px);
   background: var(--lab-blue);
   color: white;
-  box-shadow: 14px 14px 0 rgba(241, 191, 71, 0.28);
+  box-shadow: 14px 14px 0 rgba(181, 145, 79, 0.25);
 }
 
 .game-lab-metric span {
@@ -4047,7 +4049,7 @@ img {
 
 .game-lab-pilot p {
   margin: 34px 0 0;
-  color: rgba(17, 44, 76, 0.65);
+  color: rgba(28, 47, 69, 0.65);
   font-size: 12px;
   line-height: 1.65;
 }
@@ -4067,11 +4069,11 @@ img {
 
 .game-lab-boundary > div + div {
   border-left: 1px solid var(--lab-line);
-  background: #fff9e9;
+  background: #efe5d4;
 }
 
 .game-lab-boundary > div + div > span {
-  color: #9e7618;
+  color: #9b584b;
 }
 
 .game-lab-boundary h3 {
@@ -4083,7 +4085,7 @@ img {
 .game-lab-boundary p {
   max-width: 480px;
   margin: 12px 0 0;
-  color: rgba(17, 44, 76, 0.62);
+  color: rgba(28, 47, 69, 0.62);
   font-size: 13px;
   line-height: 1.72;
 }
@@ -4108,7 +4110,7 @@ img {
 }
 
 .game-lab-footer span {
-  color: rgba(17, 44, 76, 0.54);
+  color: rgba(28, 47, 69, 0.54);
   font-size: 11px;
 }
 
@@ -4178,7 +4180,7 @@ img {
 
   .game-lab-hero-visual {
     padding: 8px;
-    box-shadow: 8px 8px 0 rgba(128, 100, 232, 0.14);
+    box-shadow: 8px 8px 0 rgba(70, 56, 42, 0.12);
   }
 
   .game-lab-hero-visual figcaption span {

@@ -15,10 +15,7 @@ import {
 import type { CSSProperties, SyntheticEvent, WheelEvent } from 'react';
 import { useEffect, useRef, useState } from 'react';
 
-const asset = (name: string) =>
-  import.meta.env.DEV
-    ? `https://irene0618.github.io/personal-website/portfolio/${name}`
-    : `${import.meta.env.BASE_URL}portfolio/${name}`;
+const asset = (name: string) => `${import.meta.env.BASE_URL}portfolio/${name}`;
 
 const navItems = [
   { label: '能力', href: '#roots' },
@@ -67,8 +64,8 @@ const rings = [
     slug: 'ai-pet-internship',
     year: '2026.06—2026.08',
     title: 'TCL｜AIGC产品经理实习',
-    detail: '参与AI萌宠IP“小龙吨吨”的内容孵化，关注角色能否稳定更新、家庭用户能否记住它。在电视大屏端参与脚本、分镜、生成、筛选与剪辑，支撑46集内容连续上线并进入首页推荐。内容上线后跟踪点击表现和二维码留言，将角色好感、儿童观看和主动点菜等反馈用于下一轮选题。后续完成治愈类短视频内容调研，并形成“吨吨旅行”核心栏目、视听规则与分阶段更新规划。',
-    tags: ['AIGC内容产品', '用户反馈', '内容迭代'],
+    detail: '在项目组实习期间，我收集用户反馈与业务需求，整理并输出产品需求文档，跟进需求评审、开发、测试与上线，协调研发和业务侧确认需求与进度。同时调研主流AI生图与视频工具，形成能力评测和成本分析报告，并参与脚本、分镜、生成、筛选与剪辑等AIGC内容生产环节的产品设计与优化，支撑46集内容连续上线及短视频平台运营。',
+    tags: [],
   },
 ];
 
@@ -295,12 +292,12 @@ const featuredProjects = [
     name: '策研工坊',
     cn: '游戏策划研学平台',
     stage: '2026.08',
-    type: '产品策划 / 可交互原型',
-    image: asset('game-lab-case/cover.png'),
+    type: '产品策划 / 高保真交互Demo',
+    image: asset('game-lab-case/cover-archive-4k.jpg'),
     icon: PenLine,
     summary:
       '我想解决一个很具体的问题：玩游戏时记了很多东西，写完拆解后却很难在下一次策划中继续使用。为此，我设计了记录、写作、互评和项目验证可以前后接上的学习平台。',
-    outputs: ['产品方案', '信息架构', '交互原型', '知识资产', '评估设计'],
+    outputs: ['产品方案', '信息架构', '交互Demo', '知识资产', '评估设计'],
   },
   {
     slug: 'ladywell',
@@ -760,16 +757,16 @@ const caseStudies = [
     title: '策研工坊',
     cn: '游戏策划研学平台',
     year: '2026.08',
-    type: '产品策划 / 信息架构 / 可交互原型',
-    heroImage: asset('game-lab-case/01-learning-home.png'),
+    type: '产品策划 / 信息架构 / 高保真交互Demo',
+    heroImage: asset('game-lab-case/01-learning-home-archive-4k.jpg'),
     overview:
       '面向游戏策划学习者，把课程学习、游玩记录、案例拆解、同伴评审、机制卡和项目验证接成一条连续路径。用户每完成一步，平台都会保留来源、判断和下一步动作，让一次作业有机会继续进入团队复用。',
-    award: '独立产品策划项目｜46页产品方案 + 七个主页面静态交互Demo',
-    externalLink: { label: '体验策研工坊Demo', href: 'https://irene0618.github.io/game-design-lab-demo/' },
+    award: '独立产品策划项目｜46页产品方案 + 七个核心模块高保真交互Demo',
+    externalLink: { label: '体验策研工坊Demo', href: 'https://irene0618.github.io/game-design-lab/' },
     highlights: [
       '从课程、截图、长文、评审和项目文件之间的断点出发，设计“记录—拆解—评审—提炼—复用—回写”的完整研学路径。',
       '将《燕云十六声》《文明 VI》《双影奇境》的设计关系分别转成个人成长、知识结构和协作关系三个产品模块。',
-      '完成覆盖学习首页、课程中心、案例广场、资产库、工作台、研学搭子和个人主页的可交互Demo，并明确真实账号、云端协作与推荐效果仍待验证。',
+      '完成覆盖学习首页、课程中心、案例广场、资产库、工作台、研学搭子和个人主页的高保真交互Demo，并明确真实账号、云端协作与推荐效果仍待验证。',
     ],
     details: [
       {
@@ -798,15 +795,15 @@ const caseStudies = [
           '研学搭子根据公开作品证据、方向和协作时间给出双向互补理由。互评按证据、机制、应用和表达分工，分别记录看到的问题、需要补充的内容和双方确认的下一步。',
       },
       {
-        heading: '验证边界：当前完成的是静态产品原型',
+        heading: '验证边界：当前完成的是本地可交互Demo',
         body:
-          'Demo 使用本地数据模拟七个主页面和主要流程，覆盖桌面端与390×844移动端。真实账号、班级空间、云端权限、实时协作和推荐模型尚未建设；学习效果和团队复用价值需要通过小班试点验证。',
+          'Demo 使用本地数据运行课程、案例、资产、工作台、研学搭子与个人成长等核心模块，支持主要操作状态、离线项目包和桌面端与390×844移动端。真实账号、班级空间、云端权限、实时协作和推荐模型尚未建设；学习效果和团队复用价值仍需通过小班试点验证。',
       },
     ],
     role: [
       '独立完成产品定位、用户任务、信息架构、核心对象、权限状态和迭代路线。',
       '拆解三款游戏，将游戏中的成长、研究和合作关系转译为产品模块。',
-      '设计七个主页面及关键流程，并完成可交互静态网页Demo与移动端适配。',
+      '设计七个核心模块及关键流程，并完成高保真网页Demo与移动端适配。',
       '提出北极星指标、分阶段指标、四周试点方案和质量护栏。',
     ],
     process: [
@@ -822,7 +819,7 @@ const caseStudies = [
       '关系完整只说明材料有没有连接，结论是否可靠仍要由评审和测试判断。',
     ],
     references: [
-      { image: asset('game-lab-case/01-learning-home.png'), label: '策研工坊学习首页' },
+      { image: asset('game-lab-case/01-learning-home-archive-4k.jpg'), label: '策研工坊学习首页' },
       { image: asset('game-lab-case/04-editor.png'), label: '组件化策划案编辑器' },
       { image: asset('game-lab-case/07-relationship-graph.png'), label: '研学资产关系图' },
     ],
@@ -1831,7 +1828,14 @@ function TrunkSection() {
                     ))}
                   </div>
                 ) : null}
-                <a className="detail-link" href={`#experience-${ring.slug}`}>
+                <a
+                  className="detail-link"
+                  href={
+                    ring.slug === 'ai-pet-internship'
+                      ? 'https://irene0618.github.io/personal-website/#case-ai-pet-incubation'
+                      : `#experience-${ring.slug}`
+                  }
+                >
                   查看经历详情 <span aria-hidden="true">→</span>
                 </a>
               </div>
@@ -2336,16 +2340,16 @@ function CaseStudyPage({ study }: { study: (typeof caseStudies)[number] }) {
             <p className="game-lab-thesis">我做这个平台，是想让玩游戏时记下的截图和想法，在写完一次作业后还能继续用。用户可以在这里学方法、写拆解、找人互评，再把结论拿到项目里试一试。</p>
             <dl className="game-lab-meta">
               <div><dt>给谁用</dt><dd>正在学习游戏策划、需要整理作品和反馈的人</dd></div>
-              <div><dt>我做了什么</dt><dd>46页产品方案、3篇游戏拆解、静态交互Demo</dd></div>
-              <div><dt>做到哪一步</dt><dd>七个主页面已经完成，还没有找真实用户试用</dd></div>
+              <div><dt>我做了什么</dt><dd>46页产品方案、3篇游戏拆解、高保真交互Demo</dd></div>
+              <div><dt>做到哪一步</dt><dd>七个核心模块与主要操作状态已完成，还没有找真实用户试用</dd></div>
             </dl>
-            <a className="game-lab-demo-link" href="https://irene0618.github.io/game-design-lab-demo/" target="_blank" rel="noreferrer">
+            <a className="game-lab-demo-link" href="https://irene0618.github.io/game-design-lab/" target="_blank" rel="noreferrer">
               打开Demo看看 <ExternalLink size={16} />
             </a>
           </div>
           <figure className="game-lab-hero-visual">
             <ZoomableImage
-              src={asset('game-lab-case/01-learning-home.png')}
+              src={asset('game-lab-case/01-learning-home-archive-4k.jpg')}
               alt="策研工坊学习首页"
               caption="策研工坊学习首页"
               onOpen={setLightboxImage}
@@ -2506,8 +2510,8 @@ function CaseStudyPage({ study }: { study: (typeof caseStudies)[number] }) {
         <section className="game-lab-boundary">
           <div>
             <span>现在已经有</span>
-            <h3>静态可交互Demo</h3>
-            <p>七个主页面、主要状态、离线项目包、桌面端与390×844移动端适配。</p>
+            <h3>高保真可交互Demo</h3>
+            <p>七个核心模块、主要操作状态、离线项目包、桌面端与390×844移动端适配。</p>
           </div>
           <div>
             <span>现在还没有</span>
@@ -2521,7 +2525,7 @@ function CaseStudyPage({ study }: { study: (typeof caseStudies)[number] }) {
             <strong>策研工坊 · Game Design Lab</strong>
             <span>产品方案、三篇游戏拆解和网页Demo都是我独立完成的。</span>
           </div>
-          <a href="https://irene0618.github.io/game-design-lab-demo/" target="_blank" rel="noreferrer">
+          <a href="https://irene0618.github.io/game-design-lab/" target="_blank" rel="noreferrer">
             打开Demo <ExternalLink size={15} />
           </a>
         </footer>
