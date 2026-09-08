@@ -3098,6 +3098,14 @@ function CaseStudyPage({ study }: { study: (typeof caseStudies)[number] }) {
           </figure>
         </header>
 
+        {study.externalLink ? (
+          <a className="case-watch-link wunian-diary-link" href={study.externalLink.href} target="_blank" rel="noreferrer">
+            <span className="watch-icon"><Play size={14} fill="currentColor" /></span>
+            <span>{study.externalLink.label}</span>
+            <span className="watch-arrow" aria-hidden="true">→</span>
+          </a>
+        ) : null}
+
         <section className="wunian-diary-entry">
           <span>01</span>
           <div>
@@ -3139,13 +3147,6 @@ function CaseStudyPage({ study }: { study: (typeof caseStudies)[number] }) {
               </figure>
             ))}
           </div>
-          {study.externalLink ? (
-            <a className="case-watch-link wunian-diary-link" href={study.externalLink.href} target="_blank" rel="noreferrer">
-              <span className="watch-icon"><Play size={14} fill="currentColor" /></span>
-              <span>{study.externalLink.label}</span>
-              <span className="watch-arrow" aria-hidden="true">→</span>
-            </a>
-          ) : null}
         </section>
 
         {lightboxImage ? <ImageLightbox image={lightboxImage} onClose={() => setLightboxImage(null)} /> : null}
