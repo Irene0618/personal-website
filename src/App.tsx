@@ -3066,6 +3066,93 @@ function CaseStudyPage({ study }: { study: (typeof caseStudies)[number] }) {
     );
   }
 
+  if (study.slug === 'wunian-ai-film') {
+    const diaryImages = [
+      { image: asset('wunian-case/record-01.jpg'), label: '黑客松现场记录' },
+      { image: asset('wunian-case/record-02.jpg'), label: '团队协作与创作讨论' },
+      { image: asset('wunian-case/record-03.jpg'), label: 'AI素材与镜头迭代' },
+      { image: asset('wunian-case/record-04.jpg'), label: '现场创作环境' },
+      { image: asset('wunian-case/record-05.jpg'), label: '《勿念》Demo现场呈现' },
+    ];
+
+    return (
+      <article className="case-study wunian-diary">
+        <a className="back-link" href="#branches">
+          返回精选项目
+        </a>
+
+        <header className="wunian-diary-header">
+          <div>
+            <p className="eyebrow">2026.09 / 8小时黑客松现场记录</p>
+            <h1>《勿念》</h1>
+            <p className="wunian-diary-subtitle">Tcamp设计黑客松 × 光子艺术部影视动画组 AI视频沙龙</p>
+          </div>
+          <figure>
+            <ZoomableImage
+              src={asset('wunian-case/record-05.jpg')}
+              alt="《勿念》Demo现场呈现"
+              caption="《勿念》Demo现场呈现"
+              onOpen={setLightboxImage}
+            />
+            <figcaption>8小时后，我们把片子放出来了。</figcaption>
+          </figure>
+        </header>
+
+        <section className="wunian-diary-entry">
+          <span>01</span>
+          <div>
+            <p className="section-kicker">这部片子</p>
+            <h2>先说说《勿念》</h2>
+            <p>
+              《勿念》是我在这次 AI 视频沙龙现场完成的一支短片。它从一个很快确定下来的情绪和画面出发，
+              用 AI 生成的图像和视频片段，再经过筛选、重做和剪辑，慢慢变成一段完整的影像。
+              对我来说，它更像是在有限时间里，把一个还没有成形的念头先做成可以被看见的样子。
+            </p>
+          </div>
+        </section>
+
+        <section className="wunian-diary-entry">
+          <span>02</span>
+          <div>
+            <p className="section-kicker">我的工作</p>
+            <h2>这次我主要在做导演的工作</h2>
+            <p>
+              整部片子大约80%的工作都由我完成。从前期策划和创意构思开始，到脚本、分镜、AI生图、生视频，
+              再到镜头的反复迭代和最后的剪辑，我一直在把控片子的方向、画面和节奏。
+              我也使用了 Lib TV 来完成其中的 AI 视频创作。
+            </p>
+            <p>
+              8小时结束时，我们把可以展示的 Demo 带到了现场。播放和讲解之后，我收到了导师比较正向的反馈。
+              那一刻让我觉得，原本只存在于脑海里的画面，真的被做成了一支可以和别人分享的片子。
+            </p>
+          </div>
+        </section>
+
+        <section className="wunian-diary-gallery">
+          <p className="section-kicker">现场照片</p>
+          <h2>做片子这一天</h2>
+          <div>
+            {diaryImages.map((item) => (
+              <figure key={item.label}>
+                <ZoomableImage src={item.image} alt={item.label} caption={item.label} onOpen={setLightboxImage} />
+                <figcaption>{item.label}</figcaption>
+              </figure>
+            ))}
+          </div>
+          {study.externalLink ? (
+            <a className="case-watch-link wunian-diary-link" href={study.externalLink.href} target="_blank" rel="noreferrer">
+              <span className="watch-icon"><Play size={14} fill="currentColor" /></span>
+              <span>{study.externalLink.label}</span>
+              <span className="watch-arrow" aria-hidden="true">→</span>
+            </a>
+          ) : null}
+        </section>
+
+        {lightboxImage ? <ImageLightbox image={lightboxImage} onClose={() => setLightboxImage(null)} /> : null}
+      </article>
+    );
+  }
+
   return (
     <article className="case-study">
       <a className="back-link" href="#branches">

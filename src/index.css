@@ -1801,6 +1801,127 @@ img {
   font-weight: 700;
 }
 
+.wunian-diary {
+  width: min(1000px, calc(100% - 32px));
+}
+
+.wunian-diary-header {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(360px, 1.18fr);
+  gap: clamp(28px, 6vw, 72px);
+  align-items: end;
+  padding: clamp(30px, 6vw, 70px) 0 clamp(38px, 7vw, 78px);
+  border-bottom: 1px solid rgba(47, 53, 45, 0.22);
+}
+
+.wunian-diary-header h1 {
+  margin: 0;
+  color: var(--ink);
+  font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
+  font-size: clamp(64px, 10vw, 132px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 0.86;
+}
+
+.wunian-diary-subtitle {
+  max-width: 340px;
+  margin: 24px 0 0;
+  color: var(--tree);
+  font-family: 'Noto Serif SC', serif;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.wunian-diary-header figure {
+  margin: 0;
+  padding: 12px;
+  border: 1px solid rgba(47, 53, 45, 0.24);
+  background: rgba(255, 253, 248, 0.72);
+}
+
+.wunian-diary-header figure img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.wunian-diary-header figcaption,
+.wunian-diary-gallery figcaption {
+  margin-top: 10px;
+  color: rgba(46, 46, 46, 0.62);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.wunian-diary-entry {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 720px);
+  gap: 24px;
+  padding: clamp(42px, 7vw, 78px) 0;
+  border-bottom: 1px solid rgba(47, 53, 45, 0.18);
+}
+
+.wunian-diary-entry > span {
+  color: var(--gold);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.wunian-diary-entry h2,
+.wunian-diary-gallery h2 {
+  margin: 0;
+  color: var(--ink);
+  font-family: 'Noto Serif SC', serif;
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.wunian-diary-entry p:not(.section-kicker) {
+  margin: 22px 0 0;
+  color: rgba(46, 46, 46, 0.76);
+  font-size: 16px;
+  line-height: 2;
+}
+
+.wunian-diary-gallery {
+  padding-top: clamp(42px, 7vw, 78px);
+}
+
+.wunian-diary-gallery > h2 {
+  margin-bottom: 30px;
+}
+
+.wunian-diary-gallery > div {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.wunian-diary-gallery figure {
+  margin: 0;
+  padding: 10px;
+  border: 1px solid rgba(47, 53, 45, 0.22);
+  background: rgba(255, 253, 248, 0.7);
+}
+
+.wunian-diary-gallery figure:last-child {
+  grid-column: 1 / -1;
+  max-width: 680px;
+}
+
+.wunian-diary-gallery figure img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.wunian-diary-link {
+  margin-top: 34px;
+}
+
 /* AI萌宠案例：以“播出状态台”区分已上线、进行中与概念探索。 */
 .pet-case {
   --pet-ink: #202936;
@@ -5608,6 +5729,7 @@ img {
   .case-hero,
   .case-section,
   .case-two-col,
+  .wunian-diary-header,
   .experience-hero,
   .experience-section,
   .experience-two-column {
@@ -5803,6 +5925,25 @@ img {
   .qin-case {
     width: min(100% - 16px, 1280px);
     padding-top: 18px;
+  }
+
+  .wunian-diary {
+    width: min(100% - 20px, 1000px);
+  }
+
+  .wunian-diary-entry {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 42px 0;
+  }
+
+  .wunian-diary-gallery > div {
+    grid-template-columns: 1fr;
+  }
+
+  .wunian-diary-gallery figure:last-child {
+    grid-column: auto;
+    max-width: none;
   }
 
   .qin-back-link {
