@@ -1933,7 +1933,9 @@ img {
 }
 
 .wunian-diary-link {
-  margin-top: 34px;
+  grid-column: 1 / -1;
+  margin-top: -2px;
+  margin-bottom: 26px;
 }
 
 /* AI萌宠案例：以“播出状态台”区分已上线、进行中与概念探索。 */
