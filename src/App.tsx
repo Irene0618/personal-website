@@ -3083,8 +3083,9 @@ function CaseStudyPage({ study }: { study: (typeof caseStudies)[number] }) {
 
         <header className="wunian-diary-header">
           <div>
-            <p className="eyebrow">2026.09 / 8小时黑客松现场记录</p>
-            <h1>《勿念》</h1>
+            <p className="eyebrow">AI VIDEO / 8小时黑客松</p>
+            <h1>勿念</h1>
+            <p className="wunian-diary-meta">2026.09 · 现场完成</p>
             <p className="wunian-diary-subtitle">Tcamp设计黑客松 × 光子艺术部影视动画组 AI视频沙龙</p>
           </div>
           <figure>
