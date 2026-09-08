@@ -240,6 +240,18 @@ const featuredProjects = [
     outputs: ['AIGC内容生产', '用户反馈分析', '内容产品策划', '跨平台内容运营'],
   },
   {
+    slug: 'wunian-ai-film',
+    name: '《勿念》AI视频创作',
+    cn: 'Tcamp设计黑客松 × 光子艺术部影视动画组 AI视频沙龙',
+    stage: '8小时黑客松｜2026.09',
+    type: 'AI影像 / 现场创作',
+    image: asset('wunian-case/record-05.jpg'),
+    icon: Camera,
+    summary:
+      '围绕现场主题完成《勿念》的创意构思、脚本撰写与分镜设计，统筹AI生图、生视频、素材筛选、镜头迭代及后期剪辑，在8小时内完成可展示Demo并现场呈现，获得导师正向反馈。',
+    outputs: ['创意构思', '脚本与分镜', 'AI生图 / 生视频', '镜头迭代', '后期剪辑'],
+  },
+  {
     slug: 'anti-drug-interactive-film',
     name: '禁毒互动影像游戏',
     cn: '从“让人害怕”走向“让人会拒绝”',
@@ -361,7 +373,7 @@ const featuredProjects = [
   },
 ];
 
-const priorityProjectSlugs = ['ai-pet-incubation', 'anti-drug-interactive-film', 'electronic-yuefu', 'qin-yun', 'game-design-lab'];
+const priorityProjectSlugs = ['ai-pet-incubation', 'wunian-ai-film', 'anti-drug-interactive-film', 'electronic-yuefu', 'qin-yun', 'game-design-lab'];
 
 const legacyCaseStudies = [
   {
@@ -751,6 +763,78 @@ const caseStudies = [
       { image: asset('ai-pet-case/stills/hero-river.webp'), label: '小龙吨吨电视端内容画面' },
     ],
     gallery: [],
+  },
+  {
+    slug: 'wunian-ai-film',
+    title: '《勿念》',
+    cn: 'Tcamp设计黑客松 × 光子艺术部影视动画组 AI视频沙龙',
+    year: '2026.09',
+    type: '8小时 AI 影像创作',
+    heroImage: asset('wunian-case/record-05.jpg'),
+    overview:
+      '在Tcamp设计黑客松 × 光子艺术部影视动画组 AI视频沙龙中，围绕现场主题完成《勿念》的创意构思、脚本撰写与分镜设计，并统筹AI生图、生视频、素材筛选、镜头迭代和后期剪辑。作品在8小时内完成可展示Demo并现场呈现，获得导师正向反馈。',
+    award: '8小时黑客松现场完成可展示Demo｜导师正向反馈',
+    externalLink: {
+      label: '在新片场观看《勿念》',
+      href: 'https://www.xinpianchang.com/a13810380?from=webShare&channel=copyLink',
+    },
+    highlights: [
+      '把现场命题快速转成可执行的影像概念，完成从创意、脚本到分镜的叙事搭建。',
+      '在有限时间内统筹AI生图、生视频、素材筛选、镜头迭代与后期剪辑，持续统一视觉风格和叙事节奏。',
+      '以Lib TV作为创作工具之一，在现场完成可播放、可讲述、可展示的Demo，并进行公开呈现。',
+    ],
+    details: [
+      {
+        heading: '从主题到叙事',
+        body:
+          '我先围绕“勿念”拆解情绪基调与核心意象，再把抽象主题转成可拍摄的故事动作、镜头关系和节奏节点，保证后续生成素材能够服务同一个叙事方向。',
+      },
+      {
+        heading: '8小时内完成可展示版本',
+        body:
+          '现场工作按创意构思、脚本与分镜、AI素材生成、素材筛选、镜头迭代和后期剪辑推进。每一轮都优先保留能支撑叙事的镜头，并及时调整视觉风格、画面连贯性和段落节奏。',
+      },
+      {
+        heading: '工具与人工判断并行',
+        body:
+          '项目使用Lib TV参与AI视频创作，同时结合AI生图与生视频工具扩展素材。工具负责快速生成可能性，我负责设定镜头目标、筛选结果、修正不稳定画面并完成最终剪辑。',
+      },
+      {
+        heading: '现场呈现与反馈',
+        body:
+          '完成Demo后进行现场播放和创作说明，导师反馈帮助我确认作品的主题表达、视觉统一和短时交付能力，也让我看到快速创作中仍可继续优化的镜头细节。',
+      },
+    ],
+    role: [
+      '围绕现场主题完成创意构思、脚本撰写与分镜设计。',
+      '统筹AI生图、生视频、素材筛选与镜头迭代，统一视觉风格。',
+      '完成后期剪辑、节奏调整与现场展示版本输出。',
+      '在8小时内交付可展示Demo，并根据导师反馈复盘作品表达。',
+    ],
+    process: [
+      '主题拆解：提炼“勿念”的情绪、意象与叙事方向。',
+      '脚本分镜：将概念拆成镜头目标、画面关系与节奏节点。',
+      'AI生成：使用Lib TV等工具生成图像与视频素材。',
+      '筛选迭代：围绕风格统一、画面稳定和叙事连续性反复筛选。',
+      '后期呈现：完成剪辑与声音节奏调整，现场播放并记录反馈。',
+    ],
+    learned: [
+      '时间受限时，先明确镜头在叙事中的作用，能帮助生成和筛选更快做出判断。',
+      'AI工具提升了素材探索速度，但视觉统一、节奏控制和最终取舍仍需要人工把关。',
+      '现场Demo不仅要能播放，还要能让观众理解创意来源、制作过程和作品完成度。',
+    ],
+    references: [
+      { image: asset('wunian-case/record-05.jpg'), label: '现场投影呈现《勿念》Demo' },
+      { image: asset('wunian-case/record-03.jpg'), label: '使用AI工具进行素材与镜头迭代' },
+      { image: asset('wunian-case/record-02.jpg'), label: '团队协作与现场制作' },
+    ],
+    gallery: [
+      { image: asset('wunian-case/record-01.jpg'), label: '黑客松现场记录' },
+      { image: asset('wunian-case/record-02.jpg'), label: '团队协作与创作讨论' },
+      { image: asset('wunian-case/record-03.jpg'), label: 'AI素材与镜头迭代' },
+      { image: asset('wunian-case/record-04.jpg'), label: '现场创作环境' },
+      { image: asset('wunian-case/record-05.jpg'), label: '《勿念》Demo现场呈现' },
+    ],
   },
   {
     slug: 'game-design-lab',
