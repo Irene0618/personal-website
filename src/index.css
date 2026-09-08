@@ -1807,7 +1807,7 @@ img {
 
 .wunian-diary-header {
   display: grid;
-  grid-template-columns: minmax(0, 0.82fr) minmax(360px, 1.18fr);
+  grid-template-columns: minmax(0, 0.72fr) minmax(420px, 1.28fr);
   gap: clamp(28px, 6vw, 72px);
   align-items: end;
   padding: clamp(30px, 6vw, 70px) 0 clamp(38px, 7vw, 78px);
@@ -1818,7 +1818,7 @@ img {
   margin: 0;
   color: var(--ink);
   font-family: 'Cormorant Garamond', 'Noto Serif SC', serif;
-  font-size: clamp(64px, 10vw, 132px);
+  font-size: clamp(58px, 8vw, 108px);
   font-weight: 500;
   letter-spacing: -0.04em;
   line-height: 0.86;
@@ -1835,15 +1835,17 @@ img {
 
 .wunian-diary-header figure {
   margin: 0;
-  padding: 12px;
+  padding: 14px;
   border: 1px solid rgba(47, 53, 45, 0.24);
-  background: rgba(255, 253, 248, 0.72);
+  background: rgba(255, 253, 248, 0.82);
+  box-shadow: 14px 14px 0 rgba(216, 179, 106, 0.16);
 }
 
 .wunian-diary-header figure img {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
+  object-position: center;
 }
 
 .wunian-diary-header figcaption,

@@ -245,7 +245,7 @@ const featuredProjects = [
     cn: 'Tcamp设计黑客松 × 光子艺术部影视动画组 AI视频沙龙',
     stage: '8小时黑客松｜2026.09',
     type: 'AI影像 / 现场创作',
-    image: asset('wunian-case/record-05.jpg'),
+    image: asset('wunian-case/cover.png'),
     icon: Camera,
     summary:
       '围绕现场主题完成《勿念》的创意构思、脚本撰写与分镜设计，统筹AI生图、生视频、素材筛选、镜头迭代及后期剪辑，在8小时内完成可展示Demo并现场呈现，获得导师正向反馈。',
@@ -770,7 +770,7 @@ const caseStudies = [
     cn: 'Tcamp设计黑客松 × 光子艺术部影视动画组 AI视频沙龙',
     year: '2026.09',
     type: '8小时 AI 影像创作',
-    heroImage: asset('wunian-case/record-05.jpg'),
+    heroImage: asset('wunian-case/cover.png'),
     overview:
       '在Tcamp设计黑客松 × 光子艺术部影视动画组 AI视频沙龙中，围绕现场主题完成《勿念》的创意构思、脚本撰写与分镜设计，并统筹AI生图、生视频、素材筛选、镜头迭代和后期剪辑。作品在8小时内完成可展示Demo并现场呈现，获得导师正向反馈。',
     award: '8小时黑客松现场完成可展示Demo｜导师正向反馈',
@@ -3089,7 +3089,7 @@ function CaseStudyPage({ study }: { study: (typeof caseStudies)[number] }) {
           </div>
           <figure>
             <ZoomableImage
-              src={asset('wunian-case/record-05.jpg')}
+              src={asset('wunian-case/cover.png')}
               alt="《勿念》Demo现场呈现"
               caption="《勿念》Demo现场呈现"
               onOpen={setLightboxImage}
