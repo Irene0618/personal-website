@@ -371,8 +371,6 @@ const featuredProjects = [
       '以校园文化和数字文创为切入，探索元宇宙校园平台的视觉呈现、场景搭建、展示动画和传播包装。',
     outputs: ['数字文创', '展示动画', '校园平台', '三维视觉'],
   },
-];
-
   {
     slug: 'cheso-campus-campaign',
     name: 'Cheso校园推广视觉与策划',
@@ -385,6 +383,8 @@ const featuredProjects = [
       '围绕“普通校园小事也值得做成好作品”的主题，为Cheso设计校园推广视觉与创作活动方案。项目完成一支约1分30秒的AI视频、三组“小题大作”系列海报，以及面向深圳大学城学生的校园创作计划。',
     outputs: ['AI视频制作', '校园视觉系统', '推广策划', 'AIGC工作流'],
   },
+];
+
 const priorityProjectSlugs = ['ai-pet-incubation', 'cheso-campus-campaign', 'wunian-ai-film', 'anti-drug-interactive-film', 'electronic-yuefu', 'qin-yun', 'game-design-lab'];
 
 const legacyCaseStudies = [
