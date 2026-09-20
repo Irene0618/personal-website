@@ -373,7 +373,19 @@ const featuredProjects = [
   },
 ];
 
-const priorityProjectSlugs = ['ai-pet-incubation', 'wunian-ai-film', 'anti-drug-interactive-film', 'electronic-yuefu', 'qin-yun', 'game-design-lab'];
+  {
+    slug: 'cheso-campus-campaign',
+    name: 'Cheso校园推广视觉与策划',
+    cn: 'AI Agent产品推广 / 校园场景洞察 / AIGC视频与海报',
+    stage: '2026.09',
+    type: 'AI Agent产品 / 校园推广',
+    image: 'https://irene0618.github.io/cheso-campus-report/video-cover.jpg',
+    icon: Sparkles,
+    summary:
+      '围绕“普通校园小事也值得做成好作品”的主题，为Cheso设计校园推广视觉与创作活动方案。项目完成一支约1分30秒的AI视频、三组“小题大作”系列海报，以及面向深圳大学城学生的校园创作计划。',
+    outputs: ['AI视频制作', '校园视觉系统', '推广策划', 'AIGC工作流'],
+  },
+const priorityProjectSlugs = ['ai-pet-incubation', 'cheso-campus-campaign', 'wunian-ai-film', 'anti-drug-interactive-film', 'electronic-yuefu', 'qin-yun', 'game-design-lab'];
 
 const legacyCaseStudies = [
   {
@@ -1069,6 +1081,78 @@ const caseStudies = [
       { image: asset('cocoon-case/cocoon-ppt-25.jpg'), label: '海报产出' },
       { image: asset('cocoon-case/cocoon-ppt-26.jpg'), label: '视频关键帧镜头' },
     ],
+  },
+  {
+    slug: 'cheso-campus-campaign',
+    title: 'Cheso校园推广视觉与策划',
+    cn: 'AI Agent产品推广 / 校园场景洞察 / AIGC视频与海报',
+    year: '2026.09',
+    type: 'AI Agent产品 / 校园推广',
+    heroImage: 'https://irene0618.github.io/cheso-campus-report/video-cover.jpg',
+    overview:
+      '围绕Cheso“从文字需求到完整、可编辑、可交付PPT”的产品价值，面向大学城学生的真实校园生活设计推广表达。项目用一支AI视频和三组“小题大作”系列海报，把鹅腿饭、流浪小咪和洗澡水卡等日常选题转化成具有大片感的视觉案例。',
+    award: '独立完成概念、视觉设定、AI生图、生视频、剪辑与校园推广策划',
+    externalLink: {
+      label: '打开完整汇报网页',
+      href: 'https://irene0618.github.io/cheso-campus-report/',
+    },
+    highlights: [
+      '用“普通小事也值得认真做”作为传播入口，把学生熟悉的校园场景转成容易参与的内容命题。',
+      '通过黄色制服、白色摄影棚、片场设备和夸张尺度建立统一的Cheso视觉识别。',
+      '将视频、海报与校园创作计划放进同一套表达中，展示AI Agent如何帮助用户把零散想法组织成完整作品。',
+    ],
+    details: [
+      {
+        heading: '从产品价值到校园语境',
+        body:
+          'Cheso的优势不只在于生成文字或页面，而在于能够根据简单需求搜索资料、总结内容、完成视觉设计，并继续编辑成可交付的PPT。推广表达因此从“AI很强”转向学生更熟悉的场景：一顿午饭、一只校园小猫、一张洗澡水卡，也可以被认真组织成一份有观点、有结构、有审美的作品。',
+      },
+      {
+        heading: '“小题大作”的视觉概念',
+        body:
+          '把Cheso想象成一支认真拍大片的制作团队。工作人员穿着品牌黄色制服，为日常选题搭景、打光、拍摄，和主体的普通感形成反差。这个设定既能承载海报，也方便延展成社交媒体内容、校园线下装置和学生作品征集活动。',
+      },
+      {
+        heading: 'AI视频制作方法',
+        body:
+          '视频前期先完成画面构思、控制图和提示词设计，再进行分镜拆解、AI生图、生视频、素材筛选、镜头迭代和剪辑包装。重点控制主体一致性、镜头节奏和画面风格，把AI生成的不确定性转化为可复盘的制作流程。',
+      },
+      {
+        heading: '三组校园海报',
+        body:
+          '鹅腿饭海报把食堂午饭拍成产品大片；小咪海报让悠闲的校园流浪猫成为片场主角；洗澡水卡海报从余额疑问切入，把使用记录变成值得研究的生活报告。三张海报保持同一套品牌场景，同时通过主体、构图和工作人员动作做出变化。',
+      },
+      {
+        heading: '校园推广策划',
+        body:
+          '策划案面向深圳大学城学生，邀请同学从身边的小题目出发，用Cheso制作PPT或海报，经过展示、点评和作品分享，形成校园创作案例。活动将产品体验放进真实任务中，让用户直接感受到从想法、资料到完整作品的变化。',
+      },
+    ],
+    role: [
+      '完成校园推广主题、目标场景与传播概念设计。',
+      '独立完成AI视频的画面构思、控制图、提示词、生图、生视频、镜头筛选与剪辑。',
+      '完成“小题大作”系列海报的视觉设定、构图与文案表达。',
+      '完成校园创作计划的活动机制、内容节奏、作品征集与传播建议。',
+    ],
+    process: [
+      '拆解Cheso从文本需求到可编辑PPT的产品价值，寻找学生熟悉的使用场景。',
+      '确定“小题大作”概念，用片场工作人员和校园小事形成视觉反差。',
+      '建立黄色制服、摄影棚、灯光、监视器和夸张主体的统一视觉系统。',
+      '完成AI视频与三组海报，并根据主体比例、画面清晰度和构图关系反复迭代。',
+      '把视觉资产延展到校园创作计划，形成作品征集、点评和案例分享的推广方案。',
+    ],
+    learned: [
+      'AI产品推广需要先把功能价值翻译成用户熟悉的任务和场景，视觉创意才会和产品产生关系。',
+      'AIGC制作效率来自前期构思、提示词设计和筛选标准，而不只是生成次数。',
+      '同一套品牌概念需要在视频、海报和活动机制中保持一致，同时给每个媒介留下不同的表达空间。',
+    ],
+    references: [
+      { image: 'https://irene0618.github.io/cheso-campus-report/poster-goose.png', label: '食堂鹅腿饭｜小题大作系列海报' },
+      { image: 'https://irene0618.github.io/cheso-campus-report/poster-cat.png', label: '大学城流浪小咪｜小题大作系列海报' },
+      { image: 'https://irene0618.github.io/cheso-campus-report/poster-card.png', label: '同学们的洗澡水卡｜小题大作系列海报' },
+      { image: 'https://irene0618.github.io/cheso-campus-report/poster-concept.png', label: '校园创作计划主题视觉' },
+    ],
+    gallery: [],
   },
   {
     slug: 'electronic-yuefu',
