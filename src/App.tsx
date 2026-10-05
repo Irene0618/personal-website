@@ -1,3 +1,4 @@
+import EditorialHome from './EditorialHome';
 import {
   ArrowDown,
   Camera,
@@ -18,10 +19,9 @@ import { useEffect, useRef, useState } from 'react';
 const asset = (name: string) => `${import.meta.env.BASE_URL}portfolio/${name}`;
 
 const navItems = [
-  { label: '能力', href: '#roots' },
-  { label: '经历', href: '#trunk' },
-  { label: '项目', href: '#branches' },
-  { label: '索引', href: '#notes' },
+  { label: '精选作品', href: '#branches' },
+  { label: '视觉手记', href: '#leaves' },
+  { label: '关于我', href: '#trunk' },
 ];
 
 const rings = [
@@ -35,7 +35,7 @@ const rings = [
   {
     slug: 'zuel-media-center',
     year: '2020-2022',
-    title: '中南财经政法大学党委宣传部新媒体中心｜视频主编',
+    title: 'ZUEL党委宣传部新媒体中心｜视频主编',
     detail: '负责视频栏目的策划、选题执行、发布审核与反馈复盘，累计审核视频500+；参与校级宣传短视频制作与发放，单条最高浏览量539w+，点赞10w＋。',
     tags: ['短视频运营单条最高539w+播放 10w＋点赞'],
   },
@@ -62,8 +62,8 @@ const rings = [
   },
   {
     slug: 'ai-pet-internship',
-    year: '2026.06—2026.08',
-    title: 'TCL｜AIGC产品经理实习',
+    year: '2026-07-28 至 2026-09-20',
+    title: 'TCL｜AIGC设计实习',
     detail: '在项目组实习期间，我收集用户反馈与业务需求，整理并输出产品需求文档，跟进需求评审、开发、测试与上线，协调研发和业务侧确认需求与进度。同时调研主流AI生图与视频工具，形成能力评测和成本分析报告，并参与脚本、分镜、生成、筛选与剪辑等AIGC内容生产环节的产品设计与优化，支撑46集内容连续上线及短视频平台运营。',
     tags: [],
   },
@@ -72,10 +72,10 @@ const rings = [
 const experienceDetails = [
   {
     slug: 'ai-pet-internship',
-    year: '2026.06—2026.08',
+    year: '2026-07-28 至 2026-09-20',
     type: 'AIGC产品 / 实习',
-    title: 'TCL｜AIGC产品经理实习',
-    overview: '实习期间参与AI萌宠IP“小龙吨吨”的内容孵化。电视大屏每天更新内容，我参与脚本、分镜、生成、筛选与剪辑，也持续查看上线后的点击表现和用户留言。后续对传统治愈内容与AI治愈内容进行分类调研，结合小龙吨吨已有角色资产，规划“吨吨旅行”栏目与分阶段更新节奏。',
+    title: 'TCL｜AIGC设计实习',
+    overview: '在“小龙吨吨”IP孵化项目中，我参与了从TCL电视大屏内测到短视频平台上线的全过程。内测期围绕大屏日更需求，参与脚本、分镜、生成、筛选和剪辑，支撑内容连续上线；同时跟踪点击表现和用户留言，将角色好感、观看情境和用户建议整理为反馈类型，用于后续选题与运营规划。后期参与同类短视频内容调研，明确目标人群，规划核心栏目、视听规则和分阶段更新节奏，并参与AIGC短视频制作。小红书与抖音账号均持续更新，我参与制作的《出逃成功！小龙吨吨的假期出逃vlog》在小红书的单条最高点赞量为3.5w赞，账号总粉丝为1.5万。',
     tags: ['AIGC内容产品', '生产链路', '用户反馈', '跨平台运营', 'NDA脱敏'],
     focus: [
       '内容生产：参与脚本、分镜、生成、筛选与剪辑，持续检查角色一致性、镜头稳定性和每日交付进度。',
@@ -85,7 +85,7 @@ const experienceDetails = [
     outcomes: [
       '支撑电视端46集内容连续上线并进入首页推荐，形成能够维持日更的AIGC内容生产方法。',
       '将角色好感、儿童观看和主动点菜等反馈带回选题，内容更新开始参考真实用户反应。',
-      '形成“吨吨旅行”栏目方案，以15—30秒的美景与小情节为主要形式，并完成内容验证期、用户认知期和商业化准备期的更新规划。短视频平台已开始发布相关内容。',
+      '形成“吨吨旅行”栏目方案，以15—30秒的美景与小情节为主要形式，并完成内容验证期、用户认知期和商业化准备期的更新规划。小红书与抖音账号均持续更新，参与制作的假期出逃vlog在小红书的单条最高点赞量为3.5w赞，账号总粉丝为1.5万。',
     ],
     links: [],
     images: [{ image: asset('ai-pet-case/stills/hero-river.webp'), label: '小龙吨吨内容画面｜项目已脱敏' }],
@@ -106,7 +106,7 @@ const experienceDetails = [
     slug: 'zuel-media-center',
     year: '2020-2022',
     type: 'Campus media / Video editor-in-chief',
-    title: '中南财经政法大学党委宣传部新媒体中心｜视频主编',
+    title: 'ZUEL党委宣传部新媒体中心｜视频主编',
     overview: '负责校级新媒体视频栏目从选题到复盘的完整流程，并参与多条短视频的制作、发布与传播包装。',
     tags: ['审核视频 500+', '单条播放 539w+', '单条点赞 10w+'],
     focus: ['统筹视频栏目的策划、选题执行、发布审核与反馈复盘。', '参与校园宣传短视频的脚本、制作、发布与传播节奏优化。'],
@@ -231,12 +231,12 @@ const featuredProjects = [
     slug: 'ai-pet-incubation',
     name: 'AIGC萌宠IP的产品策划与跨平台运营',
     cn: '产品策划 / 用户反馈分析 / AIGC影像 / 电视端与短视频平台运营',
-    stage: '2026.06—2026.08',
+    stage: '2026-07-28 至 2026-09-20',
     type: 'AIGC内容产品 / 跨平台运营',
     image: asset('ai-pet-case/stills/hero-river.webp'),
     icon: Sparkles,
     summary:
-      '在项目组实习期间，我前期围绕电视大屏的日更需求，参与脚本、分镜、生成、筛选与剪辑，支撑46集内容连续上线。内容发布后，我跟踪点击表现与用户留言，将角色好感、观看情境和菜品建议整理为反馈类型，并用于后续选题与运营规划。项目进入短视频平台运营阶段后，我开展治愈类短视频内容调研，明确目标人群，规划核心栏目、视听规则与分阶段更新节奏，并参与AIGC竖屏短视频制作，相关内容现已发布。',
+      '在“小龙吨吨”IP孵化项目中，我参与了从TCL电视大屏内测到短视频平台上线的全过程。内测期围绕大屏日更需求，参与脚本、分镜、生成、筛选和剪辑，支撑内容连续上线；同时跟踪点击表现和用户留言，将角色好感、观看情境和用户建议整理为反馈类型，用于后续选题与运营规划。后期参与同类短视频内容调研，明确目标人群，规划核心栏目、视听规则和分阶段更新节奏，并参与AIGC短视频制作。小红书与抖音账号均持续更新，我参与制作的《出逃成功！小龙吨吨的假期出逃vlog》在小红书的单条最高点赞量为3.5w赞，账号总粉丝为1.5万。',
     outputs: ['AIGC内容生产', '用户反馈分析', '内容产品策划', '跨平台内容运营'],
   },
   {
@@ -380,7 +380,7 @@ const featuredProjects = [
     image: 'https://irene0618.github.io/cheso-campus-report/video-cover.jpg',
     icon: Sparkles,
     summary:
-      '围绕“普通校园小事也值得做成好作品”的主题，为Cheso设计校园推广视觉与创作活动方案。项目完成一支约1分30秒的AI视频、三组“小题大作”系列海报，以及面向深圳大学城学生的校园创作计划。',
+      '以“小题大作”为主题，为 Cheso 设计校园推广视频、海报与创作活动方案。用电影片场的阵仗呈现校园日常，表达 AI 工具如何帮助学生把小灵感做成完整作品。',
     outputs: ['AI视频制作', '校园视觉系统', '推广策划', 'AIGC工作流'],
   },
 ];
@@ -714,11 +714,11 @@ const caseStudies = [
     slug: 'ai-pet-incubation',
     title: 'AIGC萌宠IP的产品策划与跨平台运营',
     cn: '产品策划 / 用户反馈分析 / AIGC影像 / 电视端与短视频平台运营',
-    year: '2026.06—2026.08',
+    year: '2026-07-28 至 2026-09-20',
     type: 'AIGC内容产品 / 跨平台运营',
     heroImage: asset('ai-pet-case/stills/hero-river.webp'),
     overview:
-      '小龙吨吨需要持续更新，也需要让家庭用户记住这个角色。电视大屏连续更新46集期间，团队持续调整AIGC内容的制作方法，并通过点击表现和二维码留言观察用户对角色、场景与菜品的反应。用户开始谈论小龙吨吨，也会主动提出下一道菜的建议，后续选题因此有了真实的参考。',
+      '在“小龙吨吨”IP孵化项目中，我参与了从TCL电视大屏内测到短视频平台上线的全过程。内测期围绕大屏日更需求，参与脚本、分镜、生成、筛选和剪辑，支撑内容连续上线；同时跟踪点击表现和用户留言，将角色好感、观看情境和用户建议整理为反馈类型，用于后续选题与运营规划。后期参与同类短视频内容调研，明确目标人群，规划核心栏目、视听规则和分阶段更新节奏，并参与AIGC短视频制作。小红书与抖音账号均持续更新，我参与制作的《出逃成功！小龙吨吨的假期出逃vlog》在小红书的单条最高点赞量为3.5w赞，账号总粉丝为1.5万。',
     award: 'NDA 脱敏展示｜电视端与短视频平台内容已上线；大屏互动为概念Demo',
     externalLink: null,
     highlights: [
@@ -1090,7 +1090,7 @@ const caseStudies = [
     type: 'AI Agent产品 / 校园推广',
     heroImage: 'https://irene0618.github.io/cheso-campus-report/video-cover.jpg',
     overview:
-      '围绕Cheso“从文字需求到完整、可编辑、可交付PPT”的产品价值，面向大学城学生的真实校园生活设计推广表达。项目用一支AI视频和三组“小题大作”系列海报，把鹅腿饭、流浪小咪和洗澡水卡等日常选题转化成具有大片感的视觉案例。',
+      '我以“小题大作”为主题，为 Cheso 设计了一套面向大学生的推广方案。创意从食堂午饭、校园小猫等日常场景出发，让制作团队为这些小事搭景、打光、拍摄，用片场的大阵仗制造反差。项目包含 AI 视频、主题海报和校园创作活动策划，由我独立完成概念设计、视觉设定、AI 生成与剪辑，展示 Cheso 如何帮助学生把一个小灵感做成完整作品。',
     award: '独立完成概念、视觉设定、AI生图、生视频、剪辑与校园推广策划',
     externalLink: {
       label: '打开完整汇报网页',
@@ -1115,7 +1115,7 @@ const caseStudies = [
       {
         heading: 'AI视频制作方法',
         body:
-          '视频前期先完成画面构思、控制图和提示词设计，再进行分镜拆解、AI生图、生视频、素材筛选、镜头迭代和剪辑包装。重点控制主体一致性、镜头节奏和画面风格，把AI生成的不确定性转化为可复盘的制作流程。',
+          '视频前期先完成画面构思、控制图和提示词设计，主要使用即梦生成角色、场景与分镜画面，再通过 Lib TV 生成视频。经过素材筛选、镜头迭代和剪辑包装，逐步统一主体、画面风格与镜头节奏。',
       },
       {
         heading: '三组校园海报',
@@ -1147,10 +1147,7 @@ const caseStudies = [
       '同一套品牌概念需要在视频、海报和活动机制中保持一致，同时给每个媒介留下不同的表达空间。',
     ],
     references: [
-      { image: 'https://irene0618.github.io/cheso-campus-report/poster-goose.png', label: '食堂鹅腿饭｜小题大作系列海报' },
-      { image: 'https://irene0618.github.io/cheso-campus-report/poster-cat.png', label: '大学城流浪小咪｜小题大作系列海报' },
-      { image: 'https://irene0618.github.io/cheso-campus-report/poster-card.png', label: '同学们的洗澡水卡｜小题大作系列海报' },
-      { image: 'https://irene0618.github.io/cheso-campus-report/poster-concept.png', label: '校园创作计划主题视觉' },
+      { image: asset('cheso-case/poster-final.png'), label: '小题大作｜Cheso校园推广海报' },
     ],
     gallery: [],
   },
@@ -2336,6 +2333,30 @@ function BranchesSection() {
   );
 }
 
+type PetStill = {src: string; caption: string; note: string};
+function PetRotatingGallery({items, onOpen}: {items: PetStill[]; onOpen: (image: LightboxImage) => void}) {
+  const [active, setActive] = useState(0);
+  const startX = useRef<number | null>(null);
+  const step = (delta: number) => setActive(value => (value + delta + items.length) % items.length);
+  const position = (index: number) => {let delta = (index - active + items.length) % items.length; if(delta > items.length / 2) delta -= items.length; return delta;};
+  return <section className="pet-card-gallery" aria-labelledby="pet-gallery-title" aria-roledescription="轮播图">
+    <div className="pet-card-heading"><div><span>电视内测 / 内容样本</span><h2 id="pet-gallery-title">内容画面</h2></div><p>左右切换，点击中间画面放大</p></div>
+    <div className="pet-card-stage" tabIndex={0} aria-label="内容画面，使用左右方向键切换" onKeyDown={e=>{if(e.key==='ArrowRight'){e.preventDefault();step(1)}if(e.key==='ArrowLeft'){e.preventDefault();step(-1)}}} onTouchStart={e=>{startX.current=e.touches[0].clientX}} onTouchEnd={e=>{if(startX.current!==null){const delta=e.changedTouches[0].clientX-startX.current;if(Math.abs(delta)>45)step(delta<0?1:-1);startX.current=null}}}>
+      {items.map((item,index)=>{const delta=position(index),visible=Math.abs(delta)<=1;return <button type="button" key={item.src} className={`pet-rotating-card ${delta===0?'is-current':''}`} style={{'--slot':Math.max(-2,Math.min(2,delta)),zIndex:10-Math.abs(delta),opacity:visible?1:0,pointerEvents:visible?'auto':'none'} as CSSProperties} tabIndex={delta===0?0:-1} aria-hidden={!visible} aria-label={delta===0?`放大查看：${item.caption}`:`切换至${item.caption}`} onClick={()=>delta===0?onOpen({src:item.src,alt:item.caption,caption:item.caption}):setActive(index)}><img src={item.src} alt={item.caption} loading="lazy"/><span>{String(index+1).padStart(2,'0')} / {item.caption}</span></button>})}
+    </div>
+    <div className="pet-card-controls"><button type="button" onClick={()=>step(-1)} aria-label="上一张内容画面">←</button><div aria-live="polite" aria-atomic="true"><strong>{items[active].caption}</strong><p>{items[active].note}</p><small>{String(active+1).padStart(2,'0')} / {String(items.length).padStart(2,'0')}</small></div><button type="button" onClick={()=>step(1)} aria-label="下一张内容画面">→</button></div>
+    <div className="pet-card-dots" aria-label="选择内容画面">{items.map((item,index)=><button type="button" key={item.src} aria-label={`查看第${index+1}张：${item.caption}`} aria-pressed={index===active} onClick={()=>setActive(index)}><span/></button>)}</div>
+  </section>;
+}
+
+function PetMotionDivider({index, caption}: {index: number; caption: string}) {
+  const [playing, setPlaying] = useState(() => !window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  return <figure className={`pet-motion-divider motion-${index}`}>
+    <img src={asset(`ai-pet-case/motion/clip-${index}.${playing ? 'gif' : 'jpg'}`)} alt={caption} loading="lazy" width="760" height="326" />
+    <figcaption><button type="button" onClick={() => setPlaying(value => !value)} aria-label={`${playing ? '暂停' : '播放'}第${index}段角色动图`}>{playing ? '暂停动图' : '播放动图'}</button></figcaption>
+  </figure>;
+}
+
 function CaseStudyPage({ study }: { study: (typeof caseStudies)[number] }) {
   const project = featuredProjects.find((item) => item.slug === study.slug);
   const [lightboxImage, setLightboxImage] = useState<LightboxImage | null>(null);
@@ -2381,86 +2402,73 @@ function CaseStudyPage({ study }: { study: (typeof caseStudies)[number] }) {
 
         <header className="pet-v2-hero">
           <div className="pet-v2-title-block">
-            <p>2026.06—2026.08　产品策划 / 用户反馈分析 / AIGC影像 / 电视端与短视频平台运营</p>
-            <h1>AIGC萌宠IP的产品策划与跨平台运营</h1>
+            <p>项目参与时间：2026-07-28至2026-09-20</p>
+            <h1>小龙吨吨 IP 孵化与跨平台运营</h1>
+            <p className="pet-updated-intro">我参与了从 TCL 电视大屏内测到小红书、抖音上线的全过程，工作涵盖 AIGC 内容制作、用户反馈分析、栏目策划与短视频运营。</p>
+            <div className="pet-results" aria-label="项目运营成果"><div><strong>3.5w赞</strong><span>小红书单条最高点赞量</span></div><div><strong>1.5万</strong><span>小红书账号总粉丝</span></div><div><strong>双平台</strong><span>小红书与抖音持续更新</span></div></div>
           </div>
 
-          <figure className="pet-v2-hero-still">
-            <ZoomableImage
-              src={asset('ai-pet-case/stills/hero-river.webp')}
-              alt="小龙吨吨在溪边准备粽叶的画面"
-              caption="小龙吨吨电视端内容画面"
-              onOpen={setLightboxImage}
-            />
-          </figure>
+          <div className="pet-hero-motion"><PetMotionDivider index={3} caption="小龙吨吨 · 角色动态 03" /></div>
         </header>
 
         <section className="pet-v2-work">
-          <div className="pet-v2-section-title">
-            <h2>我的工作内容：</h2>
-          </div>
+          <div className="pet-v2-section-title"><h2>我的工作内容</h2></div>
           <div className="pet-v2-work-copy">
-            <p><strong>AIGC内容生产。</strong>我参与脚本、分镜、生成、筛选和剪辑。日更要求小龙吨吨在不同食物、动作和场景中保持稳定，同时保证每一集按计划交付。生产过程会重点检查角色一致性、镜头稳定性和叙事完整性。</p>
-            <p><strong>用户反馈分析。</strong>内容上线后，我会结合点击表现和二维码留言观察用户的反应。“可爱”反映角色好感，“孩子喜欢看”指向家庭共看，“下一期想看它做……”则提供了明确的选题方向。这些信号会被整理后带入下一轮内容。</p>
-            <p><strong>短视频平台运营。</strong>我对萌宠陪伴、环境感官、烟火日常、人文艺术，以及虚拟IP、萌宠短剧和AI环境治愈等内容进行分类调研。结合小龙吨吨已有角色资产，形成“吨吨旅行”核心栏目、视听规则与分阶段更新节奏，并参与AIGC竖屏短视频制作，相关内容现已发布。</p>
+            <p><strong>电视大屏内测与内容生产。</strong>围绕 TCL 电视大屏的日更需求，我参与脚本、分镜、生成、筛选和剪辑，支撑内容连续上线。制作中持续检查角色一致性、镜头稳定性与叙事完整性，保证内容按计划交付。</p>
+            <p><strong>用户反馈整理。</strong>内测期间，我跟踪点击表现和用户留言，将角色好感、观看情境与用户建议整理为反馈类型，为后续选题和运营规划提供参考。</p>
+            <p><strong>短视频策划与制作。</strong>后期参与同类短视频内容调研，明确目标人群，规划核心栏目、视听规则与分阶段更新节奏，并参与 AIGC 短视频制作。小红书和抖音账号均已上线并持续更新。</p>
           </div>
         </section>
-
-        <section className="pet-v2-gallery" aria-labelledby="pet-gallery-title">
-          <div className="pet-v2-gallery-heading">
-            <div>
-              <h2 id="pet-gallery-title">内容画面</h2>
-            </div>
-          </div>
-          <div className="pet-v2-still-grid">
-            {episodeStills.map((item) => (
-              <figure className={`pet-v2-still is-${item.size}`} key={item.caption}>
-                <ZoomableImage
-                  src={item.src}
-                  alt={`小龙吨吨内容画面：${item.caption}`}
-                  caption={item.caption}
-                  onOpen={setLightboxImage}
-                />
-                <figcaption><strong>{item.caption}</strong><span>{item.note}</span></figcaption>
-              </figure>
-            ))}
-          </div>
-        </section>
+        <details className="pet-process-details"><summary>查看 LibTV 制作过程<span>场景参考、角色素材与镜头迭代</span></summary>
+          <figure className="pet-workflow-proof">
+            <ZoomableImage src={asset('ai-pet-case/evidence/libtv-workspace.png')} alt="LibTV制作画布，包含场景参考、角色素材和多组镜头生成节点" caption="LibTV制作记录 · 场景参考、角色素材与镜头迭代" onOpen={setLightboxImage} />
+            <figcaption><strong>LibTV 制作记录</strong><span>画布中整理了场景参考、角色素材与多组镜头生成结果。点击放大查看制作细节。</span></figcaption>
+          </figure>
+        </details>
+        <PetMotionDivider index={1} caption="小龙吨吨 · 角色动态 01" />
 
         <section className="pet-v2-feedback">
           <div className="pet-v2-section-title">
-            <h2>用户反馈：</h2>
+            <h2>内测用户反馈</h2>
           </div>
           <div className="pet-v2-feedback-list">
-            <p><strong>“吨吨很可爱”</strong><span>角色开始被记住，视觉与性格不再只是画面设定</span></p>
-            <p><strong>“家里的孩子喜欢看”</strong><span>家庭共看已经出现在真实的观看场景中</span></p>
-            <p><strong>“下一期想看它做……”</strong><span>留言从情绪表达变成了选题输入，也意味着追更期待</span></p>
+            <p><strong>“吨吨很可爱”</strong><span>归为角色好感反馈，作为判断角色吸引力的参考</span></p>
+            <p><strong>“家里的孩子喜欢看”</strong><span>归为观看情境反馈，为家庭观看场景的选题提供参考</span></p>
+            <p><strong>“下一期想看它做……”</strong><span>归为用户建议，整理为后续菜品与内容选题</span></p>
             <small>这些是定性信号，不代表大规模用户结论。点击数据按保密要求不在公开作品集中展示。</small>
           </div>
         </section>
 
+        <PetRotatingGallery items={episodeStills} onOpen={setLightboxImage} />
+        <PetMotionDivider index={2} caption="小龙吨吨 · 角色动态 02" />
+
         <section className="pet-v2-douyin">
           <div className="pet-v2-section-title">
-            <h2>短视频平台运营：</h2>
-            <p>调研覆盖传统治愈内容与AI治愈内容。结合小龙吨吨已有角色资产，核心栏目确定为“吨吨旅行”，用美景与小情节传递轻松、治愈的情绪。</p>
+            <h2>短视频平台运营</h2>
+            <p>项目已从电视大屏内测延伸至小红书与抖音，两平台账号均持续更新。我的参与覆盖内容调研、栏目与视听规划，以及 AIGC 短视频制作。</p>
           </div>
           <div className="pet-v2-research-notes">
-            <article><span>01</span><h3>用户与内容定位</h3><p>面向16—35岁的学生和上班族，关注焦虑、疲惫与精神紧绷等日常状态。小龙吨吨通过性格、动作和表情建立辨识度，为用户提供轻量的情绪放松。</p></article>
-            <article><span>02</span><h3>核心栏目</h3><p>“吨吨旅行”以15—30秒内容为主，用美景和小情节组织单集。选题从民族、国家、节日与职业延伸到城市、季节、植物、天气、光线和奇幻场景。</p></article>
-            <article><span>03</span><h3>视听规则</h3><p>画面强调真实质感、破次元构图与多样化布景。声音以轻音乐、环境白噪音和细节音效为主，旁白只在内容需要时出现。</p></article>
-            <article><span>04</span><h3>更新节奏</h3><p>内容验证期计划持续1—2个月，以20—30秒内容日更或隔日更新，重点观察画面吸引力与完播表现。进入用户认知期后加入节日、人文等专题，并尝试30—60秒内容。商业化启动后再规划长短视频组合与细分账号。</p></article>
+            <article><span>01</span><h3>内容调研与人群定位</h3><p>参与同类短视频调研，对比萌宠陪伴、日常生活与 AI 治愈类内容，梳理用户观看需求、角色表达和内容形式，明确目标人群。</p></article>
+            <article><span>02</span><h3>栏目与视听规划</h3><p>结合小龙吨吨的角色特点，规划“吨吨旅行”等核心栏目，以及场景、动作、镜头、音乐与音效的使用规则，保持持续更新中的角色辨识度。</p></article>
+            <article><span>03</span><h3>双平台持续更新</h3><p>规划分阶段更新节奏，并参与 AIGC 短视频制作。相关内容已在小红书和抖音发布，两个账号均持续运营。</p></article>
+            <article><span>04</span><h3>代表作品</h3><p>参与制作《出逃成功！小龙吨吨的假期出逃vlog》。下方展示发布成果、账号截图与制作片段。</p></article>
           </div>
         </section>
-
-        <aside className="pet-v2-demo-note">
-          <strong>大屏互动Demo的当前进展</strong>
-          <p>项目还探索过喂养、陪玩、陪看和治愈屏保等方向，目前完成的内容仅为概念Demo，还没有正式上线。这些方案用于探索IP从内容观看走向长期陪伴的可能性，不计入已完成的业务成果。</p>
-        </aside>
-
-        <footer className="pet-v2-footer">
-          <span>页面图片来自项目内容画面</span>
-          <span>品牌合作信息与具体业务数据已做保密处理</span>
-        </footer>
+        <section className="pet-hit-story" aria-labelledby="pet-hit-title">
+          <div><span className="pet-hit-kicker">小红书代表作品</span><h2 id="pet-hit-title">出逃成功！<br/>小龙吨吨的假期出逃vlog</h2><p>我参与了这条 AIGC 短视频的制作。作品上线后获得集中关注，成为项目从大屏内容走向短视频平台的一项代表成果。</p><a href="https://xhslink.cn/o/5F0IWUnAWpl" target="_blank" rel="noopener noreferrer">在小红书查看原作品 <ExternalLink size={16} /></a></div>
+          <div className="pet-evidence">
+          <div className="pet-evidence-grid">
+            <figure className="pet-social-proof">
+              <ZoomableImage src={asset('ai-pet-case/evidence/xiaohongshu-2026-10-04.jpg')} alt="小龙吨吨小红书主页截图，置顶假期出逃vlog显示3.5万点赞，账号显示1.5万粉丝" caption="小红书主页截图" onOpen={setLightboxImage} />
+              <figcaption><strong>小红书发布截图</strong></figcaption>
+            </figure>
+            <figure className="pet-video-proof">
+              <video controls playsInline preload="metadata" poster={asset('ai-pet-case/evidence/short-video-poster.jpg')} aria-label="小龙吨吨14秒视频片段"><source src={asset('ai-pet-case/evidence/short-video-excerpt.mp4')} type="video/mp4" />你的浏览器暂不支持播放此视频。</video>
+              <figcaption><strong>视频片段 · 14秒</strong></figcaption>
+            </figure>
+          </div>
+          </div>
+        </section>
 
         {lightboxImage ? <ImageLightbox image={lightboxImage} onClose={() => setLightboxImage(null)} /> : null}
       </article>
@@ -3323,6 +3331,27 @@ function CaseStudyPage({ study }: { study: (typeof caseStudies)[number] }) {
         </ol>
       </section>
 
+      {study.slug === 'cheso-campus-campaign' && (
+        <section className="case-section cheso-making-section">
+          <div>
+            <p className="section-kicker">AIGC 创作记录</p>
+            <h2>制作过程</h2>
+          </div>
+          <div className="cheso-making-grid">
+            <article>
+              <header><span>01</span><h3>即梦 · 生图</h3></header>
+              <p>主要用于角色、场景和分镜画面的生成与筛选。</p>
+              <ZoomableImage src={asset('cheso-case/jimeng-image-workspace.png')} alt="Cheso 项目在即梦中的生图工作画布，包含角色设定、场景与分镜画面" caption="即梦｜生图制作过程" onOpen={setLightboxImage} />
+            </article>
+            <article>
+              <header><span>02</span><h3>Lib TV · 生视频</h3></header>
+              <p>主要用于视频生成与镜头迭代，筛选可用片段后进入剪辑。</p>
+              <ZoomableImage src={asset('cheso-case/libtv-video-workspace.png')} alt="Cheso 项目在 Lib TV 中的视频生成节点与镜头迭代画布" caption="Lib TV｜生视频制作过程" onOpen={setLightboxImage} />
+            </article>
+          </div>
+        </section>
+      )}
+
       <section className="case-section case-two-col">
         <div>
           <p className="section-kicker">我的职责</p>
@@ -3349,7 +3378,7 @@ function CaseStudyPage({ study }: { study: (typeof caseStudies)[number] }) {
           <p className="section-kicker">过程材料</p>
           <h2>关键设计材料</h2>
         </div>
-        <div className="case-reference-grid">
+        <div className={`case-reference-grid ${study.slug === 'cheso-campus-campaign' ? 'cheso-poster-gallery' : ''}`}>
           {study.references.map((reference) => (
             <figure key={reference.label}>
               <ZoomableImage
@@ -3831,24 +3860,8 @@ function App() {
     );
   }
 
-  return (
-    <div className="site-shell">
-      <BrowserBar />
-      <main>
-        <HeroCollage />
-        <RootsSection />
-        <TrunkSection />
-        <BranchesSection />
-        <LeavesSection />
-        <NotesSection />
-      </main>
-      <footer className="site-footer">
-        <span>成长是一种持续整理自己和作品的过程。</span>
-        <a href="#top">回到顶部</a>
-      </footer>
-      <CursorAtmosphere />
-    </div>
-  );
+  return <EditorialHome projects={featuredProjects} experiences={rings} />;
+
 }
 
 export default App;
