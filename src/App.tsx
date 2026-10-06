@@ -1,4 +1,5 @@
 import EditorialHome from './EditorialHome';
+import usePortfolioMotion from './usePortfolioMotion';
 import {
   ArrowDown,
   Camera,
@@ -2404,7 +2405,8 @@ function CaseStudyPage({ study }: { study: (typeof caseStudies)[number] }) {
           <div className="pet-v2-title-block">
             <p>项目参与时间：2026-07-28至2026-09-20</p>
             <h1>小龙吨吨 IP 孵化与跨平台运营</h1>
-            <p className="pet-updated-intro">我参与了从 TCL 电视大屏内测到小红书、抖音上线的全过程，工作涵盖 AIGC 内容制作、用户反馈分析、栏目策划与短视频运营。</p>
+            <p className="pet-updated-intro">我参与了从 TCL 电视大屏内测到小红书、抖音上线的全过程，工作涵盖 AIGC 内容制作、IP 品牌传播、用户反馈分析、栏目策划与短视频运营。</p>
+            <div className="pet-capability-labels" aria-label="项目能力方向"><span>AIGC 内容制作</span><span>品牌营销</span><span>产品运营</span></div>
             <div className="pet-results" aria-label="项目运营成果"><div><strong>3.5w赞</strong><span>小红书单条最高点赞量</span></div><div><strong>1.5万</strong><span>小红书账号总粉丝</span></div><div><strong>双平台</strong><span>小红书与抖音持续更新</span></div></div>
           </div>
 
@@ -2449,8 +2451,8 @@ function CaseStudyPage({ study }: { study: (typeof caseStudies)[number] }) {
           </div>
           <div className="pet-v2-research-notes">
             <article><span>01</span><h3>内容调研与人群定位</h3><p>参与同类短视频调研，对比萌宠陪伴、日常生活与 AI 治愈类内容，梳理用户观看需求、角色表达和内容形式，明确目标人群。</p></article>
-            <article><span>02</span><h3>栏目与视听规划</h3><p>结合小龙吨吨的角色特点，规划“吨吨旅行”等核心栏目，以及场景、动作、镜头、音乐与音效的使用规则，保持持续更新中的角色辨识度。</p></article>
-            <article><span>03</span><h3>双平台持续更新</h3><p>规划分阶段更新节奏，并参与 AIGC 短视频制作。相关内容已在小红书和抖音发布，两个账号均持续运营。</p></article>
+            <article><span>02</span><h3>IP 品牌传播与栏目规划</h3><p>结合小龙吨吨的角色特点，规划“吨吨旅行”等核心栏目，以及场景、动作、镜头、音乐与音效的使用规则。通过一致的角色形象和内容风格建立 IP 辨识度，让品牌表达融入日常内容。</p></article>
+            <article><span>03</span><h3>双平台内容运营</h3><p>规划分阶段更新节奏，并参与 AIGC 短视频制作。相关内容已在小红书和抖音发布，两个账号均持续运营。</p></article>
             <article><span>04</span><h3>代表作品</h3><p>参与制作《出逃成功！小龙吨吨的假期出逃vlog》。下方展示发布成果、账号截图与制作片段。</p></article>
           </div>
         </section>
@@ -3801,6 +3803,7 @@ const scrollToCurrentHash = () => {
 function App() {
   const [activeCaseSlug, setActiveCaseSlug] = useState(readCaseSlug);
   const [activeExperienceSlug, setActiveExperienceSlug] = useState(readExperienceSlug);
+  usePortfolioMotion(activeCaseSlug||activeExperienceSlug||'home');
   const activeCase = caseStudies.find((study) => study.slug === activeCaseSlug);
   const activeExperience = experienceDetails.find((experience) => experience.slug === activeExperienceSlug);
 

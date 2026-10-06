@@ -1,0 +1,48 @@
+:root{--motion-ease:cubic-bezier(.22,1,.36,1);--motion-soft:cubic-bezier(.25,.75,.25,1)}
+.reading-progress{position:fixed;left:0;top:0;width:100%;height:2px;background:#819566;transform:scaleX(0);transform-origin:left;z-index:900;pointer-events:none}
+.editorial .motion-reveal{opacity:0;translate:0 25px;transform:none;transition:opacity .85s var(--motion-ease) var(--reveal-delay,0ms),translate 1s var(--motion-ease) var(--reveal-delay,0ms)}
+.editorial .motion-reveal.motion-visible{opacity:1;translate:0 0}
+.editorial .ed-section-title h2,.editorial .work-collection-heading h2,.editorial .about-heading h2{clip-path:inset(0 0 100% 0);translate:0 16px;transition:clip-path 1.1s var(--motion-ease) .1s,translate 1.1s var(--motion-ease) .1s}
+.editorial .motion-visible h2{clip-path:inset(-15% 0 -15% 0);translate:0 0}
+.editorial .ed-project.motion-reveal{translate:none;opacity:1}
+.editorial .ed-project .ed-cover{clip-path:inset(10% 0 10% 0 round 5px);opacity:0;transition:clip-path 1.25s var(--motion-ease),opacity .75s var(--motion-ease)}
+.editorial .ed-project.motion-visible .ed-cover{clip-path:inset(0 round 0);opacity:1}
+.editorial .ed-project-info>div,.editorial .ed-project-info>.ed-number,.editorial .ed-project-year{opacity:0;translate:0 15px;transition:opacity .7s var(--motion-ease) .17s,translate .9s var(--motion-ease) .17s}
+.editorial .ed-project.motion-visible .ed-project-info>*{opacity:1;translate:0 0}
+.editorial .motion-media img{height:calc(100% + 56px);top:-28px;translate:0 var(--media-shift,0px);transition:transform 1.1s var(--motion-ease),opacity .25s;transform:scale(1.01)}
+.editorial .motion-media:hover img{transform:scale(1.045)}
+.editorial .ed-view{opacity:1;transform:none;background:#f5f3ebdb;backdrop-filter:blur(10px);transition:background .3s,box-shadow .4s}
+.editorial .ed-view span{display:inline-block;transition:translate .5s var(--motion-ease)}
+.editorial .ed-cover:hover .ed-view{background:#fffdf2;box-shadow:0 4px 20px #21352315}.editorial .ed-cover:hover .ed-view span{translate:3px -3px}
+.editorial .motion-magnet{translate:var(--magnet-x,0px) var(--magnet-y,0px);transition:translate .18s var(--motion-soft),background .3s,color .3s,opacity .3s}
+.editorial .motion-magnet:active{scale:.96}.editorial .motion-magnet:disabled{translate:none;scale:1}
+.ed-nav nav a:after{width:100%;transform:scaleX(0);transform-origin:right;transition:transform .5s var(--motion-ease)}
+.ed-nav nav a:hover:after,.ed-nav nav a[aria-current=location]:after{transform:scaleX(1);transform-origin:left}
+.editorial .experience-expansion{transition:grid-template-rows .65s var(--motion-ease),opacity .4s}
+.editorial .experience-body{translate:0 8px;transition:translate .65s var(--motion-ease)}.editorial .is-open .experience-body{translate:0 0}
+.editorial .experience-trigger:hover .experience-heading{transform:translateX(7px);transition:transform .55s var(--motion-ease)}
+.editorial .experience-entry:before{transition:transform .65s var(--motion-ease)}
+.editorial .ed-lightbox[open]{animation:lightbox-arrive .55s var(--motion-ease) both}.editorial .ed-lightbox[open]::backdrop{animation:lightbox-backdrop .45s both}
+@keyframes lightbox-arrive{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes lightbox-backdrop{from{opacity:0}to{opacity:1}}
+.site-shell>main{animation:project-page-arrive .7s var(--motion-ease) both}
+@keyframes project-page-arrive{from{opacity:0;translate:0 18px}to{opacity:1;translate:none}}
+/* One shared indicator follows the category instead of appearing in separate boxes. */
+.editorial .work-categories{position:relative}
+.editorial .work-categories:after{content:'';position:absolute;bottom:0;left:0;width:var(--filter-width,0px);height:2px;background:#72895d;transform:translateX(var(--filter-left,0px));transition:transform .65s var(--motion-ease),width .65s var(--motion-ease);pointer-events:none}
+.editorial .work-categories button:after{display:none}
+.editorial .work-categories button{transition:color .4s,opacity .4s,background .4s}
+.editorial .orbit-title{animation:motion-copy-in .75s var(--motion-ease) both}
+.editorial .orbit-meta{animation:motion-copy-in .75s var(--motion-ease) .08s both}
+@keyframes motion-copy-in{from{opacity:0;translate:0 12px;filter:blur(2px)}to{opacity:1;translate:0 0;filter:blur(0)}}
+@media(hover:none),(pointer:coarse){.editorial .motion-media img{translate:none}.editorial .motion-magnet{translate:none}.editorial .motion-reveal{translate:0 16px}}
+@media(prefers-reduced-motion:reduce){.reading-progress{display:none}.editorial .motion-reveal,.editorial .ed-project .ed-cover,.editorial .ed-project-info>*,.editorial .ed-section-title h2,.editorial .work-collection-heading h2,.editorial .about-heading h2{opacity:1;translate:none;clip-path:none;transition:none}.editorial .motion-media img,.editorial .motion-magnet{translate:none!important}.site-shell>main{animation:none}.editorial .work-categories:after{transition:none}}
+
+.editorial .work-categories button[aria-pressed=true]{border-bottom-color:transparent}
+@media(max-width:520px){.editorial .ed-nav nav{gap:13px;font-size:10px}.editorial .ed-logo{font-size:27px}}
+
+.portrait-stage.is-offscreen .portrait-print{animation-play-state:paused}
+
+.site-shell .motion-reveal{opacity:0;translate:0 14px;transition:opacity .75s var(--motion-ease),translate .85s var(--motion-ease)}
+.site-shell .motion-visible{opacity:1;translate:none}
+@media(prefers-reduced-motion:reduce){.site-shell .motion-reveal{opacity:1;translate:none;transition:none}}

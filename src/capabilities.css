@@ -1,0 +1,29 @@
+/* Skills are a visible reading layer, shared by project cards and the collection. */
+.editorial .project-capabilities{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:15px}
+.editorial .project-capabilities>span{display:inline-flex;align-items:center;padding:7px 11px;border:1px solid #63794a35;background:#e6eadb;color:#344a32;font:500 13px/1.4 Arial,'PingFang SC',sans-serif;letter-spacing:.4px;transition:background .35s,translate .45s var(--motion-ease)}
+.editorial .project-capabilities>span:first-child{background:#344c39;color:#fffdf3;border-color:#344c39}
+.editorial .ed-project:hover .project-capabilities>span{translate:0 -2px}.editorial .project-capabilities>span:nth-child(2){transition-delay:.04s}.editorial .project-capabilities>span:nth-child(3){transition-delay:.08s}
+.editorial .ed-project-info>div{min-width:0;flex:1}.editorial .ed-project-info h3{margin:9px 0 14px;font-size:26px}.editorial .ed-project-info p{font-size:13px;max-width:740px}
+.editorial .ed-tags{flex-wrap:wrap;font-size:10px;gap:7px 12px;line-height:1.7}.editorial .ed-project-year{padding-top:8px}
+.editorial .photo-hero-heading p .hero-directions{font-size:12px;color:#445a3e}
+.editorial .work-collection .work-categories{flex-wrap:wrap;gap:0 30px;padding:5px 0 0;overflow:visible;border-bottom:1px solid #263b3020}
+.editorial .work-collection .work-categories button{font-size:15px;padding:19px 0 17px;font-weight:500;color:#6b795f}
+.editorial .work-categories:after{top:var(--filter-top,auto);bottom:auto}
+.direction-note{display:flex;align-items:baseline;gap:20px;padding:18px 0 8px;animation:direction-note-in .55s var(--motion-ease) both;font-size:11px;color:#7a866d}
+.direction-note strong{font-size:12px;color:#354d35;font-weight:500;white-space:nowrap}.direction-note p{margin:0;line-height:1.8}.direction-note>span{margin-left:auto;white-space:nowrap;font-variant-numeric:tabular-nums}
+@keyframes direction-note-in{from{opacity:0;translate:0 5px}to{opacity:1;translate:none}}
+.editorial .orbit-disciplines{gap:7px;margin-top:16px}.editorial .orbit-disciplines>span{font-size:10px;line-height:1.5;color:#47603c;background:#e5e9db;padding:5px 8px;border:1px solid #5e744129}
+.about-honors{margin:0 0 58px;padding:24px 0 0;border-top:1px solid #263b3030;border-bottom:1px solid #263b3030}
+.honors-heading{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:23px}.honors-heading h3{font:500 18px Arial,'PingFang SC',sans-serif;margin:0}.honors-heading>span{font-size:9px;letter-spacing:1.5px;color:#849077}
+.honors-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:28px}.honors-grid article{display:flex;gap:14px;padding:0 0 26px;min-width:0}.honor-number{font:italic 13px Georgia;color:#95a183;padding-top:1px}.honors-grid small{font-size:9px;letter-spacing:.7px;color:#829173}.honors-grid h4{font:500 clamp(15px,1.35vw,19px)/1.5 Arial,'PingFang SC',sans-serif;margin:8px 0 6px;color:#354b32}.honors-grid p{font-size:10px;line-height:1.7;margin:0;color:#7a856f}
+.editorial .experience-read-hint{font-size:11px;line-height:1.8;margin:17px 0;color:#7a896e}
+.experience-keywords{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}.experience-keywords>span{font:500 12px/1.5 Arial,'PingFang SC',sans-serif;letter-spacing:.25px;color:#405b38;background:#e4e9d9;padding:5px 8px;border:1px solid #6b825039;border-radius:2px}
+.editorial .experience-highlights{margin-top:12px}.editorial .experience-highlights>span{font-size:12px;color:#536e3e;font-weight:500}
+.experience-action-hint{display:block;font:11px/1.5 Arial,'PingFang SC',sans-serif;margin-top:13px;color:#839177;letter-spacing:.4px;transition:color .3s}
+.experience-trigger:hover .experience-action-hint,.is-open .experience-action-hint{color:#3b5733}
+.pet-capability-labels{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0}.pet-capability-labels>span{font:500 13px/1.5 Arial,'PingFang SC',sans-serif;color:#415839;background:#e5eadb;border:1px solid #71835940;padding:7px 12px}
+@media(max-width:1100px){.editorial .ed-project-year{white-space:normal;max-width:200px;font-size:10px;line-height:1.7}.editorial .work-collection .work-categories{gap:0 25px}.editorial .work-collection .work-categories button{font-size:14px}}
+@media(max-width:700px){.editorial .work-collection .work-categories{flex-wrap:nowrap;overflow-x:auto;gap:23px;scrollbar-width:none}.editorial .work-collection .work-categories button{font-size:13px;padding-top:17px;padding-bottom:15px}.direction-note{gap:9px;align-items:start;flex-wrap:wrap;padding-top:15px;font-size:10px}.direction-note strong{font-size:11px}.direction-note p{order:3;width:100%}.direction-note>span{font-size:10px}.honors-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px}.honors-grid article{gap:9px;padding-bottom:23px}.honors-grid h4{font-size:15px}.honors-grid p{font-size:9px}.honors-heading>span{font-size:7px;letter-spacing:1px}.about-honors{margin-bottom:36px}.editorial .ed-project-info h3{font-size:23px}.editorial .project-capabilities>span{font-size:10px;padding:6px 8px}.editorial .project-capabilities{gap:5px}.editorial .ed-project-info p{font-size:12px}}
+@media(max-width:430px){.honors-grid{gap:0 14px}.honor-number{display:none}.honors-grid h4{font-size:14px}.honors-heading h3{font-size:17px}.editorial .experience-keywords>span{font-size:11px}.editorial .experience-highlights>span{font-size:10px}.editorial .photo-hero-heading p .hero-directions{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.direction-note{animation:none}.editorial .project-capabilities>span{transition:none;translate:none!important}}
+.editorial .work-collection .work-categories button[aria-pressed=true]{color:#2d4531;font-weight:600}
