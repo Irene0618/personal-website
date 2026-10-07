@@ -374,7 +374,7 @@ const featuredProjects = [
   },
   {
     slug: 'cheso-campus-campaign',
-    name: 'Cheso校园推广视觉与策划',
+    name: '腾讯 Cheso 的校园创作计划',
     cn: 'AI Agent产品推广 / 校园场景洞察 / AIGC视频与海报',
     stage: '2026.09',
     type: 'AI Agent产品 / 校园推广',
@@ -1085,7 +1085,7 @@ const caseStudies = [
   },
   {
     slug: 'cheso-campus-campaign',
-    title: 'Cheso校园推广视觉与策划',
+    title: '腾讯 Cheso 的校园创作计划',
     cn: 'AI Agent产品推广 / 校园场景洞察 / AIGC视频与海报',
     year: '2026.09',
     type: 'AI Agent产品 / 校园推广',
@@ -2407,11 +2407,27 @@ function CaseStudyPage({ study }: { study: (typeof caseStudies)[number] }) {
             <h1>小龙吨吨 IP 孵化与跨平台运营</h1>
             <p className="pet-updated-intro">我参与了从 TCL 电视大屏内测到小红书、抖音上线的全过程，工作涵盖 AIGC 内容制作、IP 品牌传播、用户反馈分析、栏目策划与短视频运营。</p>
             <div className="pet-capability-labels" aria-label="项目能力方向"><span>AIGC 内容制作</span><span>品牌营销</span><span>产品运营</span></div>
+            <button className="pet-account-preview" onClick={() => setLightboxImage({ src: asset('ai-pet-case/evidence/xiaohongshu-2026-10-04.jpg'), alt: '小龙吨吨小红书账号主页截图', caption: '小龙吨吨 · 小红书号 94516038696' })}>查看小红书账号截图 <ExternalLink size={14} /></button>
             <div className="pet-results" aria-label="项目运营成果"><div><strong>3.5w赞</strong><span>小红书单条最高点赞量</span></div><div><strong>1.5万</strong><span>小红书账号总粉丝</span></div><div><strong>双平台</strong><span>小红书与抖音持续更新</span></div></div>
           </div>
 
-          <div className="pet-hero-motion"><PetMotionDivider index={3} caption="小龙吨吨 · 角色动态 03" /></div>
         </header>
+
+        <section className="pet-hit-story pet-hit-early" id="pet-social-results" aria-labelledby="pet-hit-title">
+            <figure className="pet-social-proof">
+              <ZoomableImage src={asset('ai-pet-case/evidence/xiaohongshu-2026-10-04.jpg')} alt="小龙吨吨小红书主页截图，置顶假期出逃vlog显示3.5万点赞，账号显示1.5万粉丝" caption="小红书主页截图" onOpen={setLightboxImage} />
+              <figcaption><strong>小红书发布截图</strong></figcaption>
+            </figure>
+          <div className="pet-hit-detail">
+          <div className="pet-hit-copy"><span className="pet-hit-kicker">小红书代表作品</span><h2 id="pet-hit-title">出逃成功！<br/>小龙吨吨的假期出逃vlog</h2><p>我参与了这条 AIGC 短视频的制作。作品上线后获得集中关注，成为项目从大屏内容走向短视频平台的一项代表成果。</p><a href="https://xhslink.cn/o/5F0IWUnAWpl" target="_blank" rel="noopener noreferrer">在小红书查看原作品 <ExternalLink size={16} /></a></div>
+            <figure className="pet-video-proof">
+              <video controls playsInline preload="metadata" poster={asset('ai-pet-case/evidence/short-video-poster.jpg')} aria-label="小龙吨吨14秒视频片段"><source src={asset('ai-pet-case/evidence/short-video-excerpt.mp4')} type="video/mp4" />你的浏览器暂不支持播放此视频。</video>
+              <figcaption><strong>视频片段 · 14秒</strong></figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <div className="pet-hero-motion"><PetMotionDivider index={3} caption="小龙吨吨 · 角色动态 03" /></div>
 
         <section className="pet-v2-work">
           <div className="pet-v2-section-title"><h2>我的工作内容</h2></div>
@@ -2453,22 +2469,7 @@ function CaseStudyPage({ study }: { study: (typeof caseStudies)[number] }) {
             <article><span>01</span><h3>内容调研与人群定位</h3><p>参与同类短视频调研，对比萌宠陪伴、日常生活与 AI 治愈类内容，梳理用户观看需求、角色表达和内容形式，明确目标人群。</p></article>
             <article><span>02</span><h3>IP 品牌传播与栏目规划</h3><p>结合小龙吨吨的角色特点，规划“吨吨旅行”等核心栏目，以及场景、动作、镜头、音乐与音效的使用规则。通过一致的角色形象和内容风格建立 IP 辨识度，让品牌表达融入日常内容。</p></article>
             <article><span>03</span><h3>双平台内容运营</h3><p>规划分阶段更新节奏，并参与 AIGC 短视频制作。相关内容已在小红书和抖音发布，两个账号均持续运营。</p></article>
-            <article><span>04</span><h3>代表作品</h3><p>参与制作《出逃成功！小龙吨吨的假期出逃vlog》。下方展示发布成果、账号截图与制作片段。</p></article>
-          </div>
-        </section>
-        <section className="pet-hit-story" aria-labelledby="pet-hit-title">
-          <div><span className="pet-hit-kicker">小红书代表作品</span><h2 id="pet-hit-title">出逃成功！<br/>小龙吨吨的假期出逃vlog</h2><p>我参与了这条 AIGC 短视频的制作。作品上线后获得集中关注，成为项目从大屏内容走向短视频平台的一项代表成果。</p><a href="https://xhslink.cn/o/5F0IWUnAWpl" target="_blank" rel="noopener noreferrer">在小红书查看原作品 <ExternalLink size={16} /></a></div>
-          <div className="pet-evidence">
-          <div className="pet-evidence-grid">
-            <figure className="pet-social-proof">
-              <ZoomableImage src={asset('ai-pet-case/evidence/xiaohongshu-2026-10-04.jpg')} alt="小龙吨吨小红书主页截图，置顶假期出逃vlog显示3.5万点赞，账号显示1.5万粉丝" caption="小红书主页截图" onOpen={setLightboxImage} />
-              <figcaption><strong>小红书发布截图</strong></figcaption>
-            </figure>
-            <figure className="pet-video-proof">
-              <video controls playsInline preload="metadata" poster={asset('ai-pet-case/evidence/short-video-poster.jpg')} aria-label="小龙吨吨14秒视频片段"><source src={asset('ai-pet-case/evidence/short-video-excerpt.mp4')} type="video/mp4" />你的浏览器暂不支持播放此视频。</video>
-              <figcaption><strong>视频片段 · 14秒</strong></figcaption>
-            </figure>
-          </div>
+            <article><span>04</span><h3>代表作品</h3><p>参与制作《出逃成功！小龙吨吨的假期出逃vlog》。单条最高点赞量为 3.5w 赞，小红书账号总粉丝为 1.5 万。</p></article>
           </div>
         </section>
 

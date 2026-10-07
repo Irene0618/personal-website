@@ -6154,3 +6154,25 @@ img {
 .cheso-making-grid .zoomable-image{display:block;width:100%}
 .cheso-making-grid img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
 @media(max-width:700px){.cheso-making-grid{grid-template-columns:1fr;gap:18px}.cheso-making-grid article{padding:16px}.cheso-making-grid p{min-height:0}.cheso-making-grid h3{font-size:19px}}
+
+/* Bring the published result directly beneath the project introduction. */
+.pet-case-v2 .pet-v2-hero{padding-bottom:0}
+.pet-case-v2 .pet-v2-title-block{margin-bottom:32px}
+.pet-case-v2 .pet-hit-early{display:grid;grid-template-columns:minmax(230px,.7fr) minmax(0,1.3fr);gap:clamp(28px,5vw,72px);padding:clamp(22px,3vw,40px);margin:0 0 64px;background:#edf0e7a6;border:1px solid #344f601b;align-items:start;scroll-margin-top:90px}
+.pet-hit-early .pet-social-proof{width:100%;max-width:340px;margin:0 auto}
+.pet-hit-early .zoomable-image{display:block;width:100%}
+.pet-hit-early .pet-social-proof img{display:block;width:100%;height:auto;border-radius:8px}
+.pet-hit-early .pet-hit-detail{min-width:0}
+.pet-case-v2 .pet-hit-early h2{font-size:clamp(24px,3vw,40px);line-height:1.4;margin:14px 0 20px}
+.pet-hit-early .pet-hit-copy p{font-size:14px;line-height:1.85;color:#64717a;max-width:560px}
+.pet-hit-early .pet-hit-copy a{margin-top:4px;margin-bottom:28px}
+.pet-hit-early .pet-video-proof{margin:0}
+.pet-hit-early figcaption{padding-top:12px;font-size:12px;color:#64717a}
+.pet-hit-early figcaption strong{font-weight:400}
+@media(max-width:650px){
+ .pet-case-v2 .pet-hit-early{grid-template-columns:1fr;gap:26px;padding:20px;margin-bottom:40px}
+ .pet-hit-early .pet-social-proof{max-width:290px}
+ .pet-case-v2 .pet-v2-title-block{margin-bottom:24px}
+}
+
+.pet-account-preview{grid-column:1;grid-row:5;justify-self:start;display:inline-flex;align-items:center;gap:12px;background:transparent;border:0;border-bottom:1px solid #71826870;padding:12px 0;color:#3c5550;font-size:13px;cursor:pointer;transition:color .2s,border-color .2s}.pet-account-preview:hover{color:#223d30;border-color:currentColor}.pet-account-preview:focus-visible{outline:2px solid #607f50;outline-offset:5px}.pet-case-v2 .pet-results{grid-column:1/-1;grid-row:6}
