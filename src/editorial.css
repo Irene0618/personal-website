@@ -20,3 +20,31 @@
 .is-stacked .portrait-position-2{--offset:25%}
 @media(max-width:800px){.portrait-position-0,.portrait-position-2{width:clamp(140px,21vw,180px)}.portrait-position-0{--offset:-122%}.portrait-position-1{width:clamp(180px,28vw,235px)}.portrait-position-2{--offset:122%}}
 @media(max-width:520px){.portrait-position-0,.portrait-position-2{width:115px}.portrait-position-0{--offset:-86%;--drop:12px}.portrait-position-1{width:164px;--drop:-7px}.portrait-position-2{--offset:86%;--drop:22px}.is-stacked .portrait-position-0{--offset:-35%}.is-stacked .portrait-position-2{--offset:35%}.portrait-position-0 .portrait-caption em,.portrait-position-2 .portrait-caption em{font-size:8px}}
+
+/* Layers of tinted paper beneath the personal photo collection. */
+.portrait-backdrop{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.portrait-light{position:absolute;inset:-8% -3% -4%;background:radial-gradient(ellipse at 39% 55%,#cbd7af70,transparent 56%),radial-gradient(ellipse at 76% 25%,#efe0bf66,transparent 47%);filter:blur(22px);transform:translate(calc(var(--px)*-12px),calc(var(--py)*-8px))}
+.portrait-paper{position:absolute;left:50%;top:50%;border:1px solid #71846622;transform-origin:center;transition:transform 1s cubic-bezier(.22,.85,.22,1)}
+.portrait-paper-sage{width:78%;height:73%;background:linear-gradient(125deg,#e0e6d5ee,#edf0e3b0 55%,#d7e0cb9c);transform:translate(calc(-50% + var(--px)*-10px),calc(-50% + var(--py)*-6px)) rotate(-5deg);box-shadow:0 24px 44px -36px #46533b57,inset 0 0 0 7px #f7f8ee55}
+.portrait-paper-vellum{width:82%;height:68%;background:linear-gradient(110deg,#fffef761,#f9f8ed2b);transform:translate(calc(-50% + var(--px)*-18px),calc(-47% + var(--py)*-10px)) rotate(4deg);border-color:#fffef8d9;box-shadow:0 12px 36px -30px #46533b40;outline:1px solid #71846613;outline-offset:7px}
+.portrait-paper-vellum:after{content:'';position:absolute;inset:14px;background-image:radial-gradient(#76836338 .65px,transparent .8px);background-size:12px 12px;mask-image:linear-gradient(110deg,#0009,transparent 36%,transparent 75%,#0007)}
+.portrait-contours{position:absolute;inset:0;width:100%;height:100%;stroke:#83906a;stroke-width:.7;opacity:.38;transform:translate(calc(var(--px)*-24px),calc(var(--py)*-12px));transition:transform .3s ease-out}
+.portrait-contours ellipse+ellipse{stroke-dasharray:2 8;opacity:.6}
+.portrait-archive-note{position:absolute;bottom:10%;left:9%;font:8px Arial,sans-serif;letter-spacing:2px;color:#839075;display:flex;align-items:center;gap:12px;transform:rotate(-5deg)}
+.portrait-archive-note i{height:1px;width:28px;background:currentColor;opacity:.5}
+.portrait-watermark{color:#aebd9638;font-size:clamp(64px,10vw,145px)}
+.is-stacked .portrait-paper-sage{transform:translate(-50%,-50%) rotate(-8deg) scaleX(.84)}
+.is-stacked .portrait-paper-vellum{transform:translate(-50%,-47%) rotate(7deg) scaleX(.88)}
+@media(max-width:800px){.portrait-paper-sage{width:90%;height:65%}.portrait-paper-vellum{width:92%;height:61%}.portrait-archive-note{left:4%;bottom:13%;font-size:7px;letter-spacing:1.4px}}
+@media(max-width:520px){.portrait-paper-sage{height:65%}.portrait-paper-vellum{height:62%}.portrait-light{inset:3% -6%}.portrait-archive-note{bottom:9%;left:7%;font-size:6px;gap:7px}.portrait-watermark{font-size:58px}.portrait-contours{opacity:.26}}
+@media(prefers-reduced-motion:reduce){.portrait-paper,.portrait-contours{transition:none}.portrait-light,.portrait-contours{transform:none}}
+
+/* Flower particles respond to the pointer without intercepting photo controls. */
+.portrait-flower-field{position:absolute;inset:-4% -2%;width:104%;height:108%;pointer-events:none;mask-image:radial-gradient(ellipse at center,#000 52%,#000b3 72%,transparent 99%)}
+.portrait-paper-vellum:after{display:none}
+.portrait-watermark{opacity:.4}
+@media(max-width:520px){.portrait-flower-field{inset:0 -3%;width:106%;height:100%}}
+/* The floral field carries the motion; the paper stays understated. */
+.portrait-paper-sage{opacity:.65}
+.portrait-paper-vellum{opacity:.6}
+.portrait-flower-field{mask-image:radial-gradient(ellipse at 50% 52%,#000 40%,#000c0 70%,transparent 98%)}

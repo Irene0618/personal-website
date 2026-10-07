@@ -242,7 +242,7 @@ const featuredProjects = [
   },
   {
     slug: 'wunian-ai-film',
-    name: '《勿念》AI视频创作',
+    name: 'Tcamp设计黑客松 《勿念》',
     cn: 'Tcamp设计黑客松 × 光子艺术部影视动画组 AI视频沙龙',
     stage: '8小时黑客松｜2026.09',
     type: 'AI影像 / 现场创作',
@@ -779,7 +779,7 @@ const caseStudies = [
   },
   {
     slug: 'wunian-ai-film',
-    title: '《勿念》',
+    title: 'Tcamp设计黑客松 《勿念》',
     cn: 'Tcamp设计黑客松 × 光子艺术部影视动画组 AI视频沙龙',
     year: '2026.09',
     type: '8小时 AI 影像创作',
@@ -3178,7 +3178,7 @@ function CaseStudyPage({ study }: { study: (typeof caseStudies)[number] }) {
         <header className="wunian-diary-header">
           <div>
             <p className="eyebrow">AI VIDEO / 8小时黑客松</p>
-            <h1>勿念</h1>
+            <h1>{study.title}</h1>
             <p className="wunian-diary-meta">2026.09</p>
             <p className="wunian-diary-subtitle">Tcamp设计黑客松 × 光子艺术部影视动画组 AI视频沙龙</p>
           </div>

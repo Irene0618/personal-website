@@ -29,7 +29,7 @@ const descriptions:Record<string,string>={
  'art-heals':'面向大学生的艺术疗愈内容社区与线上线下活动策划。',
  'digital-zuel':'以三维场景、展示动画和数字文创，探索校园互动平台。',
 };
-const shortName=(p:Project)=>p.slug==='ai-pet-incubation'?'小龙吨吨 IP 孵化与跨平台运营':p.slug==='cheso-campus-campaign'?'腾讯 Cheso 的校园创作计划':p.slug==='wunian-ai-film'?'勿念':p.name;
+const shortName=(p:Project)=>p.slug==='ai-pet-incubation'?'小龙吨吨 IP 孵化与跨平台运营':p.slug==='cheso-campus-campaign'?'腾讯 Cheso 的校园创作计划':p.slug==='wunian-ai-film'?'Tcamp设计黑客松 《勿念》':p.name;
 const cover=(p:Project)=>p.slug==='cheso-campus-campaign'?`${import.meta.env.BASE_URL}cheso-cover.jpg`:p.image;
 export function MoreWorks({projects}:{projects:Project[]}){
  const filters=useRef<HTMLDivElement>(null);
