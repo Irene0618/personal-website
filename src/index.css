@@ -6175,4 +6175,5 @@ img {
  .pet-case-v2 .pet-v2-title-block{margin-bottom:24px}
 }
 
-.pet-account-preview{grid-column:1;grid-row:5;justify-self:start;display:inline-flex;align-items:center;gap:12px;background:transparent;border:0;border-bottom:1px solid #71826870;padding:12px 0;color:#3c5550;font-size:13px;cursor:pointer;transition:color .2s,border-color .2s}.pet-account-preview:hover{color:#223d30;border-color:currentColor}.pet-account-preview:focus-visible{outline:2px solid #607f50;outline-offset:5px}.pet-case-v2 .pet-results{grid-column:1/-1;grid-row:6}
+
+.pet-case-v2 .pet-results{grid-column:1/-1}

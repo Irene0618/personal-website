@@ -2407,7 +2407,6 @@ function CaseStudyPage({ study }: { study: (typeof caseStudies)[number] }) {
             <h1>小龙吨吨 IP 孵化与跨平台运营</h1>
             <p className="pet-updated-intro">我参与了从 TCL 电视大屏内测到小红书、抖音上线的全过程，工作涵盖 AIGC 内容制作、IP 品牌传播、用户反馈分析、栏目策划与短视频运营。</p>
             <div className="pet-capability-labels" aria-label="项目能力方向"><span>AIGC 内容制作</span><span>品牌营销</span><span>产品运营</span></div>
-            <button className="pet-account-preview" onClick={() => setLightboxImage({ src: asset('ai-pet-case/evidence/xiaohongshu-2026-10-04.jpg'), alt: '小龙吨吨小红书账号主页截图', caption: '小龙吨吨 · 小红书号 94516038696' })}>查看小红书账号截图 <ExternalLink size={14} /></button>
             <div className="pet-results" aria-label="项目运营成果"><div><strong>3.5w赞</strong><span>小红书单条最高点赞量</span></div><div><strong>1.5万</strong><span>小红书账号总粉丝</span></div><div><strong>双平台</strong><span>小红书与抖音持续更新</span></div></div>
           </div>
 
