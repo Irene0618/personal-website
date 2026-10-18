@@ -1,0 +1,184 @@
+.site-shell.cheso-site-shell { background: #f7f5ee; color: #292c28; --cheso-line: #343b3028; --cheso-muted: #74776c; --cheso-gold: #94783e; }
+.cheso-site-shell .browser-bar { background: #f7f5eef2; border-color: var(--cheso-line); }
+.cheso-case { width: min(1380px, calc(100% - 112px)); margin: 0 auto; font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif; }
+.cheso-case button { cursor: pointer; }
+.cheso-case p, .cheso-case h1, .cheso-case h2, .cheso-case h3, .cheso-case h4, .cheso-case figure { margin: 0; }
+.cheso-case button:focus-visible, .cheso-case a:focus-visible { outline: 2px solid var(--cheso-gold); outline-offset: 5px; }
+.cheso-topbar { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 70px; border-bottom: 1px solid var(--cheso-line); }
+.cheso-back { display: inline-flex; align-items: center; gap: 9px; font-size: 12px; white-space: nowrap; }
+.cheso-topbar nav { display: flex; gap: 26px; }
+.cheso-topbar nav button { padding: 24px 0; position: relative; background: none; border: 0; font-size: 12px; color: var(--cheso-muted); white-space: nowrap; }
+.cheso-topbar nav button span { margin-right: 8px; font-size: 10px; color: var(--cheso-gold); }
+.cheso-topbar nav button[aria-current], .cheso-topbar nav button:hover { color: #292c28; }
+.cheso-topbar nav button[aria-current]::after { content: ''; position: absolute; inset: auto 0 14px; height: 1px; background: var(--cheso-gold); }
+.cheso-edition { font-size: 9px; letter-spacing: 1.5px; color: var(--cheso-muted); }
+.cheso-opening { padding-top: 28px; scroll-margin-top: 70px; }
+.cheso-opening-line { display: flex; justify-content: space-between; font-size: 10px; letter-spacing: 1.8px; color: var(--cheso-muted); margin-bottom: 36px; }
+.cheso-opening-line span:first-child { font-weight: 600; color: var(--cheso-gold); }
+.cheso-hero-grid { display: grid; grid-template-columns: minmax(230px,.68fr) minmax(0,1.9fr); gap: clamp(30px,5vw,80px); align-items: center; }
+.cheso-kicker { font-size: 11px; letter-spacing: 1.5px; color: var(--cheso-gold); line-height: 1.8; }
+.cheso-title-block h1 { margin-top: 21px; font-family: 'Songti SC', 'Noto Serif SC', serif; font-weight: 600; font-size: clamp(68px,7vw,108px); letter-spacing: -.08em; line-height: 1.08; }
+.cheso-title-block h1>span { display: block; }
+.cheso-title-block h1 i { color: var(--cheso-gold); font-style: normal; font-family: Georgia,serif; }
+.cheso-title-block .cheso-tagline { margin-top: 22px; font-family: 'Songti SC', 'Noto Serif SC', serif; font-size: clamp(19px,1.8vw,26px); line-height: 1.7; }
+.cheso-title-block .cheso-english { margin-top: 16px; font: italic 15px/1.5 Georgia,serif; color: #7c7e70; }
+.cheso-title-tags { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; font-size: 10px; color: #74776c; }
+.cheso-title-tags span+span { border-left: 1px solid var(--cheso-line); padding-left: 12px; }
+.cheso-film-label { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 13px; font-size: 10px; letter-spacing: 1px; }
+.cheso-film-label>span:first-child { display: flex; gap: 9px; align-items: center; }
+.cheso-film-label i { width: 5px; height: 5px; background: var(--cheso-gold); border-radius: 100%; }
+.cheso-film-label>span:last-child { color: var(--cheso-muted); }
+.cheso-video-shell { aspect-ratio: 16/9; position: relative; background: #242622; box-shadow: 0 18px 40px -28px #24262288; }
+.cheso-video-shell video { width: 100%; height: 100%; object-fit: contain; display: block; }
+.cheso-play-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); display: flex; align-items: center; gap: 12px; padding: 18px 24px; border: 1px solid #ffffff66; background: #292c28e6; color: #fff; border-radius: 3px; font-size: 13px; }
+.cheso-film-caption { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 17px; font-size: 12px; }
+.cheso-film-caption p { color: var(--cheso-muted); line-height: 1.7; }
+.cheso-film-caption button, .cheso-film-caption a { display: inline-flex; align-items: center; gap: 8px; flex-shrink: 0; padding: 8px 11px; border: 1px solid var(--cheso-line); background: transparent; font-size: 11px; }
+.cheso-film-caption button:hover { background: #ece9df; }
+.cheso-film-credits { display: flex; justify-content: space-between; gap: 16px; margin-top: 25px; padding-top: 14px; border-top: 1px solid var(--cheso-line); font-size: 9px; letter-spacing: 1px; color: var(--cheso-muted); }
+.cheso-opening-bottom { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin-top: 44px; padding: 23px 0; border-top: 1px solid var(--cheso-line); border-bottom: 1px solid var(--cheso-line); font-size: 12px; }
+.cheso-opening-bottom p { color: var(--cheso-muted); }
+.cheso-opening-bottom button { display: inline-flex; align-items: center; gap: 18px; padding: 0; border: 0; background: transparent; white-space: nowrap; }
+.cheso-brief { display: grid; grid-template-columns: .85fr 1.45fr; gap: 8%; padding: 64px 0; }
+.cheso-case h2 { font-family: 'Songti SC','Noto Serif SC',serif; font-size: clamp(27px,3vw,42px); line-height: 1.45; letter-spacing: -.04em; font-weight: 500; }
+.cheso-brief h2 { font-size: clamp(26px,2.4vw,34px); margin-top: 12px; }
+.cheso-brief-body>p { font-size: 14px; color: #62685c; line-height: 2; }
+.cheso-brief dl { margin: 22px 0 0; display: flex; flex-wrap: wrap; gap: 24px 40px; }
+.cheso-brief dt { font-size: 10px; color: var(--cheso-muted); margin-bottom: 9px; }
+.cheso-brief dd { font-size: 11px; margin: 0; line-height: 1.8; }
+.cheso-section { padding: 72px 0; border-top: 1px solid var(--cheso-line); scroll-margin-top: 60px; }
+.cheso-section-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 30px; }
+.cheso-section-heading h2 { margin-top: 13px; }
+.cheso-section-heading>span { color: var(--cheso-muted); font-size: 11px; white-space: nowrap; }
+.cheso-poster-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 12%; align-items: center; }
+.cheso-poster-copy { max-width: 390px; }
+.cheso-large-number { display: block; font: italic 70px/1 Georgia,serif; color: #d4cbb5; margin-bottom: 36px; }
+.cheso-poster-copy h2 { font-size: clamp(34px,3.4vw,48px); }
+.cheso-poster-copy .cheso-poster-lead { margin: 30px 0 22px; color: #3f473b; font-size: 18px; line-height: 1.8; }
+.cheso-poster-copy>p { font-size: 13px; color: #727669; line-height: 2; margin-top: 18px; }
+.cheso-poster-quote { display: flex; flex-direction: column; gap: 9px; margin: 34px 0 28px; padding-top: 26px; border-top: 1px solid var(--cheso-line); }
+.cheso-poster-quote span { font-size: 9px; color: var(--cheso-gold); letter-spacing: 2px; }
+.cheso-poster-quote em { font: italic 27px Georgia,serif; }
+.cheso-text-button { display: inline-flex; align-items: center; gap: 26px; padding: 9px 0; border: 0; border-bottom: 1px solid #999783; background: none; font-size: 12px; }
+.cheso-image-button { display: block; width: 100%; border: 0; padding: 0; position: relative; background: #e7e4da; cursor: zoom-in!important; }
+.cheso-image-button img { display: block; width: 100%; height: auto; }
+.cheso-poster-figure { max-width: 540px; justify-self: end; width: 100%; }
+.cheso-poster-figure .cheso-image-button { box-shadow: 0 18px 45px -24px #31372b55; outline: 1px solid #a79d851f; }
+.cheso-image-hint { position: absolute; right: 14px; bottom: 14px; display: flex; align-items: center; gap: 8px; background: #f7f5eeef; padding: 8px 11px; font-size: 10px; border: 1px solid #a49e8a33; color: #414638; opacity: 0; transform: translateY(4px); transition: opacity .2s,transform .2s; }
+.cheso-image-button:hover .cheso-image-hint, .cheso-image-button:focus-visible .cheso-image-hint { opacity: 1; transform: none; }
+.cheso-poster-figure figcaption { display: flex; justify-content: space-between; gap: 15px; margin-top: 17px; color: var(--cheso-muted); font-size: 10px; letter-spacing: .5px; }
+.cheso-section-intro { max-width: 740px; font-size: 14px; line-height: 2; color: #697061; }
+.cheso-process-line { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); border-top: 1px solid var(--cheso-line); border-bottom: 1px solid var(--cheso-line); margin: 34px 0; padding: 22px 0; }
+.cheso-process-line>div { display: flex; gap: 14px; align-items: center; padding-left: 25px; border-left: 1px solid var(--cheso-line); }
+.cheso-process-line>div:first-child { padding-left: 0; border-left: 0; }
+.cheso-process-line span { font: italic 19px Georgia,serif; color: var(--cheso-gold); }
+.cheso-process-line p { font-size: 12px; }
+.cheso-workspaces { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
+.cheso-workspaces .cheso-image-button { aspect-ratio: 16/10; display: flex; align-items: center; background: #e9e6dc; padding: 12px; }
+.cheso-workspaces .cheso-image-button img { height: 100%; object-fit: contain; }
+.cheso-workspaces h3 { margin-top: 22px; font-size: 18px; font-weight: 500; display: flex; align-items: baseline; gap: 18px; }
+.cheso-workspaces h3 span { font-size: 12px; color: var(--cheso-muted); }
+.cheso-workspaces figcaption>p { color: var(--cheso-muted); font-size: 12px; line-height: 1.9; margin-top: 12px; max-width: 460px; }
+.cheso-plan { background: #eeeee5; margin: 0 -32px; padding: 56px 32px; border: 1px solid var(--cheso-line); }
+.cheso-plan .cheso-plan-status { border: 1px solid #aaab935c; padding: 7px 10px; color: #626a54; }
+.cheso-plan-facts { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); padding: 28px 0; margin-top: 32px; border-top: 1px solid var(--cheso-line); border-bottom: 1px solid var(--cheso-line); }
+.cheso-plan-facts strong { font: 48px/1.1 Georgia,serif; letter-spacing: -2px; }
+.cheso-plan-facts strong span { font: 12px 'PingFang SC',sans-serif; margin-left: 8px; letter-spacing: 0; }
+.cheso-plan-facts p { font-size: 11px; margin-top: 12px; color: #747a68; }
+.cheso-plan .cheso-plan-note { margin-top: 16px; font-size: 10px; line-height: 1.8; color: #7d816f; }
+.cheso-plan-content { display: grid; grid-template-columns: 1.1fr .9fr; gap: 10%; margin-top: 45px; }
+.cheso-plan-content h3 { font: 25px/1.6 'Songti SC','Noto Serif SC',serif; }
+.cheso-plan-content ol { list-style: none; margin: 24px 0 0; padding: 0; }
+.cheso-plan-content li { display: flex; gap: 20px; padding: 18px 0; border-top: 1px solid var(--cheso-line); }
+.cheso-plan-content li>span { color: var(--cheso-gold); font: italic 18px Georgia,serif; padding-top: 3px; }
+.cheso-plan-content h4 { font-size: 13px; font-weight: 500; margin-bottom: 8px; }
+.cheso-plan-content li p { font-size: 12px; color: #707762; line-height: 1.8; }
+.cheso-plan-content aside { padding: 30px; background: #f8f7f0; align-self: start; }
+.cheso-plan-content aside h3 { margin-top: 17px; font-size: 30px; }
+.cheso-plan-content aside>p:not(.cheso-kicker) { font-size: 12px; line-height: 1.95; color: #747a68; margin-top: 22px; }
+.cheso-plan-link { display: inline-flex; align-items: center; gap: 22px; margin-top: 30px; padding-bottom: 9px; border-bottom: 1px solid #a5a58c; font-size: 12px; }
+.cheso-plan-link-note { display: block; margin-top: 10px; font-size: 10px; color: #929580; }
+.cheso-endnote { display: flex; justify-content: space-between; align-items: center; gap: 25px; padding: 70px 0; }
+.cheso-endnote p { font: 20px/1.9 'Songti SC','Noto Serif SC',serif; }
+.cheso-endnote em { font: italic 21px Georgia,serif; color: #8a8c78; }
+.cheso-endnote a { display: flex; gap: 26px; align-items: center; font-size: 12px; }
+.cheso-lightbox { width: min(1400px,calc(100vw - 48px)); max-width: none; height: calc(100dvh - 48px); max-height: none; padding: 0; border: 1px solid #bfb9a5; background: #f7f5ee; color: #292c28; }
+.cheso-lightbox::backdrop { background: #1b211be8; backdrop-filter: blur(6px); }
+.cheso-lightbox header { height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 0 24px; border-bottom: 1px solid #343b3028; }
+.cheso-lightbox header p { font-size: 13px; }
+.cheso-lightbox header>div { display: flex; align-items: center; gap: 20px; }
+.cheso-lightbox header button { border: 0; background: none; padding: 6px; font-size: 12px; white-space: nowrap; }
+.cheso-lightbox-canvas { height: calc(100% - 64px); overflow: auto; padding: 20px; }
+.cheso-lightbox-canvas img { margin: 0 auto; width: 100%; height: 100%; object-fit: contain; }
+.cheso-lightbox.is-zoomed .cheso-lightbox-canvas img { width: auto; height: auto; max-width: none; min-width: min(100%,941px); }
+@media (min-width: 1700px) { .cheso-opening { padding-top: 38px; } .cheso-opening-line { margin-bottom: 46px; } }
+@media (max-width: 1100px) { .cheso-case { width: calc(100% - 64px); } .cheso-edition { display: none; } .cheso-hero-grid { gap: 32px; grid-template-columns: .7fr 1.6fr; } .cheso-title-block h1 { font-size: 76px; } .cheso-title-block .cheso-english { font-size: 13px; } .cheso-title-tags { font-size: 9px; gap: 7px; } .cheso-title-tags span+span { padding-left: 7px; } .cheso-film-credits { letter-spacing: .3px; font-size: 8px; } .cheso-poster-layout { gap: 8%; } .cheso-plan { margin: 0 -16px; padding: 42px 24px; } }
+@media (max-width: 760px) {
+  .cheso-case { width: calc(100% - 40px); }
+  .cheso-topbar { flex-wrap: wrap; gap: 0; padding-top: 16px; }
+  .cheso-back { font-size: 11px; }
+  .cheso-topbar nav { width: 100%; justify-content: space-between; gap: 10px; margin-top: 4px; }
+  .cheso-topbar nav button { padding: 17px 0; font-size: 11px; }
+  .cheso-topbar nav button span { font-size: 9px; margin-right: 5px; }
+  .cheso-topbar nav button[aria-current]::after { bottom: 7px; }
+  .cheso-opening { padding-top: 22px; }
+  .cheso-opening-line { margin-bottom: 24px; font-size: 8px; letter-spacing: .7px; }
+  .cheso-hero-grid { display: flex; flex-direction: column; gap: 24px; align-items: stretch; }
+  .cheso-title-block { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 8px 14px; }
+  .cheso-title-block .cheso-kicker { grid-column: 1/-1; font-size: 10px; }
+  .cheso-title-block h1 { font-size: clamp(43px,10vw,68px); margin-top: 0; letter-spacing: -.07em; }
+  .cheso-title-block h1>span { display: inline; }
+  .cheso-title-block .cheso-tagline { font-size: 13px; margin: 0; line-height: 1.7; }
+  .cheso-title-block .cheso-english, .cheso-title-tags { display: none; }
+  .cheso-film-label { font-size: 9px; margin-bottom: 10px; }
+  .cheso-film-caption { font-size: 10px; gap: 8px; margin-top: 12px; }
+  .cheso-film-caption button { font-size: 10px; padding: 7px 8px; gap: 5px; }
+  .cheso-film-credits { margin-top: 15px; font-size: 8px; padding-top: 12px; letter-spacing: 0; }
+  .cheso-opening-bottom { margin-top: 27px; padding: 20px 0; font-size: 10px; gap: 12px; }
+  .cheso-opening-bottom p { max-width: 205px; line-height: 1.8; }
+  .cheso-opening-bottom button { gap: 8px; }
+  .cheso-brief { grid-template-columns: 1fr; gap: 22px; padding: 38px 0; }
+  .cheso-brief-body>p { font-size: 13px; }
+  .cheso-brief dl { gap: 18px; margin-top: 18px; }
+  .cheso-section { padding: 44px 0; }
+  .cheso-section-heading { margin-bottom: 23px; align-items: flex-start; }
+  .cheso-section-heading>span { font-size: 9px; padding-top: 3px; }
+  .cheso-section-heading h2 { font-size: 27px; }
+  .cheso-kicker { font-size: 9px; }
+  .cheso-poster-layout { display: flex; flex-direction: column; gap: 30px; align-items: stretch; }
+  .cheso-poster-copy { max-width: none; }
+  .cheso-large-number { display: none; }
+  .cheso-poster-copy h2 { font-size: 33px; }
+  .cheso-poster-copy h2 br { display: none; }
+  .cheso-poster-copy .cheso-poster-lead { font-size: 16px; margin: 20px 0 12px; }
+  .cheso-poster-copy .cheso-poster-lead br { display: none; }
+  .cheso-poster-copy>p { font-size: 12px; margin-top: 12px; }
+  .cheso-poster-quote { display: none; }
+  .cheso-text-button { margin-top: 14px; font-size: 11px; }
+  .cheso-poster-figure { max-width: 480px; align-self: center; }
+  .cheso-image-hint { opacity: 1; transform: none; font-size: 9px; right: 10px; bottom: 10px; }
+  .cheso-process-line { grid-template-columns: 1fr 1fr; gap: 22px 16px; margin: 25px 0; }
+  .cheso-process-line>div { border: 0; padding: 0; gap: 10px; }
+  .cheso-process-line p { font-size: 11px; }
+  .cheso-section-intro { font-size: 13px; }
+  .cheso-workspaces { grid-template-columns: 1fr; gap: 30px; }
+  .cheso-workspaces h3 { margin-top: 16px; }
+  .cheso-plan { margin: 0 -10px; padding: 35px 20px; }
+  .cheso-plan .cheso-section-heading { display: block; }
+  .cheso-plan .cheso-plan-status { display: inline-block; margin-top: 16px; padding: 5px 8px; }
+  .cheso-plan-facts { grid-template-columns: 1fr 1fr; gap: 26px; margin-top: 24px; padding: 24px 0; }
+  .cheso-plan-facts strong { font-size: 41px; }
+  .cheso-plan-content { grid-template-columns: 1fr; gap: 28px; margin-top: 32px; }
+  .cheso-plan-content aside { padding: 25px; }
+  .cheso-endnote { padding: 45px 0; align-items: flex-end; }
+  .cheso-endnote p { font-size: 16px; }
+  .cheso-endnote em { font-size: 14px; }
+  .cheso-endnote a { font-size: 10px; gap: 8px; white-space: nowrap; }
+  .cheso-lightbox { width: calc(100vw - 20px); height: calc(100dvh - 20px); }
+  .cheso-lightbox header { padding: 0 12px; gap: 10px; }
+  .cheso-lightbox header p { font-size: 11px; }
+  .cheso-lightbox header>div { gap: 8px; }
+  .cheso-lightbox header button { font-size: 10px; }
+  .cheso-lightbox-canvas { padding: 12px; }
+}
+@media (prefers-reduced-motion: reduce) { .cheso-case *, .cheso-case *::before, .cheso-case *::after { scroll-behavior: auto; transition: none; } }

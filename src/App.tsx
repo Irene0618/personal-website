@@ -1,4 +1,5 @@
 import EditorialHome from './EditorialHome';
+import ChesoCase from './ChesoCase';
 import usePortfolioMotion from './usePortfolioMotion';
 import {
   ArrowDown,
@@ -3833,10 +3834,10 @@ function App() {
 
   if (activeCase) {
     return (
-      <div className="site-shell">
+      <div className={`site-shell${activeCase.slug === 'cheso-campus-campaign' ? ' cheso-site-shell' : ''}`}>
         <BrowserBar />
         <main>
-          <CaseStudyPage study={activeCase} />
+          {activeCase.slug === 'cheso-campus-campaign' ? <ChesoCase /> : <CaseStudyPage study={activeCase} />}
         </main>
         <footer className="site-footer">
           <span>成长是一种持续整理自己和作品的过程。</span>
