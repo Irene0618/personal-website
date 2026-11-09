@@ -1,5 +1,11 @@
+import { InlineFilm, films, digitalZuelFilm, petOriginalLink, OriginalFilmPage, isOriginalFilm } from './VideoPortfolio';
 import EditorialHome from './EditorialHome';
+import ArchiveWorkPage from './ArchiveWorkPage';
+import { additionalPortfolioWorks, archiveAsProject, archiveVideos, filmCollectionProjects } from './portfolioArchive';
+import type { ArchiveWork } from './portfolioArchive';
 import ChesoCase from './ChesoCase';
+import './anti-drug-case.css';
+import AntiDrugDemo, {DemoMotion} from './AntiDrugDemo';
 import usePortfolioMotion from './usePortfolioMotion';
 import {
   ArrowDown,
@@ -77,7 +83,7 @@ const experienceDetails = [
     year: '2026-07-28 至 2026-09-20',
     type: 'AIGC产品 / 实习',
     title: 'TCL｜AIGC设计实习',
-    overview: '在“小龙吨吨”IP孵化项目中，我参与了从TCL电视大屏内测到短视频平台上线的全过程。内测期围绕大屏日更需求，参与脚本、分镜、生成、筛选和剪辑，支撑内容连续上线；同时跟踪点击表现和用户留言，将角色好感、观看情境和用户建议整理为反馈类型，用于后续选题与运营规划。后期参与同类短视频内容调研，明确目标人群，规划核心栏目、视听规则和分阶段更新节奏，并参与AIGC短视频制作。小红书与抖音账号均持续更新，我参与制作的《出逃成功！小龙吨吨的假期出逃vlog》在小红书的单条最高点赞量为3.5w赞，账号总粉丝为1.5万。',
+    overview: '在“小龙吨吨”IP孵化项目中，我参与了从TCL电视大屏内测到短视频平台上线的全过程。内测期围绕大屏日更需求，参与脚本、分镜、生成、筛选和剪辑，支撑内容连续上线；同时跟踪点击表现和用户留言，将角色好感、观看情境和用户建议整理为反馈类型，用于后续选题与运营规划。后期参与同类短视频内容调研，明确目标人群，规划核心栏目、视听规则和分阶段更新节奏，并参与AIGC短视频制作。小红书与抖音账号均持续更新，我参与制作的《出逃成功！小龙吨吨的假期出逃vlog》在小红书的单条最高点赞量为3.5w赞，小红书账号粉丝为1.7万。',
     tags: ['AIGC内容产品', '生产链路', '用户反馈', '跨平台运营', 'NDA脱敏'],
     focus: [
       '内容生产：参与脚本、分镜、生成、筛选与剪辑，持续检查角色一致性、镜头稳定性和每日交付进度。',
@@ -87,7 +93,7 @@ const experienceDetails = [
     outcomes: [
       '支撑电视端46集内容连续上线并进入首页推荐，形成能够维持日更的AIGC内容生产方法。',
       '将角色好感、儿童观看和主动点菜等反馈带回选题，内容更新开始参考真实用户反应。',
-      '形成“吨吨旅行”栏目方案，以15—30秒的美景与小情节为主要形式，并完成内容验证期、用户认知期和商业化准备期的更新规划。小红书与抖音账号均持续更新，参与制作的假期出逃vlog在小红书的单条最高点赞量为3.5w赞，账号总粉丝为1.5万。',
+      '形成“吨吨旅行”栏目方案，以15—30秒的美景与小情节为主要形式，并完成内容验证期、用户认知期和商业化准备期的更新规划。小红书与抖音账号均持续更新，参与制作的假期出逃vlog在小红书的单条最高点赞量为3.5w赞，小红书账号粉丝为1.7万。',
     ],
     links: [],
     images: [{ image: asset('ai-pet-case/stills/hero-river.webp'), label: '小龙吨吨内容画面｜项目已脱敏' }],
@@ -238,7 +244,7 @@ const featuredProjects = [
     image: asset('ai-pet-case/stills/hero-river.webp'),
     icon: Sparkles,
     summary:
-      '在“小龙吨吨”IP孵化项目中，我参与了从TCL电视大屏内测到短视频平台上线的全过程。内测期围绕大屏日更需求，参与脚本、分镜、生成、筛选和剪辑，支撑内容连续上线；同时跟踪点击表现和用户留言，将角色好感、观看情境和用户建议整理为反馈类型，用于后续选题与运营规划。后期参与同类短视频内容调研，明确目标人群，规划核心栏目、视听规则和分阶段更新节奏，并参与AIGC短视频制作。小红书与抖音账号均持续更新，我参与制作的《出逃成功！小龙吨吨的假期出逃vlog》在小红书的单条最高点赞量为3.5w赞，账号总粉丝为1.5万。',
+      '在“小龙吨吨”IP孵化项目中，我参与了从TCL电视大屏内测到短视频平台上线的全过程。内测期围绕大屏日更需求，参与脚本、分镜、生成、筛选和剪辑，支撑内容连续上线；同时跟踪点击表现和用户留言，将角色好感、观看情境和用户建议整理为反馈类型，用于后续选题与运营规划。后期参与同类短视频内容调研，明确目标人群，规划核心栏目、视听规则和分阶段更新节奏，并参与AIGC短视频制作。小红书与抖音账号均持续更新，我参与制作的《出逃成功！小龙吨吨的假期出逃vlog》在小红书的单条最高点赞量为3.5w赞，小红书账号粉丝为1.7万。',
     outputs: ['AIGC内容生产', '用户反馈分析', '内容产品策划', '跨平台内容运营'],
   },
   {
@@ -255,15 +261,15 @@ const featuredProjects = [
   },
   {
     slug: 'anti-drug-interactive-film',
-    name: '禁毒互动影像游戏',
-    cn: '从“让人害怕”走向“让人会拒绝”',
+    name: '《界限》禁毒互动影像游戏',
+    cn: '在熟人情境中，练习判断与回应',
     stage: '研究生毕业设计',
-    type: '教育产品 / 互动原型',
-    image: asset('anti-drug-case/cover.png'),
+    type: '互动影像 / 游戏设计',
+    image: asset('anti-drug-demo/menu.jpg'),
     icon: Play,
     summary:
-      '聚焦青年在熟人社交压力下“知道风险却不会拒绝”的行为缺口，通过166份问卷、6人参与式工作坊、互动原型与30份材料前测，把恐惧诉求转化为可选择、可反馈、可重试的行动训练。',
-    outputs: ['用户研究', '需求验证', '互动原型', 'AIGC影像', '实验前测'],
+      '从熟人聚会中的风险判断与拒绝困难出发，结合用户研究、AIGC影像与分支叙事，完成可试玩的《界限》。通过内容配对实验与试玩反馈，将体验延伸为回应练习、三维调查和知识回看。',
+    outputs: ['用户研究', '分支叙事', '交互设计', 'AIGC影像', '实证评价'],
   },
   {
     slug: 'cocoon',
@@ -720,7 +726,7 @@ const caseStudies = [
     type: 'AIGC内容产品 / 跨平台运营',
     heroImage: asset('ai-pet-case/stills/hero-river.webp'),
     overview:
-      '在“小龙吨吨”IP孵化项目中，我参与了从TCL电视大屏内测到短视频平台上线的全过程。内测期围绕大屏日更需求，参与脚本、分镜、生成、筛选和剪辑，支撑内容连续上线；同时跟踪点击表现和用户留言，将角色好感、观看情境和用户建议整理为反馈类型，用于后续选题与运营规划。后期参与同类短视频内容调研，明确目标人群，规划核心栏目、视听规则和分阶段更新节奏，并参与AIGC短视频制作。小红书与抖音账号均持续更新，我参与制作的《出逃成功！小龙吨吨的假期出逃vlog》在小红书的单条最高点赞量为3.5w赞，账号总粉丝为1.5万。',
+      '在“小龙吨吨”IP孵化项目中，我参与了从TCL电视大屏内测到短视频平台上线的全过程。内测期围绕大屏日更需求，参与脚本、分镜、生成、筛选和剪辑，支撑内容连续上线；同时跟踪点击表现和用户留言，将角色好感、观看情境和用户建议整理为反馈类型，用于后续选题与运营规划。后期参与同类短视频内容调研，明确目标人群，规划核心栏目、视听规则和分阶段更新节奏，并参与AIGC短视频制作。小红书与抖音账号均持续更新，我参与制作的《出逃成功！小龙吨吨的假期出逃vlog》在小红书的单条最高点赞量为3.5w赞，小红书账号粉丝为1.7万。',
     award: 'NDA 脱敏展示｜电视端与短视频平台内容已上线；大屏互动为概念Demo',
     externalLink: null,
     highlights: [
@@ -925,83 +931,57 @@ const caseStudies = [
   },
   {
     slug: 'anti-drug-interactive-film',
-    title: '禁毒互动影像游戏',
-    cn: '基于恐惧诉求的行为训练型教育产品',
+    title: '界限',
+    cn: '禁毒互动影像游戏 · 研究生毕业设计',
     year: '2026',
-    type: '用户研究 / 互动产品 / 效果前测',
-    heroImage: asset('anti-drug-case/06-web-prototype.png'),
+    type: '用户研究 / 游戏设计 / AIGC影像',
+    heroImage: asset('anti-drug-demo/menu.jpg'),
     overview:
-      '传统禁毒教育常把重点放在“让人知道毒品危险”，但前期研究显示，青年更现实的困难是在熟人聚会和群体压力下不知道如何拒绝、离场和求助。我将毕业设计重新定义为一款行为训练型教育产品：让用户进入生活化风险情境，在倒计时中做选择、看到后果、获得策略解释并重新练习。',
-    award: '阶段状态｜互动原型与材料前测已完成；正式互动性对照实验待开展',
-    externalLink: null,
+      '《界限》是一款面向成年高校学生的禁毒互动影像游戏。故事从一次熟人生日聚会展开：当朋友递来来源不明的饮品，你会如何判断、回应或离场？我将用户研究、分支叙事与 AIGC 影像创作结合，完成从实验原型到可试玩游戏的设计，并加入三维调查、回应练习与知识回看，让玩家在具体情境中探索自己的选择。',
+    award: '在线试玩已开放 · 当前可体验第一章与探索模块',
+    externalLink: {href:'https://jiexian-story-game.tyrese-veniammgg.chatgpt.site/',label:'立即试玩《界限》'},
     highlights: [
-      '166份有效问卷：自我效能是五个核心维度中均值最低项，互动媒介接受度处于较高水平。',
-      '6名青年参与式工作坊：将熟人施压、策略边界和练习需求转成角色、台词、选项、倒计时、反馈与重试规则。',
-      '30份材料前测：高/低恐惧与有效能/无效能操控均呈显著区分，证明材料具备进入正式修订的基础。',
+      '需求研究｜128份纳入分析的问卷、3名专业人员访谈、8人共创工作坊，定位熟人劝说下的判断与拒绝困难。',
+      '实验与迭代｜28对样本纳入主分析。自主选择增强了剧情决定权感受，但效能与拒绝意向未见显著组间优势；据此补充回应练习与后果解释。',
+      '试玩评价｜10名首次体验者的SUS可用性均分为89.50/100，9人答对全部4道情境判断题。结果描述当次体验，不代表长期教育效果。',
     ],
     details: [
       {
-        heading: '问题定义：从风险认知转向行动训练',
-        body:
-          '文献、专业人员访谈与青年研究指向了一个变化：风险越来越多地进入熟人组织的剧本杀、密室、民宿轰趴等封闭娱乐场景。许多青年已经了解毒品的危害，但仍会担心拒绝影响关系、显得不合群或无法安全离开。产品因此将重点放在具体情境中的行动训练上。',
+        heading: '从熟人关系中找到设计问题',
+        body: '128份问卷、3名禁毒宣传与社区工作人员访谈、8人参与式工作坊共同指向：风险判断受人物关系、物品来源和信息可信性影响，拒绝还涉及持续劝说、关系压力与离场顾虑。我将这些需求转成剧情线索、具体回应和可执行的后续行动。',
       },
       {
-        heading: '需求验证：166份问卷找到效能短板',
-        body:
-          '问卷围绕风险认知、社交压力、拒毒困难、策略偏好与互动媒介接受展开。自我效能均值为3.105/5，是五个核心维度中最低项；互动媒介接受度为3.725/5。41.0%的受访者将熟人组织的剧本杀、私人密室或封闭桌游局识别为高风险场景，31.3%选择私人民宿或昏暗别墅轰趴。由此将产品需求明确为“在熟人压力下练习拒绝、离场与求助”。',
+        heading: '把理论转成可以经历的剧情',
+        body: '结合EPPM、Kolb体验学习视角与MDA框架，将威胁与效能信息落实到14个影像片段、分支规则、行动选项和后果反馈。通过剧情与分镜、AIGC素材制作、剪辑和网页实现，把研究命题转成可操作的互动体验。',
       },
       {
-        heading: '参与式转化：用户共同决定什么才真实',
-        body:
-          '邀请6名青年参与结构化工作坊，结合录音、手册、白板关键词、角色扮演台词和原型反馈进行编码，形成身体失控、日常伪装、关系压力、策略边界、练习需求与身份代入六类主题。进入核心规则的内容需满足多源重复、与问卷结果一致、并能映射到理论变量和交互机制三个条件。',
+        heading: '让实验结果推动设计变化',
+        body: '采用自主选择与内容配对观看的两组前后测，收集32对完整资料（64人），其中28对进入主分析。自主选择组的感知剧情决定权显著更高，但控制前测后，应对自我效能、反应效能及拒绝意向未见显著组间优势。因此，优化版把设计重点进一步放在判断依据、回应表达和反馈理解上。',
       },
       {
-        heading: '机制设计：选择—后果—解释—重试',
-        body:
-          '把EPPM中的严重性、易感性、反应效能和自我效能转成游戏语言：用熟人NPC、伪装道具和封闭聚会建立易感风险；用第一人称失控和急救反馈呈现后果；用直接拒绝、客观借口、物理离场和求助构成多层策略；用10秒倒计时、口语化话术、路径反馈和失败重试建立行动信心。',
-      },
-      {
-        heading: '原型生产：把实验条件做成可控版本',
-        body:
-          '独立推进剧情、角色、风险场景、分镜、AIGC图像与视频生成、剪辑和网页交互原型，并建立“高/低恐惧 × 有效能/无效能”四组材料版本。四组共享前置情境、人物关系、关键诱导节点和问卷流程，差异只落在后果强度与是否提供策略、解释和重试，以降低无关变量。',
-      },
-      {
-        heading: '前测结果与结论边界',
-        body:
-          '30份前测中，高恐惧材料的恐惧操控得分显著高于低恐惧材料（p=.006，d=1.163），有效能材料的效能操控得分显著高于无效能材料（p=.008，d=1.183）。这只证明材料操控可区分，不代表互动产品已产生正式教育增益。下一步需在高恐惧—高效能内容一致条件下，对比互动影像与线性影像。',
+        heading: '从分支影片走向可探索的游戏',
+        body: '《界限》优化版加入胶片式剧情树、人物志、回应练习、民宿自由探索、三维物品检视和20条知识档案。10人首次试玩后的SUS均分为89.50，反馈也暴露了支线指引与个别判断理解的问题。后续将继续完善引导，并用更大样本、延迟测量和新情境任务检验体验之外的作用。',
       },
     ],
     role: [
-      '从研究命题到产品原型独立推进：文献与案例分析、问卷设计、工作坊、需求定义和机制转化。',
-      '负责剧情、角色、风险场景、分镜、AIGC素材、视频剪辑与网页交互原型。',
-      '设计四组实验材料、统一版本编码、关键节点、倒计时、条件跳转和问卷入口。',
-      '完成30份材料前测、量表信度与操控检验，并将反馈转成话术、节奏和AIGC自然度修订项。',
+      '用户研究：问卷、专业人员访谈、参与式工作坊与需求归纳。',
+      '内容创作：故事与分支设计、角色与场景、分镜、AIGC素材及后期剪辑。',
+      '交互实现：网页原型、路径记录与配对回放、游戏界面与探索机制。',
+      '研究评价：实验设计、数据分析、试玩评价及基于反馈的设计迭代。',
     ],
     process: [
-      '研究专业人员与目标青年，定位熟人社交压力下的真实行为缺口。',
-      '用166份问卷验证高风险场景、效能短板、策略偏好和互动媒介接受度。',
-      '通过6人参与式工作坊，把抽象心理变量转成可执行的游戏机制。',
-      '完成四组AIGC互动影像材料与网页原型，保证版本之间的结构一致性。',
-      '开展30份材料前测，检验操控、量表与流程并形成修订清单。',
-      '规划正式互动性对照实验，检验互动机制而非新奇感带来的增益。',
+      '通过问卷、访谈和共创，识别熟人情境中的判断与应对需求。',
+      '将理论与需求转化为影像片段、分支选择和后果反馈。',
+      '比较自主选择与内容配对观看，分析参与体验和应对信念。',
+      '据实验与开放反馈优化《界限》，开展10人首次试玩评价。',
     ],
     learned: [
-      '教育产品的关键不一定是提供更多知识，而可能是把“知道”变成能够当场执行的行动脚本。',
-      '理论只有被转成角色、选项、反馈、倒计时和重试等可操作机制，才真正进入产品设计。',
-      '前测结果必须说明统计边界：材料可区分不等于产品有效，阶段状态本身也是产品判断的一部分。',
+      '剧情选择带来的参与感，需要通过具体的判断依据、回应练习和解释继续承接。',
+      '可用性、当次题目表现与真实行为变化是不同的评价对象，应分别说明。',
+      '研究的价值也体现在揭示未出现的优势，并据此重新安排设计重点。',
     ],
-    references: [
-      { image: asset('anti-drug-case/01-problem.png'), label: '问题定义：从危害知识传播转向拒毒行动训练' },
-      { image: asset('anti-drug-case/02-research-framework.png'), label: '研究与产品验证框架' },
-      { image: asset('anti-drug-case/04-eppm-mda-rules.png'), label: 'EPPM心理变量到互动机制的转化矩阵' },
-      { image: asset('anti-drug-case/06-web-prototype.png'), label: '网页交互原型与多版本材料流程' },
-    ],
-    gallery: [
-      { image: asset('anti-drug-case/03-user-expectations.png'), label: '166份问卷中的互动功能期待' },
-      { image: asset('anti-drug-case/05-product-loop.png'), label: '选择、后果、反馈与重新练习的产品闭环' },
-      { image: asset('anti-drug-case/07-pretest-results.png'), label: '30份材料前测：信度与操控检验' },
-      { image: asset('anti-drug-case/08-next-experiment.png'), label: '正式研究：互动影像与线性影像对照方案' },
-    ],
+    references: [],
+    gallery: [],
   },
   {
     slug: 'cocoon',
@@ -1709,6 +1689,14 @@ const animationArchiveProjects = [
 
 const additionalArchiveWorks = ['UE5 场景建模', '红“秘”围城 VR 游戏项目', '丰舞蝶梦 梁祝相惠'];
 
+// Include every available project, including work formerly hidden in the old archive.
+// The MG film already has its own page, so it is represented only once.
+const archiveWorks: ArchiveWork[] = [
+  ...animationArchiveProjects.filter(work => work.slug !== 'mg-opening').map(work => ({...work,videos:archiveVideos[work.slug]})),
+  ...additionalPortfolioWorks,
+];
+const completeCollection = [...featuredProjects, ...filmCollectionProjects, ...archiveWorks.map(archiveAsProject)];
+
 const skills = [
   'AI产品拆解',
   'Prompt设计',
@@ -2044,6 +2032,9 @@ function ExperienceDetailPage({ experience }: { experience: (typeof experienceDe
         返回个人经历
       </a>
 
+      {experience.slug === 'xinhua-internship' && <InlineFilm film={films.xinhua} autoPlay />}
+      {experience.slug === 'ai-pet-internship' && <InlineFilm film={films.pet} autoPlay />}
+
       <section className="experience-hero">
         <div className="experience-hero-copy">
           <p className="eyebrow">{experience.type} / {experience.year}</p>
@@ -2173,20 +2164,7 @@ function UndergraduateArchive() {
         </div>
       </section>
 
-      <section className="experience-section undergraduate-video-section">
-        <div>
-          <p className="section-kicker">视频档案</p>
-          <h2>个人展示</h2>
-          <p className="undergraduate-section-note">从课程训练、项目创作到综合实践的阶段性作品回顾。</p>
-        </div>
-        <figure className="undergraduate-video-frame">
-          <video controls preload="metadata" poster={undergraduateArchive.poster} aria-label="本科个人展示视频">
-            <source src={undergraduateArchive.video} type="video/mp4" />
-            当前浏览器不支持视频播放，请下载后查看。
-          </video>
-          <figcaption>个人展示视频｜网页优化版，点击播放</figcaption>
-        </figure>
-      </section>
+
 
       <section className="experience-section undergraduate-awards-section">
         <div>
@@ -2402,13 +2380,21 @@ function CaseStudyPage({ study }: { study: (typeof caseStudies)[number] }) {
           返回精选项目
         </a>
 
+        <a className="pet-account-link" href="https://xhslink.cn/o/2W0moYQkD1y" target="_blank" rel="noopener noreferrer" aria-label="前往小红书查看 @小龙吨吨 的账号主页（新标签页打开）">
+          <span className="pet-account-platform" aria-hidden="true">小红书</span>
+          <span className="pet-account-identity"><strong>@小龙吨吨</strong><span>小红书账号 · <b>1.7 万</b>粉丝</span></span>
+          <span className="pet-account-action">查看账号主页 <ExternalLink size={17} aria-hidden="true" /></span>
+        </a>
+
+        <section className="pet-opening-player" aria-label="小龙吨吨代表作品"><InlineFilm film={films.pet} autoPlay /></section>
+
         <header className="pet-v2-hero">
           <div className="pet-v2-title-block">
             <p>项目参与时间：2026-07-28至2026-09-20</p>
             <h1>小龙吨吨 IP 孵化与跨平台运营</h1>
             <p className="pet-updated-intro">我参与了从 TCL 电视大屏内测到小红书、抖音上线的全过程，工作涵盖 AIGC 内容制作、IP 品牌传播、用户反馈分析、栏目策划与短视频运营。</p>
             <div className="pet-capability-labels" aria-label="项目能力方向"><span>AIGC 内容制作</span><span>品牌营销</span><span>产品运营</span></div>
-            <div className="pet-results" aria-label="项目运营成果"><div><strong>3.5w赞</strong><span>小红书单条最高点赞量</span></div><div><strong>1.5万</strong><span>小红书账号总粉丝</span></div><div><strong>双平台</strong><span>小红书与抖音持续更新</span></div></div>
+            <div className="pet-results" aria-label="项目运营成果"><div><strong>3.5w赞</strong><span>小红书单条最高点赞量</span></div><div><strong>1.7万</strong><span>小红书账号总粉丝</span></div><div><strong>双平台</strong><span>小红书与抖音持续更新</span></div></div>
           </div>
 
         </header>
@@ -2416,19 +2402,17 @@ function CaseStudyPage({ study }: { study: (typeof caseStudies)[number] }) {
         <section className="pet-hit-story pet-hit-early" id="pet-social-results" aria-labelledby="pet-hit-title">
             <figure className="pet-social-proof">
               <ZoomableImage src={asset('ai-pet-case/evidence/xiaohongshu-2026-10-04.jpg')} alt="小龙吨吨小红书主页截图，置顶假期出逃vlog显示3.5万点赞，账号显示1.5万粉丝" caption="小红书主页截图" onOpen={setLightboxImage} />
-              <figcaption><strong>小红书发布截图</strong></figcaption>
+              <figcaption><strong>小红书发布截图</strong><span>历史截图，最新粉丝数以账号主页为准。</span></figcaption>
             </figure>
           <div className="pet-hit-detail">
-          <div className="pet-hit-copy"><span className="pet-hit-kicker">小红书代表作品</span><h2 id="pet-hit-title">出逃成功！<br/>小龙吨吨的假期出逃vlog</h2><p>我参与了这条 AIGC 短视频的制作。作品上线后获得集中关注，成为项目从大屏内容走向短视频平台的一项代表成果。</p><a href="https://xhslink.cn/o/5F0IWUnAWpl" target="_blank" rel="noopener noreferrer">在小红书查看原作品 <ExternalLink size={16} /></a></div>
-            <figure className="pet-video-proof">
-              <video controls playsInline preload="metadata" poster={asset('ai-pet-case/evidence/short-video-poster.jpg')} aria-label="小龙吨吨14秒视频片段"><source src={asset('ai-pet-case/evidence/short-video-excerpt.mp4')} type="video/mp4" />你的浏览器暂不支持播放此视频。</video>
-              <figcaption><strong>视频片段 · 14秒</strong></figcaption>
-            </figure>
+          <div className="pet-hit-copy"><span className="pet-hit-kicker">小红书代表作品</span><h2 id="pet-hit-title">出逃成功！<br/>小龙吨吨的假期出逃vlog</h2><p>我参与了这条 AIGC 短视频的制作。作品上线后获得集中关注，成为项目从大屏内容走向短视频平台的一项代表成果。</p><a href={petOriginalLink} target="_blank" rel="noopener noreferrer">在小红书查看原作品 <ExternalLink size={16} /></a></div>
+
           </div>
         </section>
 
         <div className="pet-hero-motion"><PetMotionDivider index={3} caption="小龙吨吨 · 角色动态 03" /></div>
 
+        <details className="pet-reading-details"><summary>了解我的工作与制作过程<span>内容制作、用户反馈与双平台运营</span></summary>
         <section className="pet-v2-work">
           <div className="pet-v2-section-title"><h2>我的工作内容</h2></div>
           <div className="pet-v2-work-copy">
@@ -2469,9 +2453,11 @@ function CaseStudyPage({ study }: { study: (typeof caseStudies)[number] }) {
             <article><span>01</span><h3>内容调研与人群定位</h3><p>参与同类短视频调研，对比萌宠陪伴、日常生活与 AI 治愈类内容，梳理用户观看需求、角色表达和内容形式，明确目标人群。</p></article>
             <article><span>02</span><h3>IP 品牌传播与栏目规划</h3><p>结合小龙吨吨的角色特点，规划“吨吨旅行”等核心栏目，以及场景、动作、镜头、音乐与音效的使用规则。通过一致的角色形象和内容风格建立 IP 辨识度，让品牌表达融入日常内容。</p></article>
             <article><span>03</span><h3>双平台内容运营</h3><p>规划分阶段更新节奏，并参与 AIGC 短视频制作。相关内容已在小红书和抖音发布，两个账号均持续运营。</p></article>
-            <article><span>04</span><h3>代表作品</h3><p>参与制作《出逃成功！小龙吨吨的假期出逃vlog》。单条最高点赞量为 3.5w 赞，小红书账号总粉丝为 1.5 万。</p></article>
+            <article><span>04</span><h3>代表作品</h3><p>参与制作《出逃成功！小龙吨吨的假期出逃vlog》。单条最高点赞量为 3.5w 赞，小红书账号总粉丝为 1.7 万。</p></article>
           </div>
         </section>
+
+        </details>
 
         {lightboxImage ? <ImageLightbox image={lightboxImage} onClose={() => setLightboxImage(null)} /> : null}
       </article>
@@ -3176,6 +3162,7 @@ function CaseStudyPage({ study }: { study: (typeof caseStudies)[number] }) {
           返回精选项目
         </a>
 
+        <section className="pet-opening-player"><InlineFilm film={films.wunian} autoPlay/></section>
         <header className="wunian-diary-header">
           <div>
             <p className="eyebrow">AI VIDEO / 8小时黑客松</p>
@@ -3254,14 +3241,25 @@ function CaseStudyPage({ study }: { study: (typeof caseStudies)[number] }) {
         返回精选项目
       </a>
 
+      {study.slug === 'cocoon' && <section className="pet-opening-player"><InlineFilm film={films.cocoon} autoPlay/></section>}
+      {study.slug === 'digital-zuel' && <section className="pet-opening-player" aria-label="数字中南大效果展示动画"><InlineFilm film={digitalZuelFilm} autoPlay/></section>}
+
       <section className="case-hero">
         <div className="case-hero-copy">
           <p className="eyebrow">{study.type} / {study.year}</p>
           <h1>{study.title}</h1>
           <p className="case-cn">{study.cn}</p>
+          {study.slug==='electronic-yuefu'&&study.externalLink&&(
+            <a className="case-watch-featured" href={study.externalLink.href} target="_blank" rel="noopener noreferrer" aria-label="在新片场观看完整视频：电子新乐府（新窗口）">
+              <span className="case-watch-featured-icon"><Play size={26} fill="currentColor"/></span>
+              <span><strong>观看完整视频</strong><small>电子新乐府 · 在新片场观看</small></span>
+              <ExternalLink size={22} aria-hidden="true"/>
+            </a>
+          )}
+          {study.slug==='anti-drug-interactive-film'&&study.externalLink&&<a className="case-play-cta" href={study.externalLink.href} target="_blank" rel="noopener noreferrer" aria-label="立即试玩禁毒互动影像游戏（新窗口）"><span className="case-play-icon"><Play size={18} fill="currentColor"/></span><span><strong>立即试玩</strong><small>禁毒互动影像游戏 · 在线体验</small></span><ExternalLink size={19}/></a>}
           <p>{study.overview}</p>
           {study.award ? <p className="case-award">{study.award}</p> : null}
-          {study.externalLink ? (
+          {study.externalLink&&!['anti-drug-interactive-film','electronic-yuefu'].includes(study.slug) ? (
             <a className="case-watch-link" href={study.externalLink.href} target="_blank" rel="noreferrer">
               <span className="watch-icon">
                 <Play size={14} fill="currentColor" />
@@ -3279,6 +3277,7 @@ function CaseStudyPage({ study }: { study: (typeof caseStudies)[number] }) {
           ) : null}
         </div>
         <figure className="case-hero-image">
+          {study.slug==='anti-drug-interactive-film'?<DemoMotion name="menu" label="游戏主菜单动态预览"/>:<>
           <ZoomableImage
             src={study.heroImage}
             alt={`${study.title} case study cover`}
@@ -3286,14 +3285,17 @@ function CaseStudyPage({ study }: { study: (typeof caseStudies)[number] }) {
             onOpen={setLightboxImage}
           />
           <figcaption>{study.type}</figcaption>
+          </>}
         </figure>
       </section>
+
+      {study.slug==='anti-drug-interactive-film'&&<AntiDrugDemo/>}
 
       {study.highlights.length > 0 ? (
         <section className="case-section case-highlights-section">
           <div>
             <p className="section-kicker">项目概览</p>
-            <h2>这个项目解决了什么</h2>
+            <h2>{study.slug==='anti-drug-interactive-film'?'研究如何推动设计':'这个项目解决了什么'}</h2>
           </div>
           <div className="case-highlight-grid">
             {study.highlights.map((highlight) => (
@@ -3305,6 +3307,7 @@ function CaseStudyPage({ study }: { study: (typeof caseStudies)[number] }) {
         </section>
       ) : null}
 
+      <details className="pet-reading-details"><summary>阅读项目研究与制作过程<span>研究思路、职责与项目复盘</span></summary>
       {study.details.length > 0 ? (
         <section className="case-section case-narrative-section">
           <div>
@@ -3376,7 +3379,9 @@ function CaseStudyPage({ study }: { study: (typeof caseStudies)[number] }) {
         </div>
       </section>
 
-      <section className="case-section">
+      </details>
+
+      {study.references.length>0&&<section className="case-section">
         <div>
           <p className="section-kicker">过程材料</p>
           <h2>关键设计材料</h2>
@@ -3394,7 +3399,7 @@ function CaseStudyPage({ study }: { study: (typeof caseStudies)[number] }) {
             </figure>
           ))}
         </div>
-      </section>
+      </section>}
 
       {study.gallery.length > 0 ? (
         <section className="case-section case-gallery-section">
@@ -3806,6 +3811,7 @@ function App() {
   const [activeExperienceSlug, setActiveExperienceSlug] = useState(readExperienceSlug);
   usePortfolioMotion(activeCaseSlug||activeExperienceSlug||'home');
   const activeCase = caseStudies.find((study) => study.slug === activeCaseSlug);
+  const activeArchive = archiveWorks.find((work) => work.slug === activeCaseSlug);
   const activeExperience = experienceDetails.find((experience) => experience.slug === activeExperienceSlug);
 
   useEffect(() => {
@@ -3831,6 +3837,14 @@ function App() {
       window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
     }
   }, [activeCaseSlug, activeExperienceSlug]);
+
+  if (isOriginalFilm(activeCaseSlug)) {
+    return <div className="site-shell"><BrowserBar /><main><OriginalFilmPage key={activeCaseSlug} slug={activeCaseSlug!} /></main><footer className="site-footer"><span>张馨文 · 视频作品</span><a href="#watch">返回视频作品</a></footer></div>;
+  }
+
+  if (activeArchive) {
+    return <div className="site-shell"><BrowserBar /><main><ArchiveWorkPage key={activeArchive.slug} work={activeArchive}/></main></div>;
+  }
 
   if (activeCase) {
     return (
@@ -3864,7 +3878,7 @@ function App() {
     );
   }
 
-  return <EditorialHome projects={featuredProjects} experiences={rings} />;
+  return <EditorialHome projects={featuredProjects} collection={completeCollection} experiences={rings} />;
 
 }
 

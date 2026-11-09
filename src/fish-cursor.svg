@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+  <defs>
+    <g id="fish" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 8 Q3 4 7 4 Q14 3 16 10 Q11 16 6 12 Z"/>
+      <path d="M12 10 Q20 17 27 26 M17 11 L13 18 M22 16 L18 23 M26 21 L23 27" fill="none"/>
+      <path d="M27 25 Q29 22 32 22 L31 32 L23 30 Q24 27 27 25 Z"/>
+    </g>
+  </defs>
+  <use href="#fish" fill="#fffefa" stroke="#fffefa" stroke-width="4.5"/>
+  <use href="#fish" fill="#090b0d" stroke="#090b0d" stroke-width="2.5"/>
+  <circle cx="7.4" cy="7.2" r="1.25" fill="#fffefa"/>
+</svg>

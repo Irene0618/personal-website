@@ -9,7 +9,7 @@ export default function usePortfolioMotion(route:string){
   const progress=document.createElement('div');progress.className='reading-progress';progress.setAttribute('aria-hidden','true');document.body.append(progress);
   const reveals=new Set<HTMLElement>(),media=new Set<HTMLElement>(),visibleMedia=new Set<HTMLElement>();
   const magnets=new Set<HTMLElement>();
-  const chapters=['branches','leaves','more-works','trunk'];
+  const chapters=['watch','branches','leaves','more-works','trunk'];
   let frame=0,last=0,scrollValue=window.scrollY,scanFrame=0,disposed=false;
   let target:HTMLElement|null=null,mx=0,my=0,tx=0,ty=0;
   const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{

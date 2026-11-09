@@ -1,0 +1,102 @@
+{
+  "repository": "irene0618/personal-website",
+  "tag": "portfolio-media-v1",
+  "files": {
+    "films/pet-full.mp4": {
+      "asset": "pet-full.mp4",
+      "size": 129024524,
+      "sha256": "4ae16a464ab207aa1a15e6aa015ceecee6fced90b866bbe4ee7499f567e5f005"
+    },
+    "films/deep-space.mp4": {
+      "asset": "deep-space.mp4",
+      "size": 262644196,
+      "sha256": "3e8bb53b95a1ddb62434ceebb12545fa7fdefbd4bdf751c7c8ce682223ec8342"
+    },
+    "films/handdrawn-mg.mp4": {
+      "asset": "handdrawn-mg.mp4",
+      "size": 324652698,
+      "sha256": "0523e7767616b550c4229bbf45c145c05597f66f1e38831de7c118ca543b293c"
+    },
+    "films/xinhua-world-games.mp4": {
+      "asset": "xinhua-world-games.mp4",
+      "size": 88190786,
+      "sha256": "2fcf9fce4bfe8bf35296c0e0db753c8a1b03380089232a57037d626d10727da6"
+    },
+    "films/wunian.mp4": {
+      "asset": "wunian.mp4",
+      "size": 290571264,
+      "sha256": "aae78ae338eabe6180d481b9e510861e94985ff1e65c13e238935425fd582560"
+    },
+    "films/china-korea-c4d.mp4": {
+      "asset": "china-korea-c4d.mp4",
+      "size": 30976166,
+      "sha256": "7e0c22dab6623077fdfe3c53f650686951ed82da78708a645cc53917634b77d8"
+    },
+    "films/cocoon-original-4k.mp4": {
+      "asset": "cocoon-original-4k.mp4",
+      "size": 1002324232,
+      "sha256": "deba9590cf822aea7b11427a16c8c36e22c86d8e87f9114ef9a5f41eb61df4f2"
+    },
+    "films/cocoon-compatible.mp4": {
+      "asset": "cocoon-compatible.mp4",
+      "size": 464218241,
+      "sha256": "064ddc7f87cc6aaf90a8eed6b62e8d2255917c6282c5d918f2f1b095e15179c2"
+    },
+    "films/digital-zuel.mp4": {
+      "asset": "digital-zuel.mp4",
+      "size": 301918005,
+      "sha256": "d18b62cf4bd04901b3cd6e062c19a74682c26cf7e59f8b95ac2ab860597cb838"
+    },
+    "archive/qing.mp4": {
+      "asset": "qing.mp4",
+      "size": 403742545,
+      "sha256": "ba20300b84581ebb02778d9b86c1f9013e06405ccedfea1c72db797490e25c70"
+    },
+    "archive/ue5-fields.mp4": {
+      "asset": "ue5-fields.mp4",
+      "size": 62582354,
+      "sha256": "62bdec5e9ef2ba23dfc52870a04d52e4d7ff91ecb30ea1c6776f7c5dfe729086"
+    },
+    "archive/ue5-traditional.mp4": {
+      "asset": "ue5-traditional.mp4",
+      "size": 72776195,
+      "sha256": "36b3262036b93c605400b133ce8a9f4a9470155178eb62a7d72eb504e9fca627"
+    }
+  },
+  "excludedPublic": [
+    "portfolio/films/pet-full.mp4",
+    "portfolio/films/deep-space.mp4",
+    "portfolio/films/handdrawn-mg.mp4",
+    "portfolio/films/xinhua-world-games.mp4",
+    "portfolio/films/wunian.mp4",
+    "portfolio/films/china-korea-c4d.mp4",
+    "portfolio/films/cocoon-original-4k.mp4",
+    "portfolio/films/cocoon-compatible.mp4",
+    "portfolio/films/digital-zuel.mp4",
+    "portfolio/archive/qing.mp4",
+    "portfolio/archive/ue5-fields.mp4",
+    "portfolio/archive/ue5-traditional.mp4",
+    "portfolio/films/cheso-preview-hq.mp4",
+    "portfolio/films/cheso-preview.mp4",
+    "portfolio/films/china-korea-c4d-preview-hq.mp4",
+    "portfolio/films/cocoon-preview-hq.mp4",
+    "portfolio/films/deep-space-preview-hq.mp4",
+    "portfolio/films/deep-space-preview.mp4",
+    "portfolio/films/handdrawn-mg-drawing-preview-hq.mp4",
+    "portfolio/films/handdrawn-mg-preview-hq.mp4",
+    "portfolio/films/handdrawn-mg-preview.mp4",
+    "portfolio/films/pet-full-preview-hq.mp4",
+    "portfolio/films/pet-poster.jpg",
+    "portfolio/films/pet-preview-hq.mp4",
+    "portfolio/films/pet-preview-v2.mp4",
+    "portfolio/films/showreel-poster.jpg",
+    "portfolio/films/showreel-preview-hq.mp4",
+    "portfolio/films/showreel-preview.mp4",
+    "portfolio/films/showreel.mp4",
+    "portfolio/films/wunian-preview-hq.mp4",
+    "portfolio/films/xinhua-highlights.mp4",
+    "portfolio/films/xinhua-preview-hq.mp4",
+    "portfolio/archive/reunion.mp4",
+    "portfolio/videos"
+  ]
+}

@@ -1,7 +1,8 @@
-export const projectCategories=['全部','AIGC 影像','UI 设计','交互网页','产品体验','品牌视觉','品牌营销','产品运营','思辨设计'];
+export const projectCategories=['全部','AIGC 影像','动画与三维','影像制作','UI 设计','交互网页','产品体验','互动游戏','品牌视觉','视觉设计','品牌营销','产品运营','思辨设计'];
 // Categories refer to work shown in the case studies; a project may cover several directions.
 export const projectDirections:Record<string,string[]>={
  'ai-pet-incubation':['AIGC 影像','品牌营销','产品运营'],
+ 'anti-drug-interactive-film':['AIGC 影像','产品体验','互动游戏'],
  'cheso-campus-campaign':['AIGC 影像','品牌视觉','品牌营销'],
  'game-design-lab':['交互网页','UI 设计'],
  'wunian-ai-film':['AIGC 影像'],
@@ -27,6 +28,10 @@ export const projectSkills:Record<string,string[]>={
 export const directionNotes:Record<string,string>={
  '全部':'从视觉表达、界面交互到品牌传播，按能力方向浏览项目。',
  'AIGC 影像':'脚本分镜、图像与视频生成、风格控制、后期剪辑。',
+ '动画与三维':'手绘动画、三维角色与场景、CG 合成和虚幻引擎影像。',
+ '影像制作':'参与新闻影像与宣传片的制作。',
+ '互动游戏':'互动影像与 VR 游戏，将叙事转化为可参与的体验。',
+ '视觉设计':'报纸版式、主题海报、角色与表情包设计。',
  'UI 设计':'把用户需求转化为信息架构、界面视觉与交互原型。',
  '交互网页':'用网页组织内容与交互，让作品成为可以操作的体验。',
  '产品体验':'围绕使用场景，完成用户研究、功能规划与体验设计。',

@@ -1,6 +1,8 @@
 import {useState} from 'react';
+import type {ReactNode} from 'react';
 import './about.css';
 import PullBadge from './PullBadge';
+import CatDoodle from './CatDoodle';
 
 export type Experience = {slug:string; year:string; title:string; detail:string; tags:string[]};
 const categories=['全部','实习经历','教育背景','校园经历'];
@@ -30,13 +32,14 @@ const honors=[
 ];
 const order=['ai-pet-internship','xinhua-internship','hitsz-master','hitsz-photo-association','zuel-media-center','zuel-undergraduate'];
 
-export default function AboutSection({experiences}:{experiences:Experience[]}){
+export default function AboutSection({experiences,introduction}:{experiences:Experience[];introduction?:ReactNode}){
  const [category,setCategory]=useState('全部');
  const [open,setOpen]=useState<string|null>(null);
  const sorted=order.flatMap(slug=>experiences.filter(e=>e.slug===slug));
  const visible=sorted.filter(e=>category==='全部'||entries[e.slug].category===category);
  return <section className="about-journal ed-section" id="trunk">
-  <header className="about-heading ed-reveal"><div><span className="ed-eyebrow">04 / ABOUT & EXPERIENCE</span><h2>关于我</h2></div><span className="about-period">2020 — 2027<span>学习与实践</span></span></header>
+  <header className="about-heading ed-reveal"><div><span className="ed-eyebrow">04 / ABOUT & EXPERIENCE</span><div className="cat-heading"><h2>关于我</h2><CatDoodle pose="sleep"/></div></div><span className="about-period">2020 — 2027<span>学习与实践</span></span></header>
+  {introduction}
   <section className="about-honors ed-reveal" aria-labelledby="honors-heading"><div className="honors-heading"><h3 id="honors-heading">奖项与荣誉</h3><span>SCHOLARSHIPS & AWARDS</span></div><div className="honors-grid">{honors.map((honor,i)=><article key={honor.title}><span className="honor-number">{String(i+1).padStart(2,'0')}</span><div><small>{honor.kind}</small><h4>{honor.title}</h4><p>{honor.context}</p></div></article>)}</div></section>
   <div className="about-layout">
    <aside className="about-profile">

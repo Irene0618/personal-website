@@ -1,5 +1,5 @@
 /* The collection is a self-contained, motion exhibition within the portfolio. */
-.work-collection.ed-section{background:#f5f3eb;color:#293e32;max-width:none;padding:90px 5% 55px;font-family:Arial,'PingFang SC','Microsoft YaHei',sans-serif}
+.work-collection.ed-section{background:var(--home-paper,#fafaf8);color:#293e32;max-width:none;padding:90px 5% 55px;font-family:Arial,'PingFang SC','Microsoft YaHei',sans-serif}
 .work-collection .ed-eyebrow{color:#71806b;font-size:10px;letter-spacing:2px}
 .work-collection-heading{margin-bottom:46px;align-items:flex-end}
 .work-collection-heading h2{font:500 clamp(44px,6.5vw,94px)/1.12 Arial,'PingFang SC',sans-serif;letter-spacing:-4px;margin-top:30px}
@@ -12,8 +12,8 @@
 .work-collection .work-categories button[aria-pressed=true]{border-color:#2d4335;background:none;color:#2d4335}
 .work-collection .work-categories sup{margin-left:9px;font-size:8px}
 /* The reference composition: an isolated card, narrow threads and split metadata. */
-.work-spotlight.liquid-spotlight{display:block;position:relative;height:clamp(650px,78vh,820px);min-height:0;background:#f5f3eb;border:0;animation:none;margin-top:0;isolation:isolate;overflow:clip;border-bottom:1px solid #293d3120}
-.liquid-gallery{position:absolute;inset:0;overflow:clip;background:#f5f3eb}
+.work-spotlight.liquid-spotlight{display:block;position:relative;height:clamp(650px,78vh,820px);min-height:0;background:var(--home-paper,#fafaf8);border:0;animation:none;margin-top:0;isolation:isolate;overflow:clip;border-bottom:1px solid #293d3120}
+.liquid-gallery{position:absolute;inset:0;overflow:clip;background:var(--home-paper,#fafaf8)}
 .liquid-stage{height:100%;position:relative;cursor:grab;touch-action:pan-y;outline-offset:-5px!important}
 .liquid-stage:active{cursor:grabbing}
 .liquid-stage canvas{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity .45s}

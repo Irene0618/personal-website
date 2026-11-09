@@ -1,0 +1,130 @@
+/* Reference palette: soft white pages, ink-blue type and restrained blue-grey rules. */
+:root {
+  --home-paper: #fafaf8;
+  --home-surface: #eef2f3;
+  --home-white: #ffffff;
+  --home-ink: #112b3a;
+  --home-muted: #647783;
+  --home-accent: #173749;
+  --home-line: #627c9128;
+  --home-nav: #fafaf8ed;
+  --home-ice: #f1f4f5;
+  --home-mint: #dde6e9;
+  --home-blue: #8298a4;
+}
+html:has(.editorial), body:has(.editorial), .site-shell:has(.editorial) { background: var(--home-paper); }
+.editorial {
+  --ed-paper: var(--home-paper);
+  --ed-ink: var(--home-ink);
+  --ed-muted: var(--home-muted);
+  background: var(--ed-paper);
+  color: var(--ed-ink);
+}
+/* Paint the chapter edge to edge while keeping the existing readable content width. */
+.editorial :is(.ed-selected.ed-section,.work-collection.ed-section,.about-journal.ed-section) {
+  max-width: none;
+  padding-inline: max(5%,calc((100% - 1440px)/2));
+}
+.editorial :is(.photo-hero,.notes-toolbar,.ed-footer) { padding-inline: max(5%,calc((100% - 1440px)/2)); }
+.editorial ::selection { background: var(--home-mint); color: var(--home-ink); }
+.editorial a:focus-visible, .editorial button:focus-visible { outline-color: var(--home-accent); }
+.editorial :is(.ed-selected,.work-collection.ed-section,.work-spotlight.liquid-spotlight,.liquid-gallery,.film-personal,.about-journal,.ed-footer) {
+  background: var(--home-paper);
+  color: var(--home-ink);
+}
+.editorial .ed-footer { border-top: 1px solid var(--home-line); }
+.editorial .ed-footer p em { color: var(--home-accent); }
+.editorial .ed-footer>a,.editorial .ed-footer-bottom { border-color: var(--home-line); }
+.editorial .ed-footer-bottom { color: var(--home-muted); }
+.editorial :is(.film-gallery-bar>span,.film-tile-caption small,.film-gallery-footer,.ed-eyebrow,.work-collection .ed-eyebrow,.work-collection-heading p,.orbit-summary p,.about-period,.ed-project-info p) { color: var(--home-muted); }
+.editorial :is(.film-tile,.film-gallery-footer a,.film-gallery-tools button) { color: var(--home-ink); }
+.editorial :is(.film-gallery-bar button:hover,.film-wall-navigation button:hover,.photo-hero-bottom>button:hover,.ed-footer>a:hover,.experience-filters button:hover,.experience-entry:hover,.experience-entry.is-open) { background: var(--home-surface); }
+.editorial :is(.project-capabilities>span,.orbit-disciplines>span,.experience-keywords>span) { background: var(--home-surface); color: var(--home-muted); }
+.editorial .project-capabilities>span { border-color: var(--home-line); }
+.editorial .project-capabilities>span:first-child { background: var(--home-surface); color: var(--home-ink); border-color: var(--home-line); }
+.editorial :is(.ed-cover,.work-tile-art,.ed-archive-card>div,.ed-about-photo,.badge-photo) { background: var(--home-surface); }
+.editorial :is(.ed-view,.work-tile-open,.ed-archive-card>div span,.spotlight-pill,.spotlight-arrow,.ed-lightbox,.portrait-print,.about-portrait) { background: var(--home-white); }
+.editorial .ed-cover:hover .ed-view { background: var(--home-white); }
+
+/* A slight tonal change gives the moving image strip room to breathe. */
+.editorial .notes-strip { background: var(--home-paper); color: var(--home-ink); border-block: 1px solid var(--home-line); }
+.editorial :is(.notes-toolbar>div>span,.notes-toolbar small,.notes-actions>span,.note-frame figcaption,.note-frame figcaption>span) { color: var(--home-muted); }
+.editorial .notes-actions button { color: var(--home-ink); border-color: var(--home-line); }
+.editorial .notes-actions button:hover { background: var(--home-surface); }
+.editorial .note-frame>div { border-color: var(--home-line); border-radius: 10px; }
+.editorial .note-frame img { opacity: 1; }
+.editorial .notes-track { background: var(--home-line); }
+.editorial .notes-track>span { background: var(--home-accent); }
+
+/* The original flowers surround the photo reveal; no extra paper cards. */
+.editorial .film-personal { margin-top: 0; border-top-color: var(--home-line); }
+.editorial .portrait-light { background: radial-gradient(ellipse at 50% 50%,#e5eadf40,transparent 65%); }
+.editorial .film-personal :is(.portrait-caption,.portrait-archive-note,.portrait-side-note,.photo-hero-bottom>span,.photo-hero-heading p>span) { color: var(--home-muted); }
+.editorial .film-personal :is(.photo-hero-bottom>button,.photo-hero-bottom>a) { color: var(--home-ink); }
+.editorial .film-personal .photo-hero-bottom { border-color: var(--home-line); }
+.editorial .film-personal .photo-hero-heading .hero-directions { color: var(--home-muted); }
+.editorial .film-personal .portrait-print .portrait-caption { color: var(--home-muted); }
+.editorial .film-personal .photo-hero-bottom>button { border-color: var(--home-line); }
+.editorial .badge-card,.editorial .badge-pull-handle { background: var(--home-white); }
+.editorial .badge-card, .editorial .badge-pull-handle { color: var(--home-ink); }
+.editorial .ed-nav a[aria-current="location"] { color: var(--home-ink); }
+
+/* One restrained type scale and light controls throughout the gallery. */
+.editorial :is(.ed-section-title,.work-collection-heading,.about-heading) h2 {
+  font-size: clamp(30px,3.3vw,46px);
+  font-weight: 500;
+  letter-spacing: -.035em;
+  line-height: 1.35;
+}
+.editorial .notes-toolbar h2 {
+  font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Microsoft YaHei',sans-serif;
+  font-size: 23px;
+  font-weight: 500;
+}
+.editorial :is(.ed-number,.ed-project-year,.ed-edition) { color: var(--home-muted); }
+.editorial .ed-section-title,.editorial .work-collection-heading,.editorial .about-heading { color: var(--home-ink); }
+.editorial .photo-hero-heading h2>span { color: var(--home-muted); }
+.editorial .note-frame>div { border-width: 0; box-shadow: none; }
+.editorial .portrait-print { box-shadow: 0 12px 28px -18px #292c2845; }
+.editorial :is(.project-capabilities>span,.orbit-disciplines>span,.experience-keywords>span) { border-color: transparent; }
+.editorial .work-categories button { color: var(--home-muted); }
+.editorial .work-categories button[aria-pressed=true] { color: var(--home-ink); }
+.editorial .work-categories:after { height: 1px; background: var(--home-accent); }
+.editorial .notes-track { height: 1px; }
+.editorial .notes-track>span { background: var(--home-blue); }
+.editorial :is(.liquid-controls,.liquid-guide,.orbit-meta,.direction-note,.experience-period,.experience-category,.ed-tags) { color: var(--home-muted); }
+.editorial :is(.liquid-controls button,.liquid-controls a,.orbit-title,.orbit-index button[aria-pressed=true]) { color: var(--home-ink); }
+.editorial .orbit-index button { color: var(--home-muted); }
+.editorial .orbit-index button:hover { color: var(--home-accent); }
+.editorial .ed-nav nav a:after { background: var(--home-blue); }
+.editorial .ed-nav { color: var(--home-ink); background: var(--home-nav); border-color: var(--home-line); }
+.editorial :is(.ed-tags span,.work-collection-heading h2>span,.direction-note,.direction-note>strong,.orbit-meta,.about-period,.experience-date,.experience-role,.experience-footnote) { color: var(--home-muted); }
+.editorial :is(.film-gallery-bar,.film-gallery-footer,.work-categories,.work-spotlight.liquid-spotlight,.about-journal,.experience-entry,.about-heading) { border-color: var(--home-line); }
+.editorial .experience-entry:before { background: var(--home-blue); }
+.reading-progress { background: var(--home-accent); }
+
+/* Keep supporting text and controls in the same neutral palette. */
+.editorial .work-collection .work-categories button { color: var(--home-muted); }
+.editorial .work-collection .work-categories button[aria-pressed=true] { color: var(--home-ink); }
+.editorial :is(.about-profile>p,.about-interests span,.about-profile-note,.experience-date>small,.experience-role,.experience-body p,.experience-index-footer,.experience-read-hint,.experience-action-hint,.honors-heading>span,.honor-number,.honors-grid small,.honors-grid p,.badge-edition,.badge-card-top,.badge-identity div>span,.badge-card-bottom,.badge-instructions) { color: var(--home-muted); }
+.editorial :is(.honors-grid h4,.experience-body a,.experience-highlights>span,.experience-keywords>span,.film-gallery-bar button,.film-open-icon) { color: var(--home-ink); }
+.editorial .experience-filters button { color: var(--home-muted); }
+.editorial .experience-filters button[aria-pressed=true] { background: var(--home-accent); color: var(--home-white); }
+.editorial :is(.experience-toggle i,.badge-slot,.badge-handle-grip,.badge-dots i.active) { background: var(--home-accent); }
+.editorial .is-open .experience-toggle { background: var(--home-accent); border-color: var(--home-accent); }
+.editorial .is-open .experience-toggle i { background: var(--home-white); }
+.editorial .badge-anchor { background: radial-gradient(circle at 35% 25%,#fafaf8,#b9c1b3 55%,#707a68); }
+.editorial .is-ready .badge-pull-handle { background: var(--home-accent); color: var(--home-white); border-color: var(--home-accent); }
+.editorial .badge-barcode { background: repeating-linear-gradient(90deg,#70756e 0 1px,transparent 1px 3px,#70756e 3px 5px,transparent 5px 7px,#70756e 7px 8px,transparent 8px 11px); }
+.editorial .badge-dots i { background: var(--home-mint); }
+.editorial .badge-dots i.active { background: var(--home-accent); }
+
+/* The project covers loop silently; text and navigation remain outside the media. */
+.editorial .ed-cover-motion .motion-preview img { opacity: 1; }
+.editorial .ed-cover.ed-cover-yuefu { background: #080b10; }
+.editorial .ed-cover-yuefu .motion-preview :is(img,video) { object-fit: contain; }
+.editorial .ed-cover-motion .motion-preview { transition: transform .7s var(--film-ease); }
+@media(hover:hover) and (prefers-reduced-motion:no-preference) {
+ .editorial .ed-cover-motion:hover .motion-preview { transform: scale(1.025); }
+ .editorial .ed-cover-motion:hover .motion-preview img { transform: none; }
+}

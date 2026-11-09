@@ -1,9 +1,12 @@
 import {useEffect, useRef, useState} from 'react';
 import './collections.css';
 import LiquidGallery from './LiquidGallery';
+import CatDoodle from './CatDoodle';
 import useInertialRail from './useInertialRail';
 import {projectCategories as categories,projectDirections as tags,projectSkills,directionNotes} from './projectCapabilities';
-type Project={slug:string;name:string;type:string;image:string;summary:string;stage:string;outputs:string[]};
+import type {CollectionProject as Project} from './portfolioArchive';
+const directions=(project:Project)=>tags[project.slug]||project.directions||[];
+const projectHref=(project:Project)=>project.href||`#case-${project.slug}`;
 const asset=(p:string)=>`${import.meta.env.BASE_URL}portfolio/${p}`;
 const notes=[['01-puzzle-light','拼图光影'],['02-wire-figure','线框雕塑'],['03-book-light','书页光束'],['04-cosmic-figure','星尘人像'],['05-blue-butterflies','蓝夜蝶群'],['06-cosmic-heart','宇宙心脏'],['07-glowing-chest','胸口微光'],['08-sunset-running','落日奔跑'],['09-white-butterflies','白蝶花田'],['10-color-cloud-boat','彩云小舟'],['11-hands-butterfly','掌心蝶光'],['12-blue-fridge','蓝色冰箱'],['13-green-running','草坡奔流'],['14-glowing-feet','足底字光'],['15-blue-embrace','蓝色拥抱'],['16-water-fall','坠入水光'],['17-music-room','琴房光束'],['18-puppet-light','牵线光影'],['19-pink-hand','掌心羽毛'],['20-starry-eyes','星河眼眸']];
 export function VisualRail(){
@@ -35,17 +38,18 @@ export function MoreWorks({projects}:{projects:Project[]}){
  const filters=useRef<HTMLDivElement>(null);
  const [category,setCategory]=useState('全部'),[activeSlug,setActiveSlug]=useState('cheso-campus-campaign');
  useEffect(()=>{const el=filters.current;if(!el)return;const update=()=>{const selected=el.querySelector<HTMLButtonElement>('[aria-pressed=true]');if(selected){el.style.setProperty('--filter-left',`${selected.offsetLeft}px`);el.style.setProperty('--filter-width',`${selected.offsetWidth}px`);el.style.setProperty('--filter-top',`${selected.offsetTop+selected.offsetHeight-2}px`)}};update();const resize=new ResizeObserver(update);resize.observe(el);return()=>resize.disconnect()},[category]);
- const order=['ai-pet-incubation','cheso-campus-campaign','electronic-yuefu','wunian-ai-film','qin-yun','botopia','cocoon','ladywell','zhuangyuan-qijing','digital-zuel','art-heals','game-design-lab'];
- const ordered=[...projects].sort((a,b)=>order.indexOf(a.slug)-order.indexOf(b.slug));
- const filtered=ordered.filter(p=>category==='全部'||tags[p.slug]?.includes(category));
+ const order=['ai-pet-incubation','cheso-campus-campaign','anti-drug-interactive-film','electronic-yuefu','wunian-ai-film','qin-yun','botopia','cocoon','ladywell','zhuangyuan-qijing','digital-zuel','art-heals','game-design-lab'];
+ const rank=(slug:string)=>{const index=order.indexOf(slug);return index<0?order.length:index};
+ const ordered=[...projects].sort((a,b)=>rank(a.slug)-rank(b.slug));
+ const filtered=ordered.filter(p=>category==='全部'||directions(p).includes(category));
  const active=filtered.find(p=>p.slug===activeSlug)||filtered[0];
- return <section className="work-collection ed-section" id="more-works"><header className="work-collection-heading"><div><span className="ed-eyebrow">03 / PROJECT COLLECTION</span><h2>更多作品<span>{String(projects.length).padStart(2,'0')}</span></h2></div><p>DESIGN / BRAND / OPERATIONS<br/><span>UI 与交互 · 品牌营销 · 产品运营</span></p></header>
- <div className="work-categories" ref={filters} aria-label="作品分类">{categories.map(cat=><button key={cat} aria-pressed={category===cat} onClick={()=>setCategory(cat)}>{cat}<sup>{cat==='全部'?projects.length:projects.filter(p=>tags[p.slug]?.includes(cat)).length}</sup></button>)}</div>
+ return <section className="work-collection ed-section" id="more-works"><header className="work-collection-heading"><div><span className="ed-eyebrow">03 / PROJECT COLLECTION</span><div className="cat-heading"><h2>更多作品<span>{String(projects.length).padStart(2,'0')}</span></h2><CatDoodle pose="eat"/></div></div><p>影像 / 交互 / 视觉 / 三维<br/><a href="#explore">在海洋里找作品 ↗</a></p></header>
+ <div className="work-categories" ref={filters} aria-label="作品分类">{categories.map(cat=><button key={cat} aria-pressed={category===cat} onClick={()=>setCategory(cat)}>{cat}<sup>{cat==='全部'?projects.length:projects.filter(p=>directions(p).includes(cat)).length}</sup></button>)}</div>
  <div className="direction-note" key={`note-${category}`} aria-live="polite"><strong>{category==='全部'?'按能力看作品':category}</strong><p>{directionNotes[category]}</p><span>{filtered.length} 个项目</span></div>
  {active&&<div className="work-spotlight liquid-spotlight" key={`spotlight-${category}`}>
-  <LiquidGallery slides={filtered.map(p=>({slug:p.slug,name:shortName(p),image:cover(p)}))} active={filtered.indexOf(active)} onSelect={i=>setActiveSlug(filtered[i].slug)}/>
-  <div className="orbit-title" key={`title-${active.slug}`}><span>{String(filtered.indexOf(active)+1).padStart(2,'0')}</span><h3><a href={`#case-${active.slug}`}>{shortName(active)}</a></h3><div className="orbit-summary"><p>{descriptions[active.slug]||active.summary}</p><div className="orbit-disciplines">{(projectSkills[active.slug]||active.outputs).slice(0,4).map(output=><span key={output}>{output}</span>)}</div></div></div>
-  <div className="orbit-meta" key={`meta-${active.slug}`}><span>{category==='全部'?tags[active.slug]?.[0]:category}</span><small>{active.stage.match(/20\d{2}/)?.[0]||'PROJECT'}</small></div>
+  <LiquidGallery slides={filtered.map(p=>({slug:p.slug,name:shortName(p),image:cover(p),href:projectHref(p)}))} active={filtered.indexOf(active)} onSelect={i=>setActiveSlug(filtered[i].slug)}/>
+  <div className="orbit-title" key={`title-${active.slug}`}><span>{String(filtered.indexOf(active)+1).padStart(2,'0')}</span><h3><a href={projectHref(active)}>{shortName(active)}</a></h3><div className="orbit-summary"><p>{descriptions[active.slug]||active.summary}</p><div className="orbit-disciplines">{(projectSkills[active.slug]||active.outputs).slice(0,4).map(output=><span key={output}>{output}</span>)}</div></div></div>
+  <div className="orbit-meta" key={`meta-${active.slug}`}><span>{category==='全部'?directions(active)[0]:category}</span><small>{active.stage.match(/20\d{2}/)?.[0]||'PROJECT'}</small></div>
   <nav className="orbit-index" aria-label="切换主展示作品">{filtered.map((p,i)=><button key={p.slug} aria-label={`预览${shortName(p)}`} aria-pressed={active.slug===p.slug} onClick={()=>setActiveSlug(p.slug)}><small>{String(i+1).padStart(2,'0')}</small><span>{shortName(p)}</span></button>)}</nav>
  </div>}
 

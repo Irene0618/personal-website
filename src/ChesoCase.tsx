@@ -118,7 +118,7 @@ export default function ChesoCase() {
             <div className="cheso-film-label"><span><i />01 / 品牌宣传片</span><span>CHESO TVC · 01:31</span></div>
             <div className="cheso-video-shell">
               <video ref={videoRef} controls playsInline muted preload="auto"
-                poster={asset('film-cover.jpg')} aria-label="CHESO 小题大作品牌广告片"
+                poster={asset('film-cover.jpg')} aria-label="腾讯CHESO 设计agent 宣传片"
                 onPlay={() => setNeedsPlay(false)} onVolumeChange={(event) => setMuted(event.currentTarget.muted)}
                 onError={() => setVideoError(true)}>
                 <source src={filmSource} type="video/mp4" onError={() => setVideoError(true)} />

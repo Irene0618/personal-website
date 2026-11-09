@@ -1,0 +1,9 @@
+.archive-work-page { color: var(--home-ink); }
+.archive-summary { max-width: 680px; font-size: 14px; line-height: 1.9; color: var(--home-muted); }
+.archive-source-links { display: flex; flex-wrap: wrap; gap: 16px; margin: 25px 0 35px; }
+.archive-source-links a { padding: 11px 18px; border: 1px solid var(--home-line); border-radius: 24px; font-size: 13px; color: var(--home-ink); background: var(--home-ice); }
+.archive-work-gallery { display: grid; gap: 32px; margin-top: 32px; }
+.archive-work-gallery figure { margin: 0; }
+.archive-work-gallery img { width: 100%; height: auto; display: block; border-radius: 14px; }
+.archive-work-gallery figcaption { margin-top: 12px; font-size: 12px; color: var(--home-muted); }
+.archive-work-page .inline-film + .inline-film { margin-top: 30px; }

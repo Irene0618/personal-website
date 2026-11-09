@@ -1,0 +1,16 @@
+/* One small fish follows the real pointer, including over the old flower-cursor controls. */
+@media (any-pointer: fine) {
+  :root {
+    --fish-cursor: url('./fish-cursor.svg') 4 5;
+    --leaf-cursor: var(--fish-cursor);
+    --flower-cursor: var(--fish-cursor);
+  }
+
+  html,
+  html body,
+  html body *,
+  html body *::before,
+  html body *::after {
+    cursor: var(--fish-cursor), auto !important;
+  }
+}

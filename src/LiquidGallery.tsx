@@ -1,15 +1,16 @@
 import {useEffect, useRef, useState} from 'react';
 import './liquid-gallery.css';
 
-type Slide={slug:string;name:string;image:string};
+type Slide={slug:string;name:string;image:string;href?:string};
 type Props={slides:Slide[];active:number;onSelect:(index:number)=>void};
 // Round-box, tapered bridge and smooth-union SDF helpers adapted from Misty-Forest-Portfolio.
 // See public/credits/misty-forest-LICENSE.txt and MOTION-CREDITS.md.
 const vertex=`attribute vec2 aPosition;void main(){gl_Position=vec4(aPosition,0.,1.);}`;
 const fragment=`precision highp float;
-uniform vec2 uResolution;uniform float uRatio;uniform float uCount;
+uniform vec2 uResolution;uniform float uRatio;uniform float uCount;uniform float uStart;
 uniform vec4 uCards[12];uniform sampler2D uAtlas;uniform sampler2D uGlyphs;uniform vec2 uGrid;
 uniform vec3 uPointer;uniform float uTime;uniform float uMotion;uniform float uDisperse;uniform float uActive;uniform float uHover;
+uniform vec3 uBackground;
 float sdRoundBox(vec2 p,vec2 b,float r){vec2 q=abs(p)-b+r;return min(max(q.x,q.y),0.)+length(max(q,0.))-r;}
 float smin(float a,float b,float k){float h=clamp(.5+.5*(b-a)/k,0.,1.);return mix(b,a,h)-k*h*(1.-h);}
 float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}
@@ -37,7 +38,8 @@ void main(){
   float d=sdRoundBox(q,hs,14.);
   field=smin(field,d,9.);
   float weight=exp(-max(d,-10.)*.025);
-  vec2 cell=vec2(mod(float(i),uGrid.x),floor(float(i)/uGrid.x));
+  float imageIndex=float(i)+uStart;
+  vec2 cell=vec2(mod(imageIndex,uGrid.x),floor(imageIndex/uGrid.x));
   vec2 uv=clamp(q/(hs*2.)+.5,.002,.998);
   vec3 tex=texture2D(uAtlas,(cell+uv)/uGrid).rgb;
   color+=tex*weight;total+=weight;
@@ -64,8 +66,10 @@ void main(){
  // A quiet particle reveal only on entry; chapter changes keep the images intact.
  float reveal=1.-uDisperse;
  float grain=hash(floor(p/3.));alpha*=smoothstep(grain*.65,grain*.65+.35,reveal);
- vec3 ink=vec3(.23,.31,.23);
- gl_FragColor=vec4(mix(ink,color,alpha),max(alpha,particles));
+ vec3 ink=vec3(.384,.486,.569);
+ // Paint the same CSS background explicitly, including transparent card edges.
+ // This avoids a separate white backing in canvas compositors.
+ gl_FragColor=vec4(mix(uBackground,mix(ink,color,alpha),max(alpha,particles)),1.);
 }`;
 
 export default function LiquidGallery({slides,active,onSelect}:Props){
@@ -83,7 +87,7 @@ export default function LiquidGallery({slides,active,onSelect}:Props){
  useEffect(()=>{
   const el=canvas.current,container=stage.current;if(!el||!container||reduced)return;
   setReady(false);position.current=live.current.active;
-  const gl=el.getContext('webgl',{alpha:true,antialias:false,premultipliedAlpha:false});if(!gl)return;
+  const gl=el.getContext('webgl',{alpha:false,antialias:false,premultipliedAlpha:false});if(!gl)return;
   let cancelled=false,raf=0,visible=false,last=0,initial=0;
   const resources:WebGLShader[]=[];
   const compile=(type:number,code:string)=>{const shader=gl.createShader(type)!;resources.push(shader);gl.shaderSource(shader,code);gl.compileShader(shader);if(!gl.getShaderParameter(shader,gl.COMPILE_STATUS))throw new Error(gl.getShaderInfoLog(shader)||'Shader compile failed');return shader};
@@ -92,16 +96,22 @@ export default function LiquidGallery({slides,active,onSelect}:Props){
   catch{resources.forEach(s=>gl.deleteShader(s));if(program)gl.deleteProgram(program);return}
   gl.useProgram(program);buffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),gl.STATIC_DRAW);
   const a=gl.getAttribLocation(program,'aPosition');gl.enableVertexAttribArray(a);gl.vertexAttribPointer(a,2,gl.FLOAT,false,0,0);
-  const uniforms=Object.fromEntries(['uResolution','uRatio','uCount','uCards','uAtlas','uGrid','uPointer','uTime','uMotion','uGlyphs','uDisperse','uActive','uHover'].map(n=>[n,gl.getUniformLocation(program!,n)]));
+  const uniforms=Object.fromEntries(['uResolution','uRatio','uCount','uStart','uCards','uAtlas','uGrid','uPointer','uTime','uMotion','uGlyphs','uDisperse','uActive','uHover','uBackground'].map(n=>[n,gl.getUniformLocation(program!,n)]));
   const glyphs=document.createElement('canvas');glyphs.width=256;glyphs.height=32;
   const gc=glyphs.getContext('2d')!;gc.fillStyle='#fff';gc.font='26px monospace';gc.textAlign='center';gc.textBaseline='middle';[...'.:+x*#%@'].forEach((char,i)=>gc.fillText(char,i*32+16,16));
   glyphTexture=gl.createTexture();gl.activeTexture(gl.TEXTURE1);gl.bindTexture(gl.TEXTURE_2D,glyphTexture);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,glyphs);gl.uniform1i(uniforms.uGlyphs,1);gl.activeTexture(gl.TEXTURE0);
-  const columns=Math.min(4,slides.length),rows=Math.ceil(slides.length/columns),size=512;
+  const columns=Math.min(4,slides.length),rows=Math.ceil(slides.length/columns);
+  const size=Math.min(512,Math.floor(gl.getParameter(gl.MAX_TEXTURE_SIZE)/Math.max(columns,rows)));
   const atlas=document.createElement('canvas');atlas.width=columns*size;atlas.height=rows*size;
   const ctx=atlas.getContext('2d')!;
   const imageLoads=slides.map((slide,index)=>new Promise<void>(resolve=>{const img=new Image();img.onload=()=>{if(!cancelled){const x=index%columns*size,y=Math.floor(index/columns)*size,cropW=Math.min(img.naturalWidth,img.naturalHeight*1.5),cropH=cropW/1.5;ctx.drawImage(img,(img.naturalWidth-cropW)/2,(img.naturalHeight-cropH)/2,cropW,cropH,x,y,size,size)}resolve()};img.onerror=()=>resolve();img.src=slide.image}));
   let width=0,height=0,ratio=1,velocity=0,hover=0,px=-500,py=-500;
-  const resize=()=>{width=container.clientWidth;height=container.clientHeight;ratio=Math.min(devicePixelRatio,1.35);el.width=Math.round(width*ratio);el.height=Math.round(height*ratio);gl.viewport(0,0,el.width,el.height)};
+  const resize=()=>{
+   width=container.clientWidth;height=container.clientHeight;ratio=Math.min(devicePixelRatio,1.35);el.width=Math.round(width*ratio);el.height=Math.round(height*ratio);gl.viewport(0,0,el.width,el.height);
+   const gallery=container.closest('.liquid-gallery')!;
+   const rgb=getComputedStyle(gallery).backgroundColor.match(/[\d.]+/g)?.slice(0,3).map(Number)||[250,250,248];
+   gl.uniform3fv(uniforms.uBackground,new Float32Array(rgb.map(channel=>channel/255)));
+  };
   const resizeObserver=new ResizeObserver(resize);resizeObserver.observe(container);resize();
   const draw=(time:number)=>{
    raf=0;if(cancelled||!visible||document.hidden)return;
@@ -114,20 +124,24 @@ export default function LiquidGallery({slides,active,onSelect}:Props){
    px+=(pointer.current.x-px)*(1-Math.exp(-dt/75));py+=(pointer.current.y-py)*(1-Math.exp(-dt/75));
    const near=Math.abs(px-width*.5)<side*.57&&Math.abs(py-height*.51)<side*.42&&pointer.current.presence>0;
    hover+=((near?1:0)-hover)*(1-Math.exp(-dt/160));
+   // Keep the same 12-card shader budget while allowing an unlimited collection.
+   const start=Math.max(0,Math.min(Math.floor(position.current)-5,slides.length-12));
+   const count=Math.min(12,slides.length);
    const data=new Float32Array(48);geometry.current=[];
-   for(let i=0;i<slides.length;i++){
+   for(let slot=0;slot<count;slot++){
+    const i=start+slot;
     const delta=i-position.current,angle=delta*.33;
-    if(Math.abs(delta)>2.1){data[i*4+2]=0;continue}
+    if(Math.abs(delta)>2.1)continue;
     const x=width*.5+(Math.cos(angle)-1)*radius;
     const y=height*.51+Math.sin(angle)*radius;
     const proximity=Math.exp(-Math.hypot(px-x,py-y)/(side*.75))*pointer.current.presence;
     const half=side*.5*(1+proximity*.035);
     const cardX=x+(px-x)*proximity*.04,cardY=y+(py-y)*proximity*.04;
-    data.set([cardX,cardY,half,angle],i*4);geometry.current.push({x:cardX,y:cardY,half,angle,index:i});
+    data.set([cardX,cardY,half,angle],slot*4);geometry.current.push({x:cardX,y:cardY,half,angle,index:i});
    }
    if(viewTag.current){viewTag.current.style.transform=`translate3d(${px+12}px,${py-15}px,0)`;viewTag.current.style.opacity=String(hover)}
-   gl.uniform2f(uniforms.uResolution,width,height);gl.uniform1f(uniforms.uRatio,ratio);gl.uniform1f(uniforms.uCount,slides.length);gl.uniform4fv(uniforms.uCards,data);
-   gl.uniform3f(uniforms.uPointer,px,py,pointer.current.presence);gl.uniform1f(uniforms.uTime,time*.001);gl.uniform1f(uniforms.uMotion,movement);gl.uniform1f(uniforms.uDisperse,1-unfold);gl.uniform1f(uniforms.uActive,target);gl.uniform1f(uniforms.uHover,hover);
+   gl.uniform2f(uniforms.uResolution,width,height);gl.uniform1f(uniforms.uRatio,ratio);gl.uniform1f(uniforms.uCount,count);gl.uniform1f(uniforms.uStart,start);gl.uniform4fv(uniforms.uCards,data);
+   gl.uniform3f(uniforms.uPointer,px,py,pointer.current.presence);gl.uniform1f(uniforms.uTime,time*.001);gl.uniform1f(uniforms.uMotion,movement);gl.uniform1f(uniforms.uDisperse,1-unfold);gl.uniform1f(uniforms.uActive,target-start);gl.uniform1f(uniforms.uHover,hover);
    gl.clearColor(0,0,0,0);gl.clear(gl.COLOR_BUFFER_BIT);gl.drawArrays(gl.TRIANGLES,0,6);
    raf=requestAnimationFrame(draw);
   };
@@ -149,13 +163,13 @@ export default function LiquidGallery({slides,active,onSelect}:Props){
    onPointerDown={e=>{if(e.button!==0)return;drag.current={x:e.clientX,y:e.clientY,position:reduced||!ready?active:position.current,moved:false};e.currentTarget.setPointerCapture(e.pointerId)}}
    onPointerMove={e=>{const rect=e.currentTarget.getBoundingClientRect();pointer.current={x:e.clientX-rect.left,y:e.clientY-rect.top,presence:e.pointerType==='mouse'?1:0};const d=drag.current;if(d){const dx=e.clientX-d.x,dy=e.clientY-d.y;if(Math.hypot(dx,dy)>6)d.moved=true;const distance=e.pointerType==='touch'?dx:dy+dx*.4;position.current=Math.max(0,Math.min(slides.length-1,d.position-distance/220))}}}
    onPointerLeave={()=>{pointer.current.presence=0}}
-   onPointerUp={e=>{const d=drag.current;drag.current=null;if(e.currentTarget.hasPointerCapture(e.pointerId))e.currentTarget.releasePointerCapture(e.pointerId);if(!d)return;if(d.moved){select(Math.round(position.current));return}if(!ready)return;const r=e.currentTarget.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;const hit=[...geometry.current].sort((a,b)=>Math.hypot(x-a.x,y-a.y)-Math.hypot(x-b.x,y-b.y))[0];if(hit&&Math.abs((x-hit.x)*Math.cos(hit.angle)+(y-hit.y)*Math.sin(hit.angle))<hit.half&&Math.abs(-(x-hit.x)*Math.sin(hit.angle)+(y-hit.y)*Math.cos(hit.angle))<hit.half/1.5){if(hit.index===active)window.location.hash=`case-${current.slug}`;else select(hit.index)}}}
+   onPointerUp={e=>{const d=drag.current;drag.current=null;if(e.currentTarget.hasPointerCapture(e.pointerId))e.currentTarget.releasePointerCapture(e.pointerId);if(!d)return;if(d.moved){select(Math.round(position.current));return}if(!ready)return;const r=e.currentTarget.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;const hit=[...geometry.current].sort((a,b)=>Math.hypot(x-a.x,y-a.y)-Math.hypot(x-b.x,y-b.y))[0];if(hit&&Math.abs((x-hit.x)*Math.cos(hit.angle)+(y-hit.y)*Math.sin(hit.angle))<hit.half&&Math.abs(-(x-hit.x)*Math.sin(hit.angle)+(y-hit.y)*Math.cos(hit.angle))<hit.half/1.5){if(hit.index===active)window.location.hash=current.href||`#case-${current.slug}`;else select(hit.index)}}}
    onPointerCancel={()=>{drag.current=null;position.current=active}}>
    <canvas ref={canvas} aria-hidden="true"/>
    <img className="liquid-fallback" src={current.image} alt={current.name} draggable={false}/>
    <span ref={viewTag} className="liquid-view-tag" aria-hidden="true">↗ 查看</span>
    <span className="liquid-guide">滚动 · 拖动切换</span>
   </div>
-  <div className="liquid-controls"><button aria-label="上一个作品" disabled={active===0} onClick={()=>select(active-1)}>←</button><span aria-live="polite">{String(active+1).padStart(2,'0')}<small> / {String(slides.length).padStart(2,'0')}</small></span><button aria-label="下一个作品" disabled={active===slides.length-1} onClick={()=>select(active+1)}>→</button><a href={`#case-${current.slug}`} aria-label={`打开${current.name}`}>查看作品 ↗</a></div>
+  <div className="liquid-controls"><button aria-label="上一个作品" disabled={active===0} onClick={()=>select(active-1)}>←</button><span aria-live="polite">{String(active+1).padStart(2,'0')}<small> / {String(slides.length).padStart(2,'0')}</small></span><button aria-label="下一个作品" disabled={active===slides.length-1} onClick={()=>select(active+1)}>→</button><a href={current.href||`#case-${current.slug}`} aria-label={`打开${current.name}`}>查看作品 ↗</a></div>
  </div>;
 }

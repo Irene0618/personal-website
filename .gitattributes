@@ -1,0 +1,12 @@
+# Preserve the exact bytes of portfolio media, including text-based PDFs with byte offsets.
+*.pdf binary
+*.mp4 binary
+*.mov binary
+*.webm binary
+*.gif binary
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.ttf binary
+*.woff binary
+*.woff2 binary

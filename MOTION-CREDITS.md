@@ -12,4 +12,10 @@ Copyright (c) 2026 Yousuf Soomro
 Copyright (c) 2026 Meg D
 Copyright (c) 2026 Jiahan (Leran)
 
-All project images are Irene’s existing portfolio assets. No reference photographs, wallpaper or fonts have been copied.
+All project images are Irene’s existing portfolio assets. No reference photographs or wallpaper have been copied.
+
+## Character ocean
+
+The work explorer integrates the user-supplied local `character-ocean` project by jiezi1234. Its animation files in `src/ocean/` originate from stackedlol/ascii-sharks, as documented in the supplied [license scope](public/credits/character-ocean/LICENSE.md) and [third-party notices](public/credits/character-ocean/THIRD_PARTY_NOTICES.md). Those files retain their original attribution; the frontend MIT license does not relicense the upstream animation.
+
+This portfolio adds the React lifecycle, lazy loading, real project search, random navigation, and tab-visibility pause handling. The original portfolio gallery and photo interaction remain separate. Geist Mono is included under its [SIL OFL license](public/credits/character-ocean/OFL.txt). No Noto Sans font is included.
